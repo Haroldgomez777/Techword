@@ -1,0 +1,9 @@
+<nav class="breadcrumps">
+    {% for crumb in breadcrumbs %}
+      {% if crumb.url %}
+      <a class="breadcrumb-item" href="{{ crumb.url }}" title="{{ crumb.name }}">{{ crumb.name }}</a>/
+      {% else %}
+      <a class="breadcrumb-item active" href="#">{{ crumb.name }}</a>
+      {% endif %}
+    {% endfor %}
+</nav>
