@@ -1,4 +1,4 @@
-{% extends "zinnia/skeleton.html" %}
+ 4{% extends "zinnia/skeleton.html" %}
 {% load i18n %}
 {% load zinnia %}
 
@@ -26,7 +26,7 @@
 
 {% block sidebar %}
 <aside id="widget-welcome" class="widget">
-  <h3>{% trans "Welcome!" %}</h3>
+  <h5>{% trans "Welcome!" %}</h5>
   <p>
     {% trans "Serious Posts" %}
   </p>
@@ -35,56 +35,56 @@
   </p>
 </aside>
 <aside id="widget-categories" class="widget">
-  <h3>
+  <h5>
     <a href="{% url 'zinnia:category_list' %}">{% trans "Categories" %}</a>
-  </h3>
+  </h5>
   {% get_categories %}
 </aside>
 <aside id="widget-authors" class="widget">
-  <h3>
+  <h5>
     <a href="{% url 'zinnia:author_list' %}">{% trans "Authors" %}</a>
-  </h3>
+  </h5>
   {% get_authors %}
 </aside>
 
 <aside id="widget-tags" class="widget">
-  <h3>
+  <h5>
     <a href="{% url 'zinnia:tag_list' %}">{% trans "Tags" %}</a>
-  </h3>
+  </h5>
   {% get_tag_cloud %}
 </aside>
 <aside id="widget-recents" class="widget">
-  <h3>{% trans "Recent entries" %}</h3>
+  <h5>{% trans "Recent entries" %}</h5>
   {% get_recent_entries %}
 </aside>
 <aside id="widget-comments" class="widget">
-  <h3>{% trans "Recent comments" %}</h3>
+  <h5>{% trans "Recent comments" %}</h5>
   {% get_recent_comments %}
 </aside>
 <aside id="widget-linkbacks" class="widget">
-  <h3>{% trans "Recent linkbacks" %}</h3>
+  <h5>{% trans "Recent linkbacks" %}</h5>
   {% get_recent_linkbacks %}
 </aside>
 <aside id="widget-randoms" class="widget">
-  <h3>{% trans "Random entries" %}</h3>
+  <h5>{% trans "Random entries" %}</h5>
   {% get_random_entries %}
 </aside>
 <aside id="widget-populars" class="widget">
-  <h3>{% trans "Popular entries" %}</h3>
+  <h5>{% trans "Popular entries" %}</h5>
   {% get_popular_entries %}
 </aside>
 <aside id="widget-archives" class="widget">
-  <h3>{% trans "Archives" %}</h3>
+  <h5>{% trans "Archives" %}</h5>
   {% get_archives_entries %}
 </aside>
 <aside id="widget-calendar" class="calendar">
-  <h3>{% trans "Calendar" %}</h3>
+  <h5>{% trans "Calendar" %}</h5>
   {% get_calendar_entries %}
 </aside>
 
 {% if user.is_authenticated %}
 <aside id="widget-tools" class="widget">
-  <h3>{% trans "Tools" %}</h3>
+  <h5>{% trans "Tools" %}</h5>
   <ul class="list-unstyled">
     {% if perms.zinnia %}
     <li>
