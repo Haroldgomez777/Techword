@@ -35,10 +35,10 @@
     border-bottom-color: black;
     border-color: black;
 }
-
+/*
 .navbar-nav > li > a {padding-top:5px !important; padding-bottom:5px !important;}
 .navbar {min-height:45px !important}
-
+*/
 input[name="head"] {
     font-family: FontAwesome;
 }
@@ -113,7 +113,7 @@ input[name="head"] {
 }
 
 .calendar td.today a {
-    
+
     background: #79aec8;
 }
 
@@ -277,4 +277,8 @@ input[name="head"] {
 .widget li {
 
     padding:5px 0px 5px 30px;
+}
+
+.widget {
+    margin:5px 5px 5px 30px;
 }

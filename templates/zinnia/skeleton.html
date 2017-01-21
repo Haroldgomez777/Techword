@@ -1,146 +1,199 @@
 {% load i18n %}
-{% load staticfiles %}
-
+{% load static %}
 <!doctype html>
 <html lang="{{ LANGUAGE_CODE }}">
-  <head>
-    <meta charset="utf-8">
-    <title>{% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %} - Techword</title>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %} - Techword</title>
 
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://use.fontawesome.com/b1a4503a71.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://use.fontawesome.com/b1a4503a71.js"></script>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
- <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<!-- jQuery library -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
-<!-- Latest compiled JavaScript -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script> -->
+  <!-- jQuery library -->
 
-<link rel="stylesheet" type="text/css" href="{% static 'change/theme/css/custom.css' %}">
 
-<style>
+  <!-- Latest compiled JavaScript -->
 
-#tooltip {
-    background: black;
-    border: 1px solid green;
-    color: white;
-    padding: 3px 10px;
-}
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script> -->
 
-.feeds .sitemap{
+  <link rel="stylesheet" type="text/css" href="{% static 'change/theme/css/custom.css' %}">
 
-  margin-right: 100px;
-}
+  <style>
 
-</style>
-    {% block link %}{% endblock link %}
+    #tooltip {
+      background: black;
+      border: 1px solid green;
+      color: white;
+      padding: 3px 10px;
+    }
 
-    {% block script %}{% endblock script %}
+    .feeds .sitemap{
+
+      margin-right: 100px;
+    }
+
+  </style>
+  {% block link %}{% endblock link %}
+
+  {% block script %}{% endblock script %}
 </head>
 
 
- 
+
 <body>
 
-  <nav class="navbar navbar-fixed-top dark">
-     <div class="container-fluid minilla">
-            <div class="navbar-header">
-            
-              <a class="navbar-brand dark" href="#">
-                <i class="fa fa-linux fa-1x" aria-hidden="true"></i>
-              </a>
-            
-            </div>
-            <div class="navbar-header">
-              <a class="navbar-brand dark hastip"  href="{% url 'zinnia:entry_archive_index' %}"  title="Techword blog" rel="home">Techword</a>
-               
-              </div>
-            
-            
-            <div class="navbar-header">
-            <form class="navbar-form" role="search" method="get" action="{% url 'zinnia:entry_search' %}">
-            <div class="form-group">
-              <input type="text" name="pattern" placeholder="{% trans 'search...' %}" {% if pattern %}value="{{ pattern }}"{% endif %} style="font-family: verdana; inputeight:bold;
-            font-size: 10pt; height: 28px; width:186px; color: #000000; padding-left: 2px; float:left; border: 1px solid black; background-color:
-            #ffffff" />
-              <input type="submit" name="head" class="search" value="&#xf002;">
-            </div>
-            </form>
-            </div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
 
-            <div class="navbar-header navbar-right  ">
-              <a class="navbar-brand hastip" href="{% url 'zinnia:entry_feed' %}" title="{% trans "RSS feed of last entries" %}" class="feeds" >
-                <i class="fa fa-rss dark" aria-hidden="true"></i>
-              </a>
-            </div>
-
-            <div class="navbar-header navbar-right ">
-              <a class="navbar-brand hastip" href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}" class="sitemap" rel="sitemap">
-                <i class="fa fa-map dark" aria-hidden="true"></i>
-              </a>
-            </div>
-            
-      </div>      
-                      
-   </nav>
-
-
-
-        
-
- <div class="container">
- <div class="row">
- <div class="col-xs-6 col-md-3">{% block sidebar %}{% endblock sidebar %}{% block breadcrumbs %}{% endblock breadcrumbs %}</div>
-
- <div class="col-xs-6 col-md-9"><div class="container" >{% block slider %}{% endblock slider %}</div>
-        {% block content %}
-        <div class="links">
-          <h2>{% trans "Useful links" %}</h2>
-          <ul>
-            <li>
-              <a href="{% url 'zinnia:entry_archive_index' %}" title="{% trans "Weblog index" %}">
-                {% trans "Weblog index" %}
-              </a>
-            </li>
-            <li>
-              <a href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}">
-                {% trans "Sitemap" %}
-              </a>
-            </li>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
           </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
         </div>
-        <div class="search">
-          <h2>{% trans "Search" %}</h2>
-          {% include "zinnia/tags/search_form.html" %}
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <!-- <nav class="navbar navbar-fixed-top dark">
+   <div class="container-fluid minilla">
+    <div class="navbar-header">
+      
+      <a class="navbar-brand dark" href="#">
+        <i class="fa fa-linux fa-1x" aria-hidden="true"></i>
+      </a>
+      
+    </div>
+    <div class="navbar-header">
+      <a class="navbar-brand dark hastip"  href="{% url 'zinnia:entry_archive_index' %}"  title="Techword blog" rel="home">Techword</a>
+      
+    </div>
+    
+    
+    <div class="navbar-header">
+      <form class="navbar-form" role="search" method="get" action="{% url 'zinnia:entry_search' %}">
+        <div class="form-group">
+          <input type="text" name="pattern" placeholder="{% trans 'search...' %}" {% if pattern %}value="{{ pattern }}"{% endif %} style="font-family: verdana; inputeight:bold;
+          font-size: 10pt; height: 28px; width:186px; color: #000000; padding-left: 2px; float:left; border: 1px solid black; background-color:
+          #ffffff" />
+          <input type="submit" name="head" class="search" value="&#xf002;">
         </div>
-        {% endblock content %}
-      </div>
-      <!-- <div class="col-xs-6 col-md-1"></div> -->
-      </div>
-      </div>
+      </form>
+    </div>
+
+    <div class="navbar-header navbar-right  ">
+      <a class="navbar-brand hastip" href="{% url 'zinnia:entry_feed' %}" title="{% trans "RSS feed of last entries" %}" class="feeds" >
+        <i class="fa fa-rss dark" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <div class="navbar-header navbar-right ">
+      <a class="navbar-brand hastip" href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}" class="sitemap" rel="sitemap">
+        <i class="fa fa-map dark" aria-hidden="true"></i>
+      </a>
+    </div>
+    
+  </div>      
+  
+</nav>
+
+ -->
+
+
+
+<div class="container">
+ <div class="row">
+   <div class="col-xs-6 col-md-3">{% block sidebar %}{% endblock sidebar %}{% block breadcrumbs %}{% endblock breadcrumbs %}</div>
+
+   <div class="col-xs-6 col-md-9"><div class="container" >{% block slider %}{% endblock slider %}</div>
+   {% block content %}
+   <div class="links">
+    <h2>{% trans "Useful links" %}</h2>
+    <ul>
+      <li>
+        <a href="{% url 'zinnia:entry_archive_index' %}" title="{% trans "Weblog index" %}">
+          {% trans "Weblog index" %}
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}">
+          {% trans "Sitemap" %}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="search">
+    <h2>{% trans "Search" %}</h2>
+    {% include "zinnia/tags/search_form.html" %}
+  </div>
+  {% endblock content %}
+</div>
+<!-- <div class="col-xs-6 col-md-1"></div> -->
+</div>
+</div>
 
 
 <!-- Modal -->
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Launch demo modal
 </button>
-
+ -->
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -157,10 +210,10 @@
     </div>
   </div>
 </div>
-          <!-- Button trigger modal -->
+ --><!-- Button trigger modal -->
 
-        
- </body>
+
+</body>
 
 <footer id="footer" role="contentinfo">
   <p>{% blocktrans %}Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.{% endblocktrans %}</p>
@@ -169,23 +222,23 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="{% static 'change/theme/js/tooltipsy.min.js' %}"></script>
- <script type="text/javascript">
+<script type="text/javascript">
 
 
-$('.hastip').tooltipsy({
+  $('.hastip').tooltipsy({
     offset: [0, 10],
     css: {
-        'padding': '5px',
-        'max-width': '200px',
-        'color': '#ffffff',
-        'background-color': '#000000',
-        'border': '1px solid #1a701d',
-        '-moz-box-shadow': '0 0 1px rgba(0, 0, 0, .5)',
-        '-webkit-box-shadow': '0 0 1px rgba(0, 0, 0, .5)',
-        'box-shadow': '0 0 1px rgba(0, 0, 0, .5)',
-        'text-shadow': 'none'
+      'padding': '5px',
+      'max-width': '200px',
+      'color': '#ffffff',
+      'background-color': '#000000',
+      'border': '1px solid #1a701d',
+      '-moz-box-shadow': '0 0 1px rgba(0, 0, 0, .5)',
+      '-webkit-box-shadow': '0 0 1px rgba(0, 0, 0, .5)',
+      'box-shadow': '0 0 1px rgba(0, 0, 0, .5)',
+      'text-shadow': 'none'
     }
-});
+  });
 
 </script>
 </html>

@@ -1,0 +1,14 @@
+beautifulsoup4==4.5.3
+Django==1.10.5
+django-blog-zinnia==0.18.1
+django-contrib-comments==1.7.3
+django-mptt==0.8.7
+django-tagging==0.4.5
+django-xmlrpc==0.1.7
+mots-vides==2015.5.11
+olefile==0.43
+Pillow==4.0.0
+pyparsing==2.1.10
+pytz==2016.10
+regex==2016.12.27
+six==1.10.0
