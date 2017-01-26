@@ -1,0 +1,134 @@
+{% load i18n %}
+{% load zinnia %}
+{% block sidebar %}
+
+<nav class="navbar navbar-inverse sidebar navbar-fixed-top" role="navigation" style="margin-top:51px;">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+        <li ><a href="#">Messages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+          <ul class="dropdown-menu forAnimate" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+        <li ><a href="#">Messages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+          <ul class="dropdown-menu forAnimate" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- <aside id="widget-welcome" class="widget">
+  <h5>{% trans "Welcome!" %}</h5>
+  <p>
+    {% trans "Serious Posts" %}
+  </p>
+  <p>
+    {% trans "I will be posting something serious here" %}
+  </p>
+</aside>
+<aside id="widget-categories" class="widget">
+  <h5>
+    <a href="{% url 'zinnia:category_list' %}">{% trans "Categories" %}</a>
+  </h5>
+  {% get_categories %}
+</aside>
+<aside id="widget-authors" class="widget">
+  <h5>
+    <a href="{% url 'zinnia:author_list' %}">{% trans "Authors" %}</a>
+  </h5>
+  {% get_authors %}
+</aside>
+
+<aside id="widget-tags" class="widget">
+  <h5>
+    <a href="{% url 'zinnia:tag_list' %}">{% trans "Tags" %}</a>
+  </h5>
+  {% get_tag_cloud %}
+</aside>
+<aside id="widget-recents" class="widget">
+  <h5>{% trans "Recent entries" %}</h5>
+  {% get_recent_entries %}
+</aside>
+<aside id="widget-comments" class="widget">
+  <h5>{% trans "Recent comments" %}</h5>
+  {% get_recent_comments %}
+</aside>
+<aside id="widget-linkbacks" class="widget">
+  <h5>{% trans "Recent linkbacks" %}</h5>
+  {% get_recent_linkbacks %}
+</aside>
+<aside id="widget-randoms" class="widget">
+  <h5>{% trans "Random entries" %}</h5>
+  {% get_random_entries %}
+</aside>
+<aside id="widget-populars" class="widget">
+  <h5>{% trans "Popular entries" %}</h5>
+  {% get_popular_entries %}
+</aside>
+<aside id="widget-archives" class="widget">
+  <h5>{% trans "Archives" %}</h5>
+  {% get_archives_entries %}
+</aside>
+<aside id="widget-calendar" class="calendar">
+  <h5>{% trans "Calendar" %}</h5>
+  {% get_calendar_entries %}
+</aside>
+
+{% if user.is_authenticated %}
+<aside id="widget-tools" class="widget">
+  <h5>{% trans "Tools" %}</h5>
+  <ul class="list-unstyled">
+    {% if perms.zinnia %}
+    <li>
+      <a href="{% url 'admin:app_list' 'zinnia' %}" title="{% trans "Dashboard" %}">
+        {% trans "Dashboard" %}
+      </a>
+    </li>
+    {% endif %}
+    {% if perms.zinnia.add_entry %}
+    <li>
+      <a href="{% url 'admin:zinnia_entry_add' %}" title="{% trans "Post an entry" %}">
+        {% trans "Post an entry" %}
+      </a>
+    </li>
+    {% endif %}
+    {% block admin-tools %}
+    {% endblock admin-tools %}
+    <li>
+      <a href="{% url 'admin:logout' %}" title="{% trans "Log out" %}">
+        {% trans "Log out" %}
+      </a>
+    </li>
+  </ul>
+</aside>
+{% endif %} -->
+{% endblock sidebar %}

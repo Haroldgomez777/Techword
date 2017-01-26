@@ -1,284 +1,438 @@
+.calendarbox, .clockbox {
+  margin: 5px auto;
+  font-size: 12px;
+  width: 19em;
+  text-align: center;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative; }
+
+.calendarbox h2, .calendar caption {
+  margin: 0;
+  text-align: center;
+  border-top: none;
+  background: black;
+  font-weight: 700;
+  font-size: 12px;
+  color: white; }
+
+.calendar td a, .timelist a {
+  display: block;
+  font-weight: 400;
+  padding: 6px;
+  text-decoration: none;
+  color: #444; }
+
+.calendarbox .calendarnav-previous, .calendarbox .calendarnav-next {
+  display: block;
+  position: absolute;
+  top: 8px;
+  width: 15px;
+  height: 15px;
+  text-indent: -9999px;
+  padding: 0; }
+
 .container {
-  margin-left: 55px;
-  margin-top:50px;
-}
+  margin-top: 50px; }
 
 .search {
-    height:28px;
-    width:32px;
-    border: none;
-    cursor: pointer;
-    color:white;
-    background-color:black;
-    position:relative;
-}
+  height: 28px;
+  width: 32px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  position: relative; }
 
 .minilla {
   margin-left: 55px;
-  padding-bottom: 0px;
-  margin-right: 200px;
+  padding-bottom: 0;
+  margin-right: 200px; }
 
-}
 .dark {
-  background-color:black;
-  border-radius: 0px;
+  background-color: black;
+  border-radius: 0;
   color: white;
-  height: 5px;
-}
+  height: 5px; }
 
 .white {
-    background-color:white;
-    color:black;
-    text-align: center;
-    border-width: 2px;
-    border-bottom: 2px;
-    border-bottom-color: black;
-    border-color: black;
-}
-/*
-.navbar-nav > li > a {padding-top:5px !important; padding-bottom:5px !important;}
-.navbar {min-height:45px !important}
-*/
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-width: 2px;
+  border-bottom: 2px;
+  border-bottom-color: black;
+  border-color: black; }
+
 input[name="head"] {
-    font-family: FontAwesome;
-}
+  font-family: FontAwesome; }
 
-
-.calendarbox, .clockbox {
-    margin: 5px auto;
-    font-size: 12px;
-    width: 19em;
-    text-align: center;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-    position: relative;
-}
+.calendarbox .calendarnav-previous:focus {
+  background-position: 0 -15px; }
+.calendarbox .calendarnav-previous:hover {
+  background-position: 0 -15px; }
+.calendarbox .calendarnav-next:focus {
+  background-position: 0 -45px; }
+.calendarbox .calendarnav-next:hover {
+  background-position: 0 -45px; }
 
 .clockbox {
-    width: auto;
-}
+  width: auto; }
 
 .calendar {
-    margin: 0;
-    padding: 0;
-}
-
-.calendar table {
+  margin: 0;
+  padding: 0; }
+  .calendar table {
     margin: 0;
     padding: 0;
     border-collapse: collapse;
     background: white;
-    width: 100%;
-}
-
-.calendar caption, .calendarbox h2 {
-    margin: 0;
-    text-align: center;
-    border-top: none;
-    background: #000000;
-    font-weight: 700;
-    font-size: 12px;
-    color: #ffffff;
-}
-
-.calendar th {
+    width: 100%; }
+  .calendar th {
     padding: 8px 5px;
     background: #f8f8f8;
     border-bottom: 1px solid #ddd;
     font-weight: 400;
     font-size: 12px;
     text-align: center;
-    color: #666;
-}
-
-.calendar td {
+    color: #666; }
+  .calendar td {
     font-weight: 400;
     font-size: 12px;
     text-align: center;
     padding: 0;
     border-top: 1px solid #eee;
-    border-bottom: none;
-}
-
-.calendar td.selected a {
-    background: #79aec8;
-    color: #fff;
-}
-
-.calendar td.nonday {
-    background: #f8f8f8;
-}
-
-.calendar td.today a {
-
-    background: #79aec8;
-}
-
-.calendar td a, .timelist a {
-    display: block;
-    font-weight: 400;
-    padding: 6px;
-    text-decoration: none;
-    color: #444;
-}
-
-.calendar td a:focus, .timelist a:focus,
-.calendar td a:hover, .timelist a:hover {
-    background: #79aec8;
-    color: white;
-}
-
-.calendar td a:active, .timelist a:active {
-    background: #417690;
-    color: white;
-}
+    border-bottom: none; }
+    .calendar td.nonday {
+      background: #f8f8f8; }
+    .calendar td a:focus {
+      background: #79aec8;
+      color: white; }
+    .calendar td a:hover {
+      background: #79aec8;
+      color: white; }
+    .calendar td a:active {
+      background: #417690;
+      color: white; }
+    .calendar td.selected a {
+      background: #79aec8;
+      color: white; }
+    .calendar td.today a {
+      background: #79aec8; }
 
 .calendarnav {
-    font-size: 10px;
-    text-align: center;
-    color: #000000;
-    margin: 0;
-    padding: 1px 3px;
-}
-
-.calendarnav a:link, #calendarnav a:visited,
-#calendarnav a:focus, #calendarnav a:hover {
-    color: #999;
-}
+  font-size: 10px;
+  text-align: center;
+  color: black;
+  margin: 0;
+  padding: 1px 3px; }
+  .calendarnav a:link {
+    color: #999; }
 
 .calendar-shortcuts {
-    background: white;
-    font-size: 11px;
-    line-height: 11px;
-    border-top: 1px solid #eee;
-    padding: 8px 0;
-    color: #ccc;
-}
-
-.calendarbox .calendarnav-previous, .calendarbox .calendarnav-next {
-    display: block;
-    position: absolute;
-    top: 8px;
-    width: 15px;
-    height: 15px;
-    text-indent: -9999px;
-    padding: 0;
-}
+  background: white;
+  font-size: 11px;
+  line-height: 11px;
+  border-top: 1px solid #eee;
+  padding: 8px 0;
+  color: #ccc; }
 
 .calendarnav-previous {
-    left: 10px;
-    background: url(../img/calendar-icons.svg) 0 0 no-repeat;
-}
-
-.calendarbox .calendarnav-previous:focus,
-.calendarbox .calendarnav-previous:hover {
-    background-position: 0 -15px;
-}
+  left: 10px;
+  background: url(../img/calendar-icons.svg) 0 0 no-repeat; }
 
 .calendarnav-next {
-    right: 10px;
-    background: url(../img/calendar-icons.svg) 0 -30px no-repeat;
-}
-
-.calendarbox .calendarnav-next:focus,
-.calendarbox .calendarnav-next:hover {
-    background-position: 0 -45px;
-}
+  right: 10px;
+  background: url(../img/calendar-icons.svg) 0 -30px no-repeat; }
 
 .calendar-cancel {
-    margin: 0;
-    padding: 4px 0;
-    font-size: 12px;
-    background: #eee;
-    border-top: 1px solid #ddd;
-    color: #333;
-}
-
-.calendar-cancel:focus, .calendar-cancel:hover {
-    background: #ddd;
-}
-
-.calendar-cancel a {
+  margin: 0;
+  padding: 4px 0;
+  font-size: 12px;
+  background: #eee;
+  border-top: 1px solid #ddd;
+  color: #333; }
+  .calendar-cancel:focus {
+    background: #ddd; }
+  .calendar-cancel:hover {
+    background: #ddd; }
+  .calendar-cancel a {
     color: black;
-    display: block;
-}
+    display: block; }
 
+#widget-welcome {
+  background-color: black;
+  color: white; }
 
-#widget-welcome{
+#widget-categories {
+  background-color: black;
+  color: white; }
 
-    background-color: black;
-    color:white;
-}
-#widget-categories{
+#widget-authors {
+  background-color: black;
+  color: white; }
 
-    background-color: black;
-    color:white;
-}
-#widget-authors{
+#widget-tags {
+  background-color: black;
+  color: white; }
 
-    background-color: black;
-    color:white;
-}
-#widget-tags{
+#widget-recents {
+  background-color: black;
+  color: white; }
 
-    background-color: black;
-    color:white;
-}
-#widget-recents{
+#widget-comments {
+  background-color: black;
+  color: white; }
 
-    background-color: black;
-    color:white;
-}
-#widget-comments{
+#widget-linkbacks {
+  background-color: black;
+  color: white; }
 
-    background-color: black;
-    color:white;
-}
-#widget-linkbacks{
+#widget-randoms {
+  background-color: black;
+  color: white; }
 
-    background-color: black;
-    color:white;
-}
-#widget-randoms{
+#widget-populars {
+  background-color: black;
+  color: white; }
 
-    background-color: black;
-    color:white;
-}
-#widget-populars{
+#widget-archives {
+  background-color: black;
+  color: white; }
 
-    background-color: black;
-    color:white;
-}
-#widget-archives{
-
-    background-color: black;
-    color:white;
-}
-
-#widget-tools{
-
-    background-color: black;
-    color:white;
-}
-
-.widget h5 {
-
-    padding:10px 10px 5px 10px;
-}
-
-.widget p {
-    padding:5px 0px 5px 30px;
-}
-
-
-.widget li {
-
-    padding:5px 0px 5px 30px;
-}
+#widget-tools {
+  background-color: black;
+  color: white; }
 
 .widget {
-    margin:5px 5px 5px 30px;
+  margin: 5px 5px 5px 30px; }
+  .widget h5 {
+    padding: 10px 10px 5px 10px; }
+  .widget p {
+    padding: 5px 0 5px 30px; }
+  .widget li {
+    padding: 5px 0 5px 30px; }
+
+.timelist a:focus {
+  background: #79aec8;
+  color: white; }
+.timelist a:hover {
+  background: #79aec8;
+  color: white; }
+.timelist a:active {
+  background: #417690;
+  color: white; }
+
+#calendarnav a:visited {
+  color: #999; }
+#calendarnav a:focus {
+  color: #999; }
+#calendarnav a:hover {
+  color: #999; }
+
+@media screen and (max-width: 768px) {
+    h1{
+        font-size:14px;
+    }
 }
+
+
+@media screen and (max-width: 768px) {
+    h2{
+        font-size:14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h3{
+        font-size:14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h4{
+        font-size:12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h5{
+        font-size:12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h6{
+        font-size:12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    a{
+        font-size:12px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    li{
+        font-size:12px;
+    }
+}
+
+
+
+    body,html{
+    height: 100%;
+  }
+
+  /* remove outer padding */
+  .main .row{
+    padding: 0px;
+    margin: 0px;
+  }
+
+  /*Remove rounded coners*/
+
+  nav.sidebar.navbar {
+    border-radius: 0px;
+  }
+
+  nav.sidebar, .main{
+    -webkit-transition: margin 200ms ease-out;
+      -moz-transition: margin 200ms ease-out;
+      -o-transition: margin 200ms ease-out;
+      transition: margin 200ms ease-out;
+  }
+
+  /* Add gap to nav and right windows.*/
+  .main{
+    padding: 10px 10px 0 10px;
+  }
+
+  /* .....NavBar: Icon only with coloring/layout.....*/
+
+  /*small/medium side display*/
+  @media (min-width: 768px) {
+
+    /*Allow main to be next to Nav*/
+    .main{
+      position: absolute;
+      width: calc(100% - 40px); /*keeps 100% minus nav size*/
+      margin-left: 40px;
+      float: right;
+    }
+
+    /*lets nav bar to be showed on mouseover*/
+    nav.sidebar:hover + .main{
+      margin-left: 200px;
+    }
+
+    /*Center Brand*/
+    nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+      margin-left: 0px;
+    }
+    /*Center Brand*/
+    nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+      text-align: center;
+      width: 100%;
+      margin-left: 0px;
+    }
+
+    /*Center Icons*/
+    nav.sidebar a{
+      padding-right: 13px;
+    }
+
+    /*adds border top to first nav box */
+    nav.sidebar .navbar-nav > li:first-child{
+      border-top: 1px #e5e5e5 solid;
+    }
+
+    /*adds border to bottom nav boxes*/
+    nav.sidebar .navbar-nav > li{
+      border-bottom: 1px #e5e5e5 solid;
+    }
+
+    /* Colors/style dropdown box*/
+    nav.sidebar .navbar-nav .open .dropdown-menu {
+      position: static;
+      float: none;
+      width: auto;
+      margin-top: 0;
+      background-color: transparent;
+      border: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    /*allows nav box to use 100% width*/
+    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+      padding: 0 0px 0 0px;
+    }
+
+    /*colors dropdown box text */
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+      color: #777;
+    }
+
+    /*gives sidebar width/height*/
+    nav.sidebar{
+      width: 200px;
+      height: 100%;
+      margin-left: -160px;
+      float: left;
+      z-index: 8000;
+      margin-bottom: 0px;
+    }
+
+    /*give sidebar 100% width;*/
+    nav.sidebar li {
+      width: 100%;
+    }
+
+    /* Move nav to full on mouse over*/
+    nav.sidebar:hover{
+      margin-left: 0px;
+    }
+    /*for hiden things when navbar hidden*/
+    .forAnimate{
+      opacity: 0;
+    }
+  }
+
+  /* .....NavBar: Fully showing nav bar..... */
+
+  @media (min-width: 1330px) {
+
+    /*Allow main to be next to Nav*/
+    .main{
+      width: calc(100% - 200px); /*keeps 100% minus nav size*/
+      margin-left: 200px;
+    }
+
+    /*Show all nav*/
+    nav.sidebar{
+      margin-left: 0px;
+      float: left;
+    }
+    /*Show hidden items on nav*/
+    nav.sidebar .forAnimate{
+      opacity: 1;
+    }
+  }
+
+  nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+    color: #CCC;
+    background-color: transparent;
+  }
+
+  nav:hover .forAnimate{
+    opacity: 1;
+  }
+  section{
+    padding-left: 15px;
+  }

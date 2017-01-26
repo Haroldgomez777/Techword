@@ -1,0 +1,321 @@
+//colors
+$white: white;
+$black: black;
+$color_alto_approx: #ddd;
+$black_15: rgba(0, 0, 0, 0.15);
+$color_desert_storm_approx: #f8f8f8;
+$color_storm_dust_approx: #666;
+$color_gallery_approx: #eee;
+$color_glacier_approx: #79aec8;
+$color_tundora_approx: #444;
+$color_bismark_approx: #417690;
+$color_mountain_mist_approx: #999;
+$color_celeste_approx: #ccc;
+$color_mine_shaft_approx: #333;
+
+//fonts
+$font_0: FontAwesome;
+
+//urls
+$url_0: url(../img/calendar-icons.svg);
+
+//@extend-elements
+//original selectors
+//.calendarbox, .clockbox
+%extend_1 {
+	margin: 5px auto;
+	font-size: 12px;
+	width: 19em;
+	text-align: center;
+	background: $white;
+	border: 1px solid $color_alto_approx;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 4px;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 2px 4px $black_15;
+	overflow: hidden;
+	position: relative;
+}
+
+//original selectors
+//.calendar caption, .calendarbox h2
+%extend_2 {
+	margin: 0;
+	text-align: center;
+	border-top: none;
+	background: $black;
+	font-weight: 700;
+	font-size: 12px;
+	color: $white;
+}
+
+//original selectors
+//.calendar td a, .timelist a
+%extend_3 {
+	display: block;
+	font-weight: 400;
+	padding: 6px;
+	text-decoration: none;
+	color: $color_tundora_approx;
+}
+
+//original selectors
+//.calendarbox .calendarnav-previous, .calendarbox .calendarnav-next
+%extend_4 {
+	display: block;
+	position: absolute;
+	top: 8px;
+	width: 15px;
+	height: 15px;
+	text-indent: -9999px;
+	padding: 0;
+}
+
+
+.container {
+	margin-left: 55px;
+	margin-top: 50px;
+}
+.search {
+	height: 28px;
+	width: 32px;
+	border: none;
+	cursor: pointer;
+	color: $white;
+	background-color: $black;
+	position: relative;
+}
+.minilla {
+	margin-left: 55px;
+	padding-bottom: 0;
+	margin-right: 200px;
+}
+.dark {
+	background-color: $black;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 0;
+	color: $white;
+	height: 5px;
+}
+.white {
+	background-color: $white;
+	color: $black;
+	text-align: center;
+	border-width: 2px;
+	border-bottom: 2px;
+	border-bottom-color: $black;
+	border-color: $black;
+}
+input[name="head"] {
+	font-family: $font_0;
+}
+.calendarbox {
+	@extend %extend_1;
+	h2 {
+		@extend %extend_2;
+	}
+	.calendarnav-previous {
+		@extend %extend_4;
+		&:focus {
+			background-position: 0 -15px;
+		}
+		&:hover {
+			background-position: 0 -15px;
+		}
+	}
+	.calendarnav-next {
+		@extend %extend_4;
+		&:focus {
+			background-position: 0 -45px;
+		}
+		&:hover {
+			background-position: 0 -45px;
+		}
+	}
+}
+.clockbox {
+	@extend %extend_1;
+	width: auto;
+}
+.calendar {
+	margin: 0;
+	padding: 0;
+	table {
+		margin: 0;
+		padding: 0;
+		border-collapse: collapse;
+		background: $white;
+		width: 100%;
+	}
+	caption {
+		@extend %extend_2;
+	}
+	th {
+		padding: 8px 5px;
+		background: $color_desert_storm_approx;
+		border-bottom: 1px solid $color_alto_approx;
+		font-weight: 400;
+		font-size: 12px;
+		text-align: center;
+		color: $color_storm_dust_approx;
+	}
+	td {
+		font-weight: 400;
+		font-size: 12px;
+		text-align: center;
+		padding: 0;
+		border-top: 1px solid $color_gallery_approx;
+		border-bottom: none;
+		&.nonday {
+			background: $color_desert_storm_approx;
+		}
+		a {
+			@extend %extend_3;
+			&:focus {
+				background: $color_glacier_approx;
+				color: $white;
+			}
+			&:hover {
+				background: $color_glacier_approx;
+				color: $white;
+			}
+			&:active {
+				background: $color_bismark_approx;
+				color: $white;
+			}
+		}
+		&.selected a {
+			background: $color_glacier_approx;
+			color: $white;
+		}
+		&.today a {
+			background: $color_glacier_approx;
+		}
+	}
+}
+.calendarnav {
+	font-size: 10px;
+	text-align: center;
+	color: $black;
+	margin: 0;
+	padding: 1px 3px;
+	a:link {
+		color: $color_mountain_mist_approx;
+	}
+}
+.calendar-shortcuts {
+	background: $white;
+	font-size: 11px;
+	line-height: 11px;
+	border-top: 1px solid $color_gallery_approx;
+	padding: 8px 0;
+	color: $color_celeste_approx;
+}
+.calendarnav-previous {
+	left: 10px;
+	background: $url_0 0 0 no-repeat;
+}
+.calendarnav-next {
+	right: 10px;
+	background: $url_0 0 -30px no-repeat;
+}
+.calendar-cancel {
+	margin: 0;
+	padding: 4px 0;
+	font-size: 12px;
+	background: $color_gallery_approx;
+	border-top: 1px solid $color_alto_approx;
+	color: $color_mine_shaft_approx;
+	&:focus {
+		background: $color_alto_approx;
+	}
+	&:hover {
+		background: $color_alto_approx;
+	}
+	a {
+		color: $black;
+		display: block;
+	}
+}
+#widget-welcome {
+	background-color: $black;
+	color: $white;
+}
+#widget-categories {
+	background-color: $black;
+	color: $white;
+}
+#widget-authors {
+	background-color: $black;
+	color: $white;
+}
+#widget-tags {
+	background-color: $black;
+	color: $white;
+}
+#widget-recents {
+	background-color: $black;
+	color: $white;
+}
+#widget-comments {
+	background-color: $black;
+	color: $white;
+}
+#widget-linkbacks {
+	background-color: $black;
+	color: $white;
+}
+#widget-randoms {
+	background-color: $black;
+	color: $white;
+}
+#widget-populars {
+	background-color: $black;
+	color: $white;
+}
+#widget-archives {
+	background-color: $black;
+	color: $white;
+}
+#widget-tools {
+	background-color: $black;
+	color: $white;
+}
+.widget {
+	margin: 5px 5px 5px 30px;
+	h5 {
+		padding: 10px 10px 5px 10px;
+	}
+	p {
+		padding: 5px 0 5px 30px;
+	}
+	li {
+		padding: 5px 0 5px 30px;
+	}
+}
+.timelist a {
+	@extend %extend_3;
+	&:focus {
+		background: $color_glacier_approx;
+		color: $white;
+	}
+	&:hover {
+		background: $color_glacier_approx;
+		color: $white;
+	}
+	&:active {
+		background: $color_bismark_approx;
+		color: $white;
+	}
+}
+#calendarnav a {
+	&:visited {
+		color: $color_mountain_mist_approx;
+	}
+	&:focus {
+		color: $color_mountain_mist_approx;
+	}
+	&:hover {
+		color: $color_mountain_mist_approx;
+	}
+}
