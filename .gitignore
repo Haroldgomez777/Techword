@@ -5,3 +5,5 @@ ENV
 db.sqlite3
 /staticfiles
 .DS_Store
+.git
+
