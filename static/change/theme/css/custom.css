@@ -164,48 +164,50 @@ input[name="head"] {
     display: block; }
 
 #widget-welcome {
-  background-color: black;
-  color: white; }
+  background-color: #939ba0;
+  color: black;
+  text-align: center;
+   }
 
 #widget-categories {
-  background-color: black;
-  color: white; }
+  background-color: #939ba0;
+  color: black; }
 
 #widget-authors {
-  background-color: black;
-  color: white; }
+  background-color: #939ba0;
+  color: black; }
 
 #widget-tags {
-  background-color: black;
-  color: white; }
+  background-color: #939ba0;
+  color: black; }
 
 #widget-recents {
-  background-color: black;
-  color: white; }
+  background-color: #939ba0;
+  color: black; }
 
 #widget-comments {
-  background-color: black;
-  color: white; }
+  background-color: #939ba0;
+  color: black; }
 
 #widget-linkbacks {
-  background-color: black;
-  color: white; }
+  background-color: #939ba0;
+  color: black; }
 
 #widget-randoms {
-  background-color: black;
-  color: white; }
+  background-color: #939ba0;
+  color: black; }
 
 #widget-populars {
-  background-color: black;
-  color: white; }
+  background-color: #939ba0;
+  color: black; }
 
 #widget-archives {
-  background-color: black;
-  color: white; }
+  background-color: #939ba0;
+  color: black; }
 
 #widget-tools {
-  background-color: black;
-  color: white; }
+  background-color: #939ba0;
+  color: black; }
 
 .widget {
   margin: 5px 5px 5px 30px; }

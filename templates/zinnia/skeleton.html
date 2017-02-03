@@ -39,6 +39,12 @@
     #ss {
       margin-left: 1em;
     }
+    a {
+      color: #004547;
+    }
+    a:hover {
+      color: #347a63;
+    }
   </style>
 
   {% block link %}{% endblock link %}
@@ -54,7 +60,7 @@
   <div class="container">
     <div class="row">
       <div class="visible-lg col-sm-3 col-sm-offset-0">{% block sidebar %}{% endblock sidebar %}</div>
-      <div class="col-sm-7 "><div class="" id="wrapper" >{% block slider %}{% endblock slider %}</div>
+      <div class="col-sm-7 ">
       {% block content %}
       <div class="links">
         <h2>{% trans "Useful links" %}</h2>
