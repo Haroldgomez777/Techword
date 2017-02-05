@@ -2,62 +2,101 @@
 {% load zinnia %}
 {% block sidebar %}
 
-<aside id="widget-welcome" class="widget">
-  <h5>
+<h1> </h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
     <a href="https://www.paypal.me/harold11"><i class="fa fa-paypal fa-2x" aria-hidden="true"></i></a>
-  </h5>
-</aside>
-<aside id="widget-categories" class="widget">
-  <h5>
-    <a href="{% url 'zinnia:category_list' %}">{% trans "Categories" %}</a>
-  </h5>
-  {% get_categories %}
-</aside>
-<aside id="widget-authors" class="widget">
-  <h5>
-    <a href="{% url 'zinnia:author_list' %}">{% trans "Authors" %}</a>
-  </h5>
-  {% get_authors %}
-</aside>
+  </div>
+</div>
 
-<aside id="widget-tags" class="widget">
-  <h5>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <a href="{% url 'zinnia:category_list' %}">{% trans "Categories" %}</a>
+  </div>
+  <div class="panel-body">
+  {% get_categories %}
+</div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <a href="{% url 'zinnia:author_list' %}">{% trans "Authors" %}</a>
+  </div>
+  <div class="panel-body">
+  {% get_authors %}
+</div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
     <a href="{% url 'zinnia:tag_list' %}">{% trans "Tags" %}</a>
-  </h5>
-  {% get_tag_cloud %}
-</aside>
-<aside id="widget-recents" class="widget">
+  </div>
+  <div class="panel-body">
+  <div class="tag-cloud tag-cloud-info">{% get_tag_cloud %}</div>
+  </div>
+</div>
+
+<!-- <aside id="widget-recents" class="widget">
   <h5>{% trans "Recent entries" %}</h5>
   {% get_recent_entries %}
 </aside>
 <aside id="widget-comments" class="widget">
   <h5>{% trans "Recent comments" %}</h5>
   {% get_recent_comments %}
-</aside>
-<aside id="widget-linkbacks" class="widget">
-  <h5>{% trans "Recent linkbacks" %}</h5>
+</aside> -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+  {% trans "Recent linkbacks" %}
+  </div>
+  <div class="panel-body">
   {% get_recent_linkbacks %}
-</aside>
-<aside id="widget-randoms" class="widget">
-  <h5>{% trans "Random entries" %}</h5>
-  {% get_random_entries %}
-</aside>
-<aside id="widget-populars" class="widget">
-  <h5>{% trans "Popular entries" %}</h5>
-  {% get_popular_entries %}
-</aside>
-<aside id="widget-archives" class="widget">
-  <h5>{% trans "Archives" %}</h5>
-  {% get_archives_entries %}
-</aside>
+</div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+  {% trans "Random entries" %}
+  </div>
+  <div class="panel-body">
+ {% get_random_entries %}
+</div>
+</div>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+  {% trans "Popular entries" %}
+  </div>
+  <div class="panel-body">
+ {% get_popular_entries %}
+</div>
+</div>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+  {% trans "Archives" %}
+  </div>
+  <div class="panel-body">
+ {% get_archives_entries %}
+</div>
+</div>
+
+
 <aside id="widget-calendar" class="calendar">
   <h5>{% trans "Calendar" %}</h5>
   {% get_calendar_entries %}
 </aside>
 
 {% if user.is_authenticated %}
-<aside id="widget-tools" class="widget">
-  <h5>{% trans "Tools" %}</h5>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    {% trans "Tools" %} 
+    </div>
+  <div class="panel-body">
   <ul class="list-unstyled">
     {% if perms.zinnia %}
     <li>
@@ -81,6 +120,7 @@
       </a>
     </li>
   </ul>
-</aside>
+</div>
+</div>
 {% endif %}
 {% endblock sidebar %}

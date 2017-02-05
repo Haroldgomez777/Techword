@@ -40,12 +40,13 @@
 {% endblock entry-content %}
 
 {% block entry-widgets %}
-<aside role="complementary" class="entry-widgets">
+<div class="container">
+<div class="row">
   {% block entry-next-entry %}
   {% with next_entry=object.next_entry %}
   {% if next_entry %}
-  <div class="entry-next">
-    <h3>{% trans "Next entry" %}</h3>
+  <div class="col-sm-3">
+    <h5>{% trans "Next entry" %}</h5>
     <p>
       <a href="{{ next_entry.get_absolute_url }}" title="{{ next_entry.title }}" rel="next">
         {{ next_entry.title }}
@@ -58,22 +59,27 @@
   {% block entry-previous-entry %}
   {% with previous_entry=object.previous_entry %}
   {% if previous_entry %}
-  <div class="entry-previous">
-    <h3>{% trans "Previous entry" %}</h3>
+  <div class="col-sm-3">
+    <h5>{% trans "Previous entry" %}</h5>
     <p>
       <a href="{{ previous_entry.get_absolute_url }}" title="{{ previous_entry.title }}" rel="prev">
         {{ previous_entry.title }}
       </a>
     </p>
   </div>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
   {% endif %}
   {% endwith %}
   {% endblock entry-previous-entry %}
   {% block entry-related-entries %}
   {% with entry_related=object.related_published %}
   {% if entry_related %}
-  <div class="entry-related">
-    <h3>{% trans "Related entries" %}</h3>
+  <div class="col-sm-3">
+    <h5>{% trans "Related entries" %}</h5>
     <ul>
       {% for entry in entry_related %}
       <li>
@@ -86,17 +92,20 @@
   {% endwith %}
   {% endblock entry-related-entries %}
   {% block entry-similar-entries %}
-  <div class="entry-similar">
-    <h3>{% trans "Similar entries" %}</h3>
+  <div class="col-sm-3">
+    <h5>{% trans "Similar entries" %}</h5>
     {% get_similar_entries %}
   </div>
   {% endblock entry-similar-entries %}
-</aside>
+  </div>
+</div>
 {% endblock entry-widgets %}
 
 {% block entry-pingbacks %}
-<section id="pingbacks">
-  <h3>{% trans "Pingbacks" %}</h3>
+<div class="container">
+<div class="row">
+<div class="col-sm-3">
+  <h5>{% trans "Pingbacks" %}</h5>
   {% if object.pingback_count %}
   {% with pingback_list=object.pingbacks %}
   {% block pingbacks-loop %}
@@ -134,13 +143,13 @@
   <p>{% trans "Pingbacks are closed." %}</p>
   {% endif %}
   {% endblock pingbacks-status %}
-</section>
+</div>
 {% endblock entry-pingbacks %}
 
 {% block entry-trackbacks %}
 {% if object.trackback_count or object.trackbacks_are_open %}
-<section id="trackbacks">
-  <h3>{% trans "Trackbacks" %}</h3>
+<div class="col-sm-3">
+  <h5>{% trans "Trackbacks" %}</h5>
   {% if object.trackback_count %}
   {% with trackback_list=object.trackbacks %}
   {% block trackbacks-loop %}
@@ -179,13 +188,15 @@
   </p>
   {% endif %}
   {% endblock trackbacks-status %}
-</section>
+</div>
 {% endif %}
 {% endblock entry-trackbacks %}
-
+</div>
+</div>
 {% block entry-comments %}
-<section id="comments">
-  <h3>{% trans "Comments" %}</h3>
+<div class="panel panel-default">
+    <div class="panel-heading">{% trans "Comments" %}</div>
+    <div class="panel-body">
   {% if object.comment_count %}
   {% with comment_list=object.comments %}
   {% block comments-loop %}
@@ -232,7 +243,9 @@
   <p>{% trans "Comments are closed." %}</p>
     {% endif %}
   {% endif %}
-</section>
+  </div>
+</div>
+
 {% endblock entry-comments %}
 
 {% block entry-comments-form %}
