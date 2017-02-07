@@ -10,7 +10,7 @@
   <h2>{% blocktrans count errors=form.errors|length %}Please correct following error.{% plural %}Please correct following errors.{% endblocktrans %}</h2>
   {% else %}
   <h2>{% trans "Preview of the comment" %}</h2>
-  <ol id="comment-list">
+  <ul id="comment-list">
     {% with comment=form.get_comment_object %}
     <li id="comment-preview" class="comment vcard box1">
       <img src="{% get_gravatar comment.email 60 "G" %}"
@@ -30,7 +30,7 @@
       {{ comment.comment|linebreaks }}
     </li>
     {% endwith %}
-  </ol>
+  </ul>
   {% endif %}
   {% include "comments/zinnia/entry/form.html" %}
 {% endblock content %}

@@ -6,7 +6,7 @@
     {{ form.non_field_errors }}
   </div>
   {% endif %}
-  <fieldset>
+
     <legend>{% trans "Post your comment" %}</legend>
     <input type="hidden" name="next" value="{% url 'zinnia:comment_success' %}"/>
     {% for field in form %}
@@ -18,7 +18,7 @@
       {{ field.label_tag }}
       </label>
       {% if field.errors %}{{ field.errors }}{% endif %}
-      <div class="col-sm-1">
+      <div class="col-sm-3">
       {{ field }}
       </div>
     </div>
@@ -37,5 +37,5 @@
       <input type="submit" name="preview" class="btn btn-default" value="{% trans "Preview" %}" />
     </div>
     </div>
-  </fieldset>
+
 </form>

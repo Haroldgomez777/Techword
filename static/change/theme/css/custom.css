@@ -438,3 +438,48 @@ input[name="head"] {
   section{
     padding-left: 15px;
   }
+
+
+  #id_name {
+    background-color: transparent;
+    color: #086800;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #086800 1px;
+    padding: 3px 10px;
+}
+#id_url {
+    background-color: transparent;
+    color: #086800;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #086800 1px;
+    padding: 3px 10px;
+}
+#id_email {
+    background-color: transparent;
+    color: #086800;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #086800 1px;
+    padding: 3px 10px;
+}
+#id_comment {
+    background-color: transparent;
+    color: #086800;
+    outline: none;
+    outline-style: none;
+    border-top: solid #086800 1px;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #086800 1px;
+    padding: 3px 10px;

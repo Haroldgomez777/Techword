@@ -48,6 +48,56 @@
       border: 1px solid #ced3cd;
 
     }
+
+#id_name {
+    background-color: transparent;
+    color: #086800;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #086800 1px;
+    padding: 3px 10px;
+    width: 400px;
+}
+#id_url {
+    background-color: transparent;
+    color: #086800;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #086800 1px;
+    padding: 3px 10px;
+    width: 400px;
+}
+#id_email {
+    background-color: transparent;
+    color: #086800;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #086800 1px;
+    padding: 3px 10px;
+    width: 400px;
+
+}
+#id_comment {
+    background-color: transparent;
+    color: #086800;
+    outline: none;
+    outline-style: none;
+    border-top: solid #086800 1px;
+    border-left: solid #086800 1px;
+    border-right: solid #086800 1px;
+    border-bottom: solid #086800 1px;
+    padding: 3px 10px;
+    width: 400px;
+}
   </style>
 
   {% block link %}{% endblock link %}
@@ -59,7 +109,7 @@
   {% endblock navbar %}
   <div class="container">
     <div class="row">
-      <div class="visible-lg col-sm-3 col-sm-offset-0">{% block sidebar %}{% endblock sidebar %}</div>
+      <div class="visible-lg col-sm-3" style="margin-left: 10px">{% block sidebar %}{% endblock sidebar %}</div>
       <div class="col-sm-8 ">
         {% block content %}
         <div class="links">
@@ -98,11 +148,13 @@
     $('.hastip').tooltipsy({
       offset: [0, 10],
       css: {
-        'padding': '5px',
+        'padding': '2px',
         'max-width': '200px',
-        'color': '#ffffff',
+        'color': '#1c7025',
         'background-color': '#000000',
         'border': '1px solid #1a701d',
+        'font-size' : '12px',
+        'font-family' : '"Courier New", Courier, monospace',
         '-moz-box-shadow': '0 0 1px rgba(0, 0, 0, .5)',
         '-webkit-box-shadow': '0 0 1px rgba(0, 0, 0, .5)',
         'box-shadow': '0 0 1px rgba(0, 0, 0, .5)',
