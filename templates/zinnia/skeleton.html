@@ -1,31 +1,23 @@
 {% load i18n %}
 {% load static %}
 <!doctype html>
-<html lang="{{ LANGUAGE_CODE }}">
+<html >
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %} - Techword</title>
-  <!-- Latest compiled and minified CSS -->
+  <link rel="shortcut icon" href="{% static 'change/favicon.ico' %}" />
+  <title>Techword</title>
   <link rel="stylesheet" type="text/css" href="{% static 'change/theme/css/bootstrap.min.css' %}">
-  <!-- Optional theme -->
   <link rel="stylesheet" type="text/css" href="{% static 'change/theme/css/bootstrap-theme.min.css' %}">
-  <!-- Latest compiled and minified JavaScript -->
-<!--   <script src="https://use.fontawesome.com/b1a4503a71.js"></script> -->
-   <script src="{% static 'change/theme/js/bootstrap.min.js' %}"></script>
-<link rel="stylesheet" href="{% static 'change/font-awesome-4.7.0/css/font-awesome.css' %}"></head>
-  <!-- Latest compiled and minified CSS -->
-  <!-- jQuery library -->
-  <!-- Latest compiled JavaScript -->
-
-  <script src="{% static 'change/theme/js/jquery.min.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'change/font-awesome-4.7.0/css/font-awesome.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'change/theme/css/custom.css' %}">
-
+  <script src="{% static 'change/theme/js/jquery.min.js' %}"></script>
+  <script src="{% static 'change/theme/js/bootstrap.min.js' %}"></script>
   <style>
     #tooltip {
       background: black;
       border: 1px solid green;
       color: white;
-      padding: 3px 10px;
+      padding: 3px 5px;
     }
     .feeds .sitemap{
       margin-right: 100px;
@@ -49,14 +41,18 @@
       background-color: #ced3cd;
       padding:2em;
     }
+    .remotebutt {
+      height: 22px;
+      font-size: 12px;
+      background-color: #ceefd3;
+      border: 1px solid #ced3cd;
+
+    }
   </style>
 
   {% block link %}{% endblock link %}
   {% block script %}{% endblock script %}
 </head>
-
-
-
 <body>
   {% block navbar %}
   {% include "zinnia/navbar.html" %}
@@ -65,88 +61,87 @@
     <div class="row">
       <div class="visible-lg col-sm-3 col-sm-offset-0">{% block sidebar %}{% endblock sidebar %}</div>
       <div class="col-sm-8 ">
-      {% block content %}
-      <div class="links">
-        <h2>{% trans "Useful links" %}</h2>
-        <ul>
-          <li>
-            <a href="{% url 'zinnia:entry_archive_index' %}" title="{% trans "Weblog index" %}">
-              {% trans "Weblog index" %}
-            </a>
-          </li>
-          <li>
-            <a href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}">
-              {% trans "Sitemap" %}
-            </a>
-          </li>
-        </ul>
+        {% block content %}
+        <div class="links">
+          <h2>{% trans "Useful links" %}</h2>
+          <ul>
+            <li>
+              <a href="{% url 'zinnia:entry_archive_index' %}" title="{% trans "Weblog index" %}">
+                {% trans "Weblog index" %}
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}">
+                {% trans "Sitemap" %}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="search">
+          <h2>{% trans "Search" %}</h2>
+          {% include "zinnia/tags/search_form.html" %}
+        </div>
+        {% endblock content %}
       </div>
-      <div class="search">
-        <h2>{% trans "Search" %}</h2>
-        {% include "zinnia/tags/search_form.html" %}
-      </div>
-      {% endblock content %}
     </div>
-  </div>
-{% block breadcrumbs %}{% endblock breadcrumbs %}
-</body>
+    
+  </body>
 
-<footer id="footer" role="contentinfo">
-  <p>{% blocktrans %}Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.{% endblocktrans %}</p>
-</footer>
-<script src="{% static 'change/theme/js/jquery.min.js' %}"></script>
-<script src="{% static 'change/theme/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'change/theme/js/tooltipsy.min.js' %}"></script>
-<script type="text/javascript">
+  <footer id="footer" role="contentinfo">
+  {% block breadcrumbs %}{% endblock breadcrumbs %}
+    <p>{% blocktrans %}Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.{% endblocktrans %}</p>
+  </footer>
+  <script src="{% static 'change/theme/js/tooltipsy.min.js' %}"></script>
+  <script type="text/javascript">
 
 
-  $('.hastip').tooltipsy({
-    offset: [0, 10],
-    css: {
-      'padding': '5px',
-      'max-width': '200px',
-      'color': '#ffffff',
-      'background-color': '#000000',
-      'border': '1px solid #1a701d',
-      '-moz-box-shadow': '0 0 1px rgba(0, 0, 0, .5)',
-      '-webkit-box-shadow': '0 0 1px rgba(0, 0, 0, .5)',
-      'box-shadow': '0 0 1px rgba(0, 0, 0, .5)',
-      'text-shadow': 'none'
-    }
-  });
-
-
-
-  function htmlbodyHeightUpdate(){
-    var height3 = $( window ).height()
-    var height1 = $('.nav').height()+50
-    height2 = $('.main').height()
-    if(height2 > height3){
-      $('html').height(Math.max(height1,height3,height2)+10);
-      $('body').height(Math.max(height1,height3,height2)+10);
-    }
-    else
-    {
-      $('html').height(Math.max(height1,height3,height2));
-      $('body').height(Math.max(height1,height3,height2));
-    }
-
-  }
-  $(document).ready(function () {
-    htmlbodyHeightUpdate()
-    $( window ).resize(function() {
-      htmlbodyHeightUpdate()
+    $('.hastip').tooltipsy({
+      offset: [0, 10],
+      css: {
+        'padding': '5px',
+        'max-width': '200px',
+        'color': '#ffffff',
+        'background-color': '#000000',
+        'border': '1px solid #1a701d',
+        '-moz-box-shadow': '0 0 1px rgba(0, 0, 0, .5)',
+        '-webkit-box-shadow': '0 0 1px rgba(0, 0, 0, .5)',
+        'box-shadow': '0 0 1px rgba(0, 0, 0, .5)',
+        'text-shadow': 'none'
+      }
     });
-    $( window ).scroll(function() {
-      height2 = $('.container').height()
+
+
+
+    function htmlbodyHeightUpdate(){
+      var height3 = $( window ).height()
+      var height1 = $('.nav').height()+50
+      height2 = $('.main').height()
+      if(height2 > height3){
+        $('html').height(Math.max(height1,height3,height2)+10);
+        $('body').height(Math.max(height1,height3,height2)+10);
+      }
+      else
+      {
+        $('html').height(Math.max(height1,height3,height2));
+        $('body').height(Math.max(height1,height3,height2));
+      }
+
+    }
+    $(document).ready(function () {
       htmlbodyHeightUpdate()
+      $( window ).resize(function() {
+        htmlbodyHeightUpdate()
+      });
+      $( window ).scroll(function() {
+        height2 = $('.container').height()
+        htmlbodyHeightUpdate()
+      });
     });
-  });
 
 
-  $("#menu-toggle").click(function(e) {
-    e.preventDefault();
-  });
-  $("#wrapper").toggleClass("toggled");
-</script>
-</html>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+    });
+    $("#wrapper").toggleClass("toggled");
+  </script>
+  </html>

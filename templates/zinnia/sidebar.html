@@ -32,7 +32,7 @@
     <a href="{% url 'zinnia:tag_list' %}">{% trans "Tags" %}</a>
   </div>
   <div class="panel-body">
-  <div class="tag-cloud tag-cloud-info">{% get_tag_cloud %}</div>
+  {% get_tag_cloud %}
   </div>
 </div>
 

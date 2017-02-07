@@ -1,5 +1,5 @@
 {% load comments i18n %}
-<form action="{% comment_form_target %}" method="post" id="comment-form">
+<form action="{% comment_form_target %}" method="post" id="comment-form" class="form-horizontal">
   <div>{% csrf_token %}</div>
   {% if form.non_field_errors %}
   <div class="error">
@@ -13,9 +13,15 @@
     {% if field.is_hidden %}{{ field }}{% else %}
     {% if user.email and field.name in "namemailurl" %}{% else %}
     <div{% if field.errors %} class="error"{% endif %}{% ifequal field.name "honeypot" %} style="display:none;"{% endifequal %}>
+    <div class="form-group">
+      <label class="control-label col-sm-2">
       {{ field.label_tag }}
+      </label>
       {% if field.errors %}{{ field.errors }}{% endif %}
+      <div class="col-sm-1">
       {{ field }}
+      </div>
+    </div>
     </div>
     {% endif %}
     {% endif %}
@@ -25,9 +31,11 @@
       {% trans "Comment as" %} <strong>{% firstof user.get_full_name user.get_username %}</strong>. <a href="{% url 'admin:logout' %}">{% trans "Log out" %}</a>.
     </p>
     {% endif %}
-    <p class="submit">
+    <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
       <input type="submit" name="submit" class="btn btn-default" value="{% trans "Post" %}" />
       <input type="submit" name="preview" class="btn btn-default" value="{% trans "Preview" %}" />
-    </p>
+    </div>
+    </div>
   </fieldset>
 </form>

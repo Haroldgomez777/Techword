@@ -1,14 +1,15 @@
 {% load i18n %}
-<ul class="list-unstyled">
+
   {% for tag in tags %}
-  <li>
     <a href="{% url 'zinnia:tag_detail' tag.name %}"
-       title="{% blocktrans count entry_count=tag.count %}{{ entry_count }} entry tagged by {{ tag }}{% plural %}{{ entry_count }} entries tagged by {{ tag }}{% endblocktrans %}"
-       class="tag-{{ tag.font_size }}{% if tag.name == context_tag.name %} current{% endif %}">{{ tag }}</a>
-  </li>
+       title="{% blocktrans count entry_count=tag.count %}{{ entry_count }} entry tagged by {{ tag }}{% plural %}{{ entry_count }} entries tagged by {{ tag }}{% endblocktrans %}" class="hastip">
+<button class="remotebutt" >
+  {{ tag }} <span class="badge">{{ tag.count}}</span>
+</button>
+
   {% empty %}
   <li>
     {% trans "No tags yet." %}
   </li>
   {% endfor %}
-</ul>
+

@@ -39,42 +39,60 @@
   {% include object.content_template with object_content=object.html_content %}
 {% endblock entry-content %}
 
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="" style="background-color: #d2efdb;">
+<div style="padding-left: 20px;">
 {% block entry-widgets %}
-<div class="container">
 <div class="row">
+  <div class="col-sm-3">
   {% block entry-next-entry %}
   {% with next_entry=object.next_entry %}
-  {% if next_entry %}
-  <div class="col-sm-3">
+  
+  
     <h5>{% trans "Next entry" %}</h5>
+    {% if next_entry %}
     <p>
       <a href="{{ next_entry.get_absolute_url }}" title="{{ next_entry.title }}" rel="next">
-        {{ next_entry.title }}
+        <i class="fa fa-arrow-right" aria-hidden="true"></i>
       </a>
     </p>
   </div>
   {% endif %}
   {% endwith %}
   {% endblock entry-next-entry %}
+
+
+  <div class="col-sm-3">
   {% block entry-previous-entry %}
   {% with previous_entry=object.previous_entry %}
-  {% if previous_entry %}
-  <div class="col-sm-3">
     <h5>{% trans "Previous entry" %}</h5>
+  {% if previous_entry %}
     <p>
       <a href="{{ previous_entry.get_absolute_url }}" title="{{ previous_entry.title }}" rel="prev">
-        {{ previous_entry.title }}
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
       </a>
     </p>
   </div>
 </div>
-</div>
 
-<div class="container">
-<div class="row">
+
+
   {% endif %}
   {% endwith %}
   {% endblock entry-previous-entry %}
+
+  <div class="row">
   {% block entry-related-entries %}
   {% with entry_related=object.related_published %}
   {% if entry_related %}
@@ -98,11 +116,14 @@
   </div>
   {% endblock entry-similar-entries %}
   </div>
-</div>
 {% endblock entry-widgets %}
 
+
+
+
+
+
 {% block entry-pingbacks %}
-<div class="container">
 <div class="row">
 <div class="col-sm-3">
   <h5>{% trans "Pingbacks" %}</h5>
@@ -145,6 +166,12 @@
   {% endblock pingbacks-status %}
 </div>
 {% endblock entry-pingbacks %}
+
+
+
+
+
+
 
 {% block entry-trackbacks %}
 {% if object.trackback_count or object.trackbacks_are_open %}
@@ -193,6 +220,15 @@
 {% endblock entry-trackbacks %}
 </div>
 </div>
+</div>
+
+
+
+
+
+
+
+
 {% block entry-comments %}
 <div class="panel panel-default">
     <div class="panel-heading">{% trans "Comments" %}</div>
