@@ -289,7 +289,10 @@ input[name="head"] {
 
     body,html{
     height: 100%;
+    background-color: #e9ebee;
+    font-family: 'Delius';font-size: 16px;
   }
+
 
   /* remove outer padding */
   .main .row{
@@ -483,3 +486,10 @@ input[name="head"] {
     border-right: none;
     border-bottom: solid #086800 1px;
     padding: 3px 10px;
+}
+
+
+.entry-last-update {
+  font-size: 12px;
+  color: 
+}
