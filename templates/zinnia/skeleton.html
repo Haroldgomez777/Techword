@@ -109,19 +109,25 @@
   background-color: blue;
 }
 
+
+
+
   </style>
 
   {% block link %}{% endblock link %}
   {% block script %}{% endblock script %}
 </head>
 <body>
+ 
   {% block navbar %}
   {% include "zinnia/navbar.html" %}
   {% endblock navbar %}
   <div class="container">
+
     <div class="row">
       <div class="visible-lg col-sm-3" style="margin-left: 10px">{% block sidebar %}{% endblock sidebar %}</div>
       <div class="col-sm-8 ">
+      <a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
         {% block content %}
         <div class="links">
           <h2>{% trans "Useful links" %}</h2>
@@ -206,5 +212,20 @@
       e.preventDefault();
     });
     $("#wrapper").toggleClass("toggled");
+
+    $(document).ready(function(){ 
+    $(window).scroll(function(){ 
+        if ($(this).scrollTop() > 100) { 
+            $('#scroll').fadeIn(); 
+        } else { 
+            $('#scroll').fadeOut(); 
+        } 
+    }); 
+    $('#scroll').click(function(){ 
+        $("html, body").animate({ scrollTop: 0 }, 600); 
+        return false; 
+    }); 
+});
+
   </script>
   </html>
