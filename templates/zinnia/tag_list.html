@@ -8,15 +8,17 @@
 {% block body-class %}tag-list{% endblock body-class %}
 
 {% block content %}
-<h1>{% trans "Tag list" %}</h1>
+<h3>{% trans "Tag list" %}</h3>
 
 <ul>
   {% for object in object_list %}
-  <li>
+
     <a href="{% url 'zinnia:tag_detail' object %}"
-       title="{% blocktrans with tag=object %}Show all entries tagged by {{ tag }}{% endblocktrans %}">{{ object }}</a>
-    {% blocktrans count entry_count=object.count %}{{ entry_count }} entry{% plural %}{{ entry_count }} entries{% endblocktrans %}
-  </li>
+       title="{% blocktrans count entry_count=object.count %}{{ entry_count }} entry{% plural %}{{ entry_count }} entries{% endblocktrans %}" class="hastip"><button class="remotebutt" >
+  {{ object }} <span class="badge">{{ object.count}}</span>
+</button></a>
+    
+ 
   {% empty %}
   <li>
     {% trans "No tags yet." %}
