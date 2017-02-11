@@ -9,6 +9,28 @@
   </div>
   <div class="panel-body">
     <a href="https://www.paypal.me/harold11"><p style="color:#C4A914"><i class="fa fa-cc-paypal fa-3x" aria-hidden="true"></i></p></a>
+    <script src="//blockr.io/js_external/coinwidget/coin.js"></script>
+    <script>
+      CoinWidgetCom.go({
+        wallet_address: '1J6c3bXh76NEVrG6fYSPoTSWufBAgJHK4g',
+        currency: 'bitcoin',
+        counter: 'count',
+        lbl_button: 'Donate BTC',
+        lbl_count: 'donations',
+        lbl_amount: 'BTC',
+        lbl_address: 'Use address below to donate. Thanks!',
+        qrcode: true,
+        alignment: 'bl',
+        decimals: 8,
+        size: "small",
+        color: "dark",
+        countdownFrom: "0",
+        element: "#coinwidget-bitcoin-1J6c3bXh76NEVrG6fYSPoTSWufBAgJHK4g",
+        onShow: function(){},
+        onHide: function(){}
+      });
+    </script>
+    <div id="coinwidget-bitcoin-1J6c3bXh76NEVrG6fYSPoTSWufBAgJHK4g"></div>
   </div>
 </div>
 
