@@ -94,14 +94,14 @@
 
               {% block entry-lead %}
               {% if not continue_reading and object.lead %}
-              <div class="entry-summary" itemprop="headline" style="font-family: Georgia, serif; text-align: justify;padding-left: 2em;">
+              <div class="entry-summary" itemprop="headline" >
               {{ object.html_lead|safe }}
               </div>
               {% endif %}
               {% endblock entry-lead %}
 
           {% block entry-content %}
-          <div class="entry-content" itemprop="articleBody" style="font-family: Georgia, serif; text-align: justify;padding-left: 2em; ">
+          <div class="entry-content" itemprop="articleBody">
           {{ object_content|safe }}
           </div>
           {% endblock entry-content %}

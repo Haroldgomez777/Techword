@@ -14,7 +14,7 @@
 
 {% block content-related %}
 {% if date_list %}
-<h2>{% trans "Yearly archives" %}</h2>
+<h3>{% trans "Yearly archives" %}</h3>
 <ul>
   {% for date in date_list %}
     <a href="{% url 'zinnia:entry_archive_year' date|date:"Y" %}" rel="archives">{{ date|date:"Y" }}</a>

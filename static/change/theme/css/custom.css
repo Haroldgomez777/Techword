@@ -290,7 +290,14 @@ input[name="head"] {
     body,html{
     height: 100%;
     background-color: #e9ebee;
-    font-family: 'Delius';font-size: 16px;
+    font-family: 'Droid Serif', serif;
+    font-size: 17px;
+    color: #001404;
+  }
+ h2{
+    
+    font-size: 60px;
+    font-style: italic;
   }
 
 
