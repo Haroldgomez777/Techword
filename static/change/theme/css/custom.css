@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Open+Sans+Condensed:300|Raleway|Source+Sans+Pro|Yantramanav');
+
 .calendarbox, .clockbox {
   margin: 5px auto;
   font-size: 12px;
@@ -279,6 +281,9 @@ input[name="head"] {
 }
 
 
+
+
+
 @media screen and (max-width: 768px) {
     li{
         font-size:12px;
@@ -289,14 +294,9 @@ input[name="head"] {
 
     body,html{
     height: 100%;
-    background-color: #fafafa;
+    background-color: #ffffff;
     font-size: 17px;
     color: #001404;
-  }
- h2{
-    
-    font-size: 30px;
-    font-style: italic;
   }
 
 
@@ -530,4 +530,59 @@ input[name="head"] {
     background-color:#e74c3c;
     opacity:1;filter:"alpha(opacity=100)";
     -ms-filter:"alpha(opacity=100)";
+}
+
+.entry-info {
+  font-size: 12.9px;
+  color: grey;
+  text-align: left;
+}
+
+.entry-title {
+  text-align: center;
+}
+
+
+.entry-title a {
+  font-size: 60px;
+  font-family: 'Raleway', sans-serif;
+  color : black;
+  font-stretch: 10px;
+}
+
+
+.entry-footer {
+  font-size: 12.9px;
+}
+
+.entry-tags {
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .entry-title a{
+        font-size:40px;
+    }
+}
+
+
+/*
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Source Sans Pro', sans-serif;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-family: 'Raleway', sans-serif;
+
+    font-family: 'Open Sans Condensed', sans-serif;
+
+    font-family: 'Yantramanav', sans-serif;
+
+*/
+
+#co {
+  color:black;
 }

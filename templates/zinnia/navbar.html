@@ -1,7 +1,7 @@
 {% load i18n %}
 {% block navbar %}
 <nav class="navbar navbar-inverse navbar-fixed-top ">
-  <div class="container-fluid ">
+  <div class="container-fluid " style="background-color: #283aa0;">
 
 
 
@@ -21,13 +21,13 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav ">
-        <li><a class="hastip"  href="{% url 'zinnia:entry_archive_index' %}"  title="Blog blog" rel="home">Blog</a></li>
+      <ul class="nav navbar-nav" id="co">
+        <li><a class="hastip"  href="{% url 'zinnia:entry_archive_index' %}"  title="XXX blog" rel="home">Home</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More
 <i class="fa fa-angle-down" aria-hidden="true"></i>
 </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" id="ba">
             <li><a href="{% url 'zinnia:category_list' %}">{% trans "Categories" %}</a></li>
             <li><a href="{% url 'zinnia:tag_list' %}">{% trans "Tags" %}</a></li>
           </ul>
@@ -49,7 +49,7 @@
 
 
 
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right" id="co">
 
 <li><a class="hastip" href="{% url 'zinnia:entry_feed' %}" title="{% trans "Google" %}" target="_blank" >
 <i class="fa fa-google" aria-hidden="true"></i>
@@ -81,10 +81,10 @@
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li> -->
           </ul>
-        </li>
-      </ul>
+        
+      </div>
     </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+ <!-- /.container-fluid -->
 </nav>
 
 

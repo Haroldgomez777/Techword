@@ -126,7 +126,7 @@
 
             {% block entry-tags %}
             <p class="entry-tags">
-            <strong>{% trans "Tags" %}</strong> :
+            {% trans "Tags" %} :
             <meta itemprop="keywords" content="{{ object.tags }}" />
             {% for tag in object.tags_list %}
             <a href="{% url 'zinnia:tag_detail' tag %}"
@@ -140,7 +140,7 @@
 
                       {% block entry-shorturl %}
                       <p class="entry-shorturl">
-                      <strong>{% trans "Short url" %}</strong> :
+                      {% trans "Short url" %} :
                       <a href="{{ object.short_url }}"
                       title="{% blocktrans with object=object.title %}Short URL to {{ object }}{% endblocktrans %}"
                       rel="shortlink" class="hastip">
