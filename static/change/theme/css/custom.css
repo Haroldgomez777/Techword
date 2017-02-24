@@ -495,10 +495,7 @@ input[name="head"] {
 }
 
 
-.entry-last-update {
-  font-size: 12px;
-  color: 
-}
+
 
 
 #scroll {
@@ -536,6 +533,7 @@ input[name="head"] {
   font-size: 12.9px;
   color: grey;
   text-align: left;
+  font-family: 'Raleway', sans-serif;
 }
 
 .entry-title {
@@ -585,4 +583,13 @@ input[name="head"] {
 
 #co {
   color:black;
+}
+
+.entry-last-update{
+  font-size: 12px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.entry-last-update time{
+  font-family: 'Open Sans Condensed', sans-serif;
 }
