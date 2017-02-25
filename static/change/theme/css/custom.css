@@ -581,6 +581,15 @@ input[name="head"] {
 
 */
 
+.panel > .panel-heading {
+  background-image: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+.panel > .panel-body {
+  font-family: 'Raleway', sans-serif;
+  color:#7f0000;
+}
 #co {
   color:black;
 }
@@ -594,12 +603,3 @@ input[name="head"] {
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
-
-.panel-body {
-  font-family: 'Yantramanav', sans-serif;
-}
-
-.panel-body li {
-  font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
-}
