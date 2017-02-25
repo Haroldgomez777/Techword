@@ -53,7 +53,7 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
 
 
 {% block entry-widgets %}
-<div class="row" style="background-color: #a6b0bc;">
+<div class="row">
 <div class="col-sm-3 col-sm-offset-1">
       {% block entry-next-entry %}
       <h5>{% trans "Next entry" %}</h5>
@@ -91,7 +91,7 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
 </div>
         {% endblock entry-previous-entry %}
 
-<div class="row" style="background-color: #a6b0bc;color: black;">
+<div class="row">
 <div class="col-sm-3 col-sm-offset-1">
           {% block entry-related-entries %}
           <h5>{% trans "Related entries" %}</h5>
@@ -126,7 +126,7 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
 
 
         {% block entry-pingbacks %}
-        <div class="row" style="background-color: #a6b0bc;">
+        <div class="row">
         <div class="col-sm-3 col-sm-offset-1">
         <h5>{% trans "Pingbacks" %}</h5>
         {% if object.pingback_count %}

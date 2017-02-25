@@ -593,3 +593,13 @@ input[name="head"] {
 .entry-last-update time{
   font-family: 'Open Sans Condensed', sans-serif;
 }
+
+
+.panel-body {
+  font-family: 'Yantramanav', sans-serif;
+}
+
+.panel-body li {
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+}
