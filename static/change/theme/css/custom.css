@@ -581,6 +581,14 @@ input[name="head"] {
 
 */
 
+.panel > .panel-heading {
+  background-image: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+.panel > .panel-body {
+  font-family: 'Raleway', sans-serif;
+}
 #co {
   color:black;
 }
@@ -593,3 +601,4 @@ input[name="head"] {
 .entry-last-update time{
   font-family: 'Open Sans Condensed', sans-serif;
 }
+
