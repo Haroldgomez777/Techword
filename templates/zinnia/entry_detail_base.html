@@ -60,12 +60,12 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
       {% with next_entry=object.next_entry %}
       {% if next_entry %}
       <p>
-      <a href="{{ next_entry.get_absolute_url }}" title="{{ next_entry.title }}" rel="next">
-      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+      <a href="{{ next_entry.get_absolute_url }}" title="{{ next_entry.title }}" rel="next" class="hastip">
+      <i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
       </a>
       </p>
       {% else %}
-       <i class="fa fa-arrow-right" aria-hidden="true"></i>
+       <i class="fa fa-arrow-right fa-1x" aria-hidden="true"></i>
       {% endif %}
       {% endwith %}
 </div>
@@ -79,12 +79,12 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
 
         {% if previous_entry %}
         <p>
-        <a href="{{ previous_entry.get_absolute_url }}" title="{{ previous_entry.title }}" rel="prev">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        <a href="{{ previous_entry.get_absolute_url }}" title="{{ previous_entry.title }}" rel="prev" class="hastip">
+        <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
         </a>
         </p>
         {% else %}
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        <i class="fa fa-arrow-left fa-1x" aria-hidden="true"></i>
         {% endif %}
         {% endwith %}
 </div>
@@ -238,10 +238,20 @@ title="{% trans "Direct link to this trackback" %}">#</a>
 
 
 
+
+<!-- to edit -->
+<!-- //////
+    ///
+    /////
+   ///
+  //////
+ -->
+
+
+
 {% block entry-comments %}
-<div class="panel panel-default">
-<div class="panel-heading">{% trans "Comments" %}</div>
-<div class="panel-body">
+<div>{% trans "Comments" %}</div>
+
 {% if object.comment_count %}
 {% with comment_list=object.comments %}
 {% block comments-loop %}
