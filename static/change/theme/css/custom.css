@@ -542,7 +542,7 @@ input[name="head"] {
 
 
 .entry-title a {
-  font-size: 60px;
+  font-size: 45px;
   font-family: 'Raleway', sans-serif;
   color : black;
   font-stretch: 10px;
@@ -626,7 +626,7 @@ h4,h5,h6 {
 
 h1,h2,h3 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 p,a{
