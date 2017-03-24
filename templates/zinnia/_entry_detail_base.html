@@ -139,7 +139,7 @@
             {% endblock entry-tags %}
 
                       {% block entry-shorturl %}
-                      <p class="entry-shorturl">
+                      <p class="entry-shorturl" id="hide">
                       {% trans "Short url" %} :
                       <a href="{{ object.short_url }}"
                       title="{% blocktrans with object=object.title %}Short URL to {{ object }}{% endblocktrans %}"
@@ -150,7 +150,7 @@
                       {% endblock entry-shorturl %}
 
       {% block entry-discussions %}
-      <p class="entry-discussions">
+      <p class="entry-discussions" >
       {% trans "Discussions" %} :
                     {% block entry-comments %}
                     {% with comment_count=object.comment_count %}

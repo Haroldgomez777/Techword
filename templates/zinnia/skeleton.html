@@ -125,7 +125,7 @@
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
     background-image: none;
-    background-color: #890101;   
+    background-color: #0f56c6;   
 }
 
   </style>
@@ -241,6 +241,13 @@
         $("html, body").animate({ scrollTop: 0 }, 600); 
         return false; 
     }); 
+});
+
+    $(document).ready(function(){
+    $("#hide").click(function(){
+        $("#hide>a").toggle();
+    });
+    
 });
 
   </script>
