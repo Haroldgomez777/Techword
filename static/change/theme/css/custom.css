@@ -632,3 +632,13 @@ h1,h2,h3 {
 p,a{
  font-family: 'Montserrat', sans-serif; 
 }
+
+.continue-reading {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: red;
+}
+
+
+.entry-content > p {
+font-family: 'Raleway', sans-serif;
+}

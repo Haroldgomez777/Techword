@@ -38,7 +38,7 @@
       margin-left: 1em;
     }
     a {
-      color: black;
+      color: #04300c;
       outline:none;
       /*font-family: Verdana, Geneva, sans-serif;*/
     }
@@ -59,8 +59,18 @@
       background: transparent url({% static '/change/theme/img/tags.png' %}) no-repeat scroll;
       width: 100px;
     }
+.entry-summary > p { 
+    
+    font-family: 'Raleway', sans-serif;
+}
+.entry-summary > p::first-letter {
+    padding-left: 1.8em; 
+    font-size: 200%;
+}
 
-
+.entry-content > p {
+font-family: 'Raleway', sans-serif;
+}
 #id_name {
     background-color: transparent;
     color: #086800;

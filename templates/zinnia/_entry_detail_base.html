@@ -81,10 +81,12 @@
           {% endif %}
           <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
           <img class="img-responsive" src="{{ object.image.url }}" alt="{{ object.image_caption|default:object.title }}" itemprop="contentUrl" />
+          </br>
           {% if object.image_caption %}
-          <figcaption itemprop="caption">{{ object.image_caption }}</figcaption>
+          <figcaption style="text-align: center;" itemprop="caption" >{{ object.image_caption }}</figcaption>
           {% endif %}
           </figure>
+          </br>
           {% if continue_reading %}
           </a>
           {% endif %}
@@ -94,7 +96,7 @@
 
               {% block entry-lead %}
               {% if not continue_reading and object.lead %}
-              <div class="entry-summary" itemprop="headline" >
+              <div class="entry-summary" itemprop="headline">
               {{ object.html_lead|safe }}
               </div>
               {% endif %}
@@ -112,7 +114,7 @@
     <a href="{{ object.get_absolute_url }}"
     title="{% blocktrans with object=object.title percent=object_content.remaining_percent|floatformat:0 %}{{ percent }}% of {{ object }} still remains to read.{% endblocktrans %}"
     rel="bookmark" itemprop="url" class="hastip">
-    {% trans "Continue reading" %}
+    <h3 style="text-align:center">{% trans "Continue reading" %}</h3>
     </a>
     </p>
     {% endif %}
@@ -122,9 +124,11 @@
 {% endblock entry-body %}
 
 {% block entry-footer %}
-<footer class="entry-footer">
-
+<!-- <footer class="entry-footer">
+<div class="row">
+  <div class="col-sm-4">
             {% block entry-tags %}
+            
             <p class="entry-tags">
             {% trans "Tags" %} :
             <meta itemprop="keywords" content="{{ object.tags }}" />
@@ -137,7 +141,9 @@
             {% endfor %}
             </p>
             {% endblock entry-tags %}
+    </div>
 
+    <div class="col-sm-4">
                       {% block entry-shorturl %}
                       <p class="entry-shorturl" id="hide">
                       {% trans "Short url" %} :
@@ -148,7 +154,8 @@
                       </a>
                       </p>
                       {% endblock entry-shorturl %}
-
+                      </div>
+      <div class="col-sm-4">
       {% block entry-discussions %}
       <p class="entry-discussions" >
       {% trans "Discussions" %} :
@@ -196,9 +203,12 @@
             {% endblock entry-trackbacks %}
       </p>
       {% endblock entry-discussions %}
-</footer>
+    </div>
+</div>
+</footer> -->
 {% endblock entry-footer %}
 </article>
 
-
+</br>
+</br>
 <h1> </h1>

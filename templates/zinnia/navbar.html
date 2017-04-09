@@ -22,14 +22,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li id="co"><a class="hastip"  href="{% url 'zinnia:entry_archive_index' %}"  title="lookout home" rel="home">Home</a></li>
-        <li class="dropdown" id="co">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More
-<i class="fa fa-angle-down" aria-hidden="true"></i>
-</a>
-          <ul class="dropdown-menu" id="ba">
-            <li><a href="{% url 'zinnia:category_list' %}">{% trans "Categories" %}</a></li>
-            <li><a href="{% url 'zinnia:tag_list' %}">{% trans "Tags" %}</a></li>
+          <li id="co"><a class="hastip"  href="{% url 'zinnia:entry_archive_index' %}"  title="lookout home" rel="home">Home</a></li>
+          <li id="co"><a class="hastip"  href="{% url 'zinnia:category_list' %}"  title="lookout home" rel="home">{% trans "Categories" %}</a></li>
+          <li id="co"><a class="hastip"  href="{% url 'zinnia:tag_list' %}"  title="lookout home" rel="home">{% trans "Tags" %}</a></li>
           </ul>
         </li>
       </ul>
