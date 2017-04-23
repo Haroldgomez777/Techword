@@ -297,6 +297,7 @@ input[name="head"] {
     background-color: #ffffff;
     font-size: 17px;
     color: #001404;
+
   }
 
 
@@ -366,6 +367,7 @@ input[name="head"] {
     /*adds border to bottom nav boxes*/
     nav.sidebar .navbar-nav > li{
       border-bottom: 1px #e5e5e5 solid;
+      font-family: 'Raleway', sans-serif;
     }
 
     /* Colors/style dropdown box*/
@@ -590,9 +592,6 @@ input[name="head"] {
   font-family: 'Raleway', sans-serif;
   color:#7f0000;
 }
-#co {
-  color:black;
-}
 
 .entry-last-update{
   font-size: 12px;
@@ -630,8 +629,9 @@ h1,h2,h3 {
 }
 
 p,a{
- font-family: 'Montserrat', sans-serif; 
+ font-family: 'Raleway', sans-serif;
 }
+
 
 .continue-reading {
   font-family: 'Source Sans Pro', sans-serif;
