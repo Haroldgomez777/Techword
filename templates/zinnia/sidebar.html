@@ -1,7 +1,6 @@
 {% load i18n %}
 {% load zinnia %}
 {% block sidebar %}
-
 <h1> </h1>
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -33,7 +32,6 @@
     <div id="coinwidget-bitcoin-1J6c3bXh76NEVrG6fYSPoTSWufBAgJHK4g"></div>
   </div>
 </div>
-
 <div class="panel panel-default">
   <div class="panel-heading">
     <a href="{% url 'zinnia:category_list' %}">{% trans "Categories" %}</a>
@@ -60,15 +58,6 @@
   {% get_tag_cloud %}
   </div>
 </div>
-
-<!-- <aside id="widget-recents" class="widget">
-  <h5>{% trans "Recent entries" %}</h5>
-  {% get_recent_entries %}
-</aside>
-<aside id="widget-comments" class="widget">
-  <h5>{% trans "Recent comments" %}</h5>
-  {% get_recent_comments %}
-</aside> -->
 <div class="panel panel-default">
   <div class="panel-heading">
   {% trans "Recent linkbacks" %}
@@ -77,8 +66,6 @@
   {% get_recent_linkbacks %}
 </div>
 </div>
-
-
 <div class="panel panel-default">
   <div class="panel-heading">
   {% trans "Random entries" %}
@@ -87,9 +74,6 @@
  {% get_random_entries %}
 </div>
 </div>
-
-
-
 <div class="panel panel-default">
   <div class="panel-heading">
   {% trans "Popular entries" %}
@@ -98,9 +82,6 @@
  {% get_popular_entries %}
 </div>
 </div>
-
-
-
 <div class="panel panel-default">
   <div class="panel-heading">
   {% trans "Archives" %}
@@ -109,13 +90,10 @@
  {% get_archives_entries %}
 </div>
 </div>
-
-
 <aside id="widget-calendar" class="calendar">
   <h5>{% trans "Calendar" %}</h5>
   {% get_calendar_entries %}
 </aside>
-
 {% if user.is_authenticated %}
 <div class="panel panel-default">
   <div class="panel-heading">

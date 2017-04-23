@@ -15,7 +15,6 @@
 <script src="{% static 'change/theme/js/jquery.min.js' %}"></script>
 <script src="{% static 'change/theme/js/bootstrap.min.js' %}"></script>
 <style>
-
 #tooltip {
 background: black;
 border: 1px solid green;
@@ -126,7 +125,7 @@ background-color: blue;
 
 
 #co a{
-color:#FDECD2;
+color:#FFFFFF;
 }
 
 #ba a{
@@ -137,19 +136,15 @@ color:black;
 background-image: none;
 background-color: #0f56c6;   
 }
-
 </style>
-
 {% block link %}{% endblock link %}
 {% block script %}{% endblock script %}
 </head>
 <body>
-
 {% block navbar %}
 {% include "zinnia/navbar.html" %}
 {% endblock navbar %}
 <div class="container">
-
 <div class="row">
 <div class="visible-lg col-sm-3" style="margin-left: 10px">{% block sidebar %}{% endblock sidebar %}</div>
 <div class="col-sm-8 ">
@@ -177,17 +172,13 @@ background-color: #0f56c6;
 {% endblock content %}
 </div>
 </div>
-
 </body>
-
 <footer id="footer" role="contentinfo">
 {% block breadcrumbs %}{% endblock breadcrumbs %}
 <p>{% blocktrans %}Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.{% endblocktrans %}</p>
 </footer>
 <script src="{% static 'change/theme/js/tooltipsy.min.js' %}"></script>
 <script type="text/javascript">
-
-
 $('.hastip').tooltipsy({
 offset: [0, 10],
 css: {
@@ -204,9 +195,6 @@ css: {
 'text-shadow': 'none'
 }
 });
-
-
-
 function htmlbodyHeightUpdate(){
 var height3 = $( window ).height()
 var height1 = $('.nav').height()+50
@@ -232,8 +220,6 @@ height2 = $('.container').height()
 htmlbodyHeightUpdate()
 });
 });
-
-
 $("#menu-toggle").click(function(e) {
 e.preventDefault();
 });
@@ -252,13 +238,10 @@ $("html, body").animate({ scrollTop: 0 }, 600);
 return false; 
 }); 
 });
-
 $(document).ready(function(){
 $("#hide").click(function(){
 $("#hide>a").toggle();
 });
-
 });
-
 </script>
 </html>

@@ -1,0 +1,238 @@
+----------------------------------navbar.html------------------------------
+<!--         <li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="#">Action</a></li>
+<li><a href="#">Another action</a></li>
+<li><a href="#">Something else here</a></li>
+<li role="separator" class="divider"></li>
+<li><a href="#">Separated link</a></li> -->
+
+
+
+<!-- <nav class="navbar navbar-fixed-top dark">
+<div class="container-fluid minilla">
+<div class="navbar-header">
+
+<a class="navbar-brand dark" href="#">
+<i class="fa fa-linux fa-1x" aria-hidden="true"></i>
+</a>
+
+</div>
+<div class="navbar-header">
+<a class="navbar-brand dark hastip"  href="{% url 'zinnia:entry_archive_index' %}"  title="Techword blog" rel="home">Techword</a>
+
+</div>
+
+
+<div class="navbar-header">
+<form class="navbar-form" role="search" method="get" action="{% url 'zinnia:entry_search' %}">
+<div class="form-group">
+<input type="text" name="pattern" placeholder="{% trans 'search...' %}" {% if pattern %}value="{{ pattern }}"{% endif %} style="font-family: verdana; inputeight:bold;
+font-size: 10pt; height: 28px; width:186px; color: #000000; padding-left: 2px; float:left; border: 1px solid black; background-color:
+#ffffff" />
+<input type="submit" name="head" class="search" value="&#xf002;">
+</div>
+</form>
+</div>
+
+<div class="navbar-header navbar-right  ">
+<a class="navbar-brand hastip" href="{% url 'zinnia:entry_feed' %}" title="{% trans "RSS feed of last entries" %}" class="feeds" >
+<i class="fa fa-rss dark" aria-hidden="true"></i>
+</a>
+</div>
+
+<div class="navbar-header navbar-right ">
+<a class="navbar-brand hastip" href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}" class="sitemap" rel="sitemap">
+<i class="fa fa-map dark" aria-hidden="true"></i>
+</a>
+</div>
+
+</div>      
+
+</nav>
+
+-->
+
+---------------------------------
+----------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+
+--------------------Entry Detail base---------------------------------------------------
+
+<!-- <footer class="entry-footer">
+<div class="row">
+  <div class="col-sm-4">
+            {% block entry-tags %}
+            
+            <p class="entry-tags">
+            {% trans "Tags" %} :
+            <meta itemprop="keywords" content="{{ object.tags }}" />
+            {% for tag in object.tags_list %}
+            <a href="{% url 'zinnia:tag_detail' tag %}"
+            title="{% blocktrans %}Show all entries tagged by {{ tag }}{% endblocktrans %}"
+            rel="tag" itemprop="articleSection" class="hastip">{{ tag }}</a>
+            {% empty %}
+            <span>{% trans "No tags" %}</span>
+            {% endfor %}
+            </p>
+            {% endblock entry-tags %}
+    </div>
+
+    <div class="col-sm-4">
+                      {% block entry-shorturl %}
+                      <p class="entry-shorturl" id="hide">
+                      {% trans "Short url" %} :
+                      <a href="{{ object.short_url }}"
+                      title="{% blocktrans with object=object.title %}Short URL to {{ object }}{% endblocktrans %}"
+                      rel="shortlink" class="hastip">
+                      {{ object.short_url }}
+                      </a>
+                      </p>
+                      {% endblock entry-shorturl %}
+                      </div>
+      <div class="col-sm-4">
+      {% block entry-discussions %}
+      <p class="entry-discussions" >
+      {% trans "Discussions" %} :
+                    {% block entry-comments %}
+                    {% with comment_count=object.comment_count %}
+                    <meta itemprop="commentCount" content="{{ object.comment_count }}" />
+                    <meta itemprop="discussionUrl" content="{{ object.get_absolute_url }}#comments" />
+                    {% if comment_count %}
+                    <a href="{{ object.get_absolute_url }}#comments"
+                    title="{% blocktrans with object=object.title %}Comments on {{ object }}{% endblocktrans %}" class="hastip">
+                    {% blocktrans count comment_count=comment_count %}{{ comment_count }} comment{% plural %}{{ comment_count }} comments{% endblocktrans %}
+                    </a>
+                    {% else %}
+                    {% if object.comments_are_open %}
+                    {% trans "No comments yet." %}
+                    <a href="{{ object.get_absolute_url }}#comment-form"
+                    title="{% blocktrans with object=object.title %}Leave a comment on {{ object }}{% endblocktrans %}">
+                    {% trans "Be first to comment!" %}
+                    </a>
+                    {% else %}
+                    {% trans "Comments are closed." %}
+                    {% endif %}
+                    {% endif %}
+                    {% endwith %}
+                    {% endblock entry-comments %}
+
+                {% block entry-pingbacks %}
+                {% with pingback_count=object.pingback_count %}
+                {% if pingback_count %}
+                , <a href="{{ object.get_absolute_url }}#pingbacks" title="{% blocktrans with object=object.title %}Pingbacks on {{ object }}{% endblocktrans %}">
+                {% blocktrans count pingback_count=pingback_count %}{{ pingback_count }} pingback{% plural %}{{ pingback_count }} pingbacks{% endblocktrans %}
+                </a>
+                {% endif %}
+                {% endwith %}
+                {% endblock entry-pingbacks %}
+                
+            {% block entry-trackbacks %}
+            {% with trackback_count=object.trackback_count %}
+            {% if trackback_count %}
+            , <a href="{{ object.get_absolute_url }}#trackbacks" title="{% blocktrans with object=object.title %}Trackbacks on {{ object }}{% endblocktrans %}">
+            {% blocktrans count trackback_count=trackback_count %}{{ trackback_count }} trackback{% plural %}{{ trackback_count }} trackbacks{% endblocktrans %}
+            </a>
+            {% endif %}
+            {% endwith %}
+            {% endblock entry-trackbacks %}
+      </p>
+      {% endblock entry-discussions %}
+    </div>
+</div>
+</footer> -->
+
+
+
+--------------------------Entry_detail_base.html---------------------
+
+
+
+
+
+
+
+<!-- to edit -->
+<!-- //////
+    ///
+    /////
+   ///
+  //////
+ -->
+
+
+
+<!-- {% block entry-comments %}
+<div>{% trans "Comments" %}</div>
+
+{% if object.comment_count %}
+{% with comment_list=object.comments %}
+{% block comments-loop %}
+<ul id="comment-list">
+{% for comment in comment_list %}
+<p id="comment-{{ comment.pk }}-by-{{ comment.user_name|slugify }}"
+class="comment vcard {% cycle 'box1' 'box2' %}{% if comment.user %} authenticated-comment{% if comment.user.is_staff %} staff-comment{% endif %}{% if comment.user.is_superuser %} superuser-comment{% endif %}{% endif %}">
+{% block comment-image %}
+<img src="{% get_gravatar comment.email 60 "G" %}"
+class="gravatar photo" alt="{{ comment.name }}" />
+{% endblock comment-image %}
+{% block comment-info %}
+<p class="comment-info">
+{% if comment.url %}
+<a href="{{ comment.url }}" rel="external nofollow"
+class="fn url">{{ comment.name }}</a>
+{% else %}
+<span class="fn">{{ comment.name }}</span>
+{% endif %}
+{% trans "on" context "on date" %}
+<time class="comment-published" datetime="{{ comment.submit_date|date:"c" }}">
+{{ comment.submit_date|date:"SHORT_DATETIME_FORMAT" }}
+</time>
+<a href="#comment-{{ comment.pk }}-by-{{ comment.user_name|slugify }}"
+id="c{{ comment.pk }}" class="anchor-link"
+title="{% trans "Direct link to this comment" %}">#</a>
+</p>
+{% endblock comment-info %}
+{% block comment-content %}
+{{ comment.comment|linebreaks }}
+{% endblock comment-content %}
+</p>
+{% endfor %}
+</ul>
+{% endblock comments-loop %}
+{% endwith %}
+{% if not object.comments_are_open %}
+<p>{% trans "Comments are closed." %}</p>
+{% endif %}
+{% else %}
+{% if object.comments_are_open %}
+<p>{% trans "No comments yet." %}</p>
+{% else %}
+<p>{% trans "Comments are closed." %}</p>
+{% endif %}
+{% endif %}
+
+
+
+{% endblock entry-comments %}
+
+{% block entry-comments-form %}
+{% if object.comments_are_open %}
+{% render_comment_form for object %}
+{% endif %}
+{% endblock entry-comments-form %} -->
+
+
+
+-------------------sidebar.html-----------------------
+
+<!-- <aside id="widget-recents" class="widget">
+  <h5>{% trans "Recent entries" %}</h5>
+  {% get_recent_entries %}
+</aside>
+<aside id="widget-comments" class="widget">
+  <h5>{% trans "Recent comments" %}</h5>
+  {% get_recent_comments %}
+</aside> -->
