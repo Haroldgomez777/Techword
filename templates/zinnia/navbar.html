@@ -1,110 +1,28 @@
 {% load i18n %}
 {% block navbar %}
+
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid" style="background-color: #890101;">
-
-
-
-
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div id="ss" class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/"><img src=""></a>
-    </div>
-
-
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li id="co"><a class="hastip"  href="{% url 'zinnia:entry_archive_index' %}"  title="lookout home" rel="home">Home</a></li>
-        <li class="dropdown" id="co">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More
-<i class="fa fa-angle-down" aria-hidden="true"></i>
-</a>
-          <ul class="dropdown-menu" id="ba">
-            <li><a href="{% url 'zinnia:category_list' %}">{% trans "Categories" %}</a></li>
-            <li><a href="{% url 'zinnia:tag_list' %}">{% trans "Tags" %}</a></li>
-          </ul>
-        </li>
-      </ul>
-
-
-
-
-      <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'zinnia:entry_search' %}">
-        <div class="form-group">
-          <input type="text" name="pattern" placeholder="{% trans 'search...' %}" {% if pattern %}value="{{ pattern }}"{% endif %} style="font-family: verdana; inputeight:bold;
-          font-size: 10pt; height: 28px; width:186px; color: #000000; padding-left: 2px; float:left; border: 1px solid black; background-color:
-          #ffffff" />
-          <input type="submit" name="head" class="search" value="&#xf002;">
-        </div>
-      </form>
-
-
-
-
-      <ul class="nav navbar-nav navbar-right" id="co">
-
-<li><a class="hastip" href="#" title="{% trans "Google" %}" target="_blank" >
-<i class="fa fa-google" aria-hidden="true"></i>
-</a></li>
-
-<li><a class="hastip" href="https://www.facebook.com/prospect71" title="{% trans "facebook" %}" target="_blank" >
-<i class="fa fa-facebook" aria-hidden="true"></i>
-</a></li>
-
-<li><a class="hastip" href="https://twitter.com" title="{% trans "twitter" %}" target="_blank" >
-<i class="fa fa-twitter" aria-hidden="true"></i>
-</a></li>
-
-<li><a class="hastip" href="{% url 'zinnia:entry_feed' %}" title="{% trans "RSS feed of last entries" %}" target="_blank" >
-<i class="fa fa-rss" aria-hidden="true"></i>
-</a></li>
-
-          <li>
-            <a class="hastip" href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}" class="" rel="sitemap">
-<i class="fa fa-map " aria-hidden="true"></i>
-</a>
-          </li>
-<!--         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li> -->
-          </ul>
-        
-      </div>
-    </div><!-- /.navbar-collapse -->
- <!-- /.container-fluid -->
-</nav>
-
-
-<!-- <nav class="navbar navbar-fixed-top dark">
-<div class="container-fluid minilla">
-<div class="navbar-header">
-
-<a class="navbar-brand dark" href="#">
-<i class="fa fa-linux fa-1x" aria-hidden="true"></i>
-</a>
-
+<div class="container-fluid" ">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div id="ss" class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="/"><img src=""></a>
 </div>
-<div class="navbar-header">
-<a class="navbar-brand dark hastip"  href="{% url 'zinnia:entry_archive_index' %}"  title="Techword blog" rel="home">Techword</a>
-
-</div>
-
-
-<div class="navbar-header">
-<form class="navbar-form" role="search" method="get" action="{% url 'zinnia:entry_search' %}">
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav">
+<li id="co"><a class="hastip"  href="{% url 'zinnia:entry_archive_index' %}"  title="lookout home" rel="home" >Home</a></li>
+<li id="co"><a class="hastip"  href="{% url 'zinnia:category_list' %}"  title="Categories" rel="home">{% trans "Categories" %}</a></li>
+<li id="co"><a class="hastip"  href="{% url 'zinnia:tag_list' %}"  title="Tags" rel="home">{% trans "Tags" %}</a></li>
+</ul>
+</li>
+</ul>
+<form class="navbar-form navbar-left" role="search" method="get" action="{% url 'zinnia:entry_search' %}">
 <div class="form-group">
 <input type="text" name="pattern" placeholder="{% trans 'search...' %}" {% if pattern %}value="{{ pattern }}"{% endif %} style="font-family: verdana; inputeight:bold;
 font-size: 10pt; height: 28px; width:186px; color: #000000; padding-left: 2px; float:left; border: 1px solid black; background-color:
@@ -112,24 +30,28 @@ font-size: 10pt; height: 28px; width:186px; color: #000000; padding-left: 2px; f
 <input type="submit" name="head" class="search" value="&#xf002;">
 </div>
 </form>
-</div>
-
-<div class="navbar-header navbar-right  ">
-<a class="navbar-brand hastip" href="{% url 'zinnia:entry_feed' %}" title="{% trans "RSS feed of last entries" %}" class="feeds" >
-<i class="fa fa-rss dark" aria-hidden="true"></i>
+<ul class="nav navbar-nav navbar-right" id="co">
+>>>>>>> 74f93f36d3649548933ec8da8dfc19d93e35e536
+<li><a class="hastip" href="#" title="{% trans "Google" %}" target="_blank" >
+<i class="fa fa-google" aria-hidden="true"></i>
+</a></li>
+<li><a class="hastip" href="https://www.facebook.com/prospect71" title="{% trans "facebook" %}" target="_blank" >
+<i class="fa fa-facebook" aria-hidden="true"></i>
+</a></li>
+<li><a class="hastip" href="https://twitter.com" title="{% trans "twitter" %}" target="_blank" >
+<i class="fa fa-twitter" aria-hidden="true"></i>
+</a></li>
+<li><a class="hastip" href="{% url 'zinnia:entry_feed' %}" title="{% trans "RSS feed of last entries" %}" target="_blank" >
+<i class="fa fa-rss" aria-hidden="true"></i>
+</a></li>
+<li>
+<a class="hastip" href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}" class="" rel="sitemap">
+<i class="fa fa-map " aria-hidden="true"></i>
 </a>
+</li>
+</ul>
 </div>
-
-<div class="navbar-header navbar-right ">
-<a class="navbar-brand hastip" href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}" class="sitemap" rel="sitemap">
-<i class="fa fa-map dark" aria-hidden="true"></i>
-</a>
-</div>
-
-</div>      
-
+</div><!-- /.navbar-collapse -->
+<!-- /.container-fluid -->
 </nav>
-
--->
 {% endblock navbar %}
-

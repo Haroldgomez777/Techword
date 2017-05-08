@@ -32,26 +32,10 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
 {% endblock link %}
 
 {% block body-class %}entry entry-{{ object.pk }}{% if object.featured %} featured{% endif %} year-{{ object.publication_date|date:"Y" }} month-{{ object.publication_date|date:"m" }} week-{{ object.publication_date|date:"W" }} day-{{ object.publication_date|date:"d" }}{% endblock body-class %}
-
 {% block content %}
-
 {% block entry-content %}
 {% include object.content_template with object_content=object.html_content %}
 {% endblock entry-content %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {% block entry-widgets %}
 <div class="row" id="entri-styles">
 <div class="visible-lg col-sm-3 col-sm-offset-1">
@@ -70,8 +54,6 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
       {% endwith %}
 </div>
       {% endblock entry-next-entry %}
-
-
 <div class="visible-lg col-sm-3 col-sm-offset-5">
         {% block entry-previous-entry %}
         <h5>{% trans "Previous entry" %}</h5>
@@ -90,7 +72,6 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
 </div>
 </div>
         {% endblock entry-previous-entry %}
-
 <div class="row" id="entri-styles">
 <div class="visible-lg col-sm-3 col-sm-offset-1">
           {% block entry-related-entries %}
@@ -104,13 +85,10 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
           </li>
           {% endfor %}
           </ul>
-          
           {% endif %}
           {% endwith %}
 </div>
           {% endblock entry-related-entries %}
-
-
               {% block entry-similar-entries %}
               <div class="visible-lg col-sm-3 col-sm-offset-5">
               <h5>{% trans "Similar entries" %}</h5>
@@ -119,12 +97,6 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
               {% endblock entry-similar-entries %}
 </div>
 {% endblock entry-widgets %}
-
-
-
-
-
-
         {% block entry-pingbacks %}
         <div class="row" id="entri-styles">
         <div class="visible-lg col-sm-3 col-sm-offset-1">
@@ -133,7 +105,6 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
         {% with pingback_list=object.pingbacks %}
           {% block pingbacks-loop %}
           <ol id="pingback-list">
-
             {% for pingback in pingback_list %}
             <li id="pingback-{{ pingback.pk }}" class="pingback vcard {% cycle 'box1' 'box2' %}">
                     {% block pingback-info %}
@@ -149,7 +120,6 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
                     title="{% trans "Direct link to this pingback" %}">#</a>
                     </p>
                     {% endblock pingback-info %}
-
                 {% block pingback-content %}
                 <p class="pingback-content">
                 {{ pingback.comment }}
@@ -158,7 +128,6 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
             </li>
             {% endfor %}
           </ol>
-
           {% endblock pingbacks-loop %}
         {% endwith %}
         {% endif %}
@@ -171,18 +140,10 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
               {% endblock pingbacks-status %}
         </div>
         {% endblock entry-pingbacks %}
-
-
-
-
-
-
-
 {% block entry-trackbacks %}
 <div class="visible-lg col-sm-3 col-sm-offset-5" >
 <h5>{% trans "Trackbacks" %}</h5>
 {% if object.trackback_count or object.trackbacks_are_open %}
-
 {% if object.trackback_count %}
 {% with trackback_list=object.trackbacks %}
 {% block trackbacks-loop %}
@@ -201,8 +162,7 @@ class="fn url org">{{ trackback.name }}</a>
 id="c{{ trackback.pk }}" class="anchor-link"
 title="{% trans "Direct link to this trackback" %}">#</a>
 </p>
-        {% endblock trackback-info %}
-        
+        {% endblock trackback-info %}  
         {% block trackback-content %}
         <p class="trackback-content">
         {{ trackback.comment }}
@@ -226,91 +186,9 @@ title="{% trans "Direct link to this trackback" %}">#</a>
 {% endif %}
 </div>
 </div>
-
-
 {% endblock entry-trackbacks %}
-
-
 <h2> </h2>
-
-
-
-
-
-
-
-<!-- to edit -->
-<!-- //////
-    ///
-    /////
-   ///
-  //////
- -->
-
-
-
-<!-- {% block entry-comments %}
-<div>{% trans "Comments" %}</div>
-
-{% if object.comment_count %}
-{% with comment_list=object.comments %}
-{% block comments-loop %}
-<ul id="comment-list">
-{% for comment in comment_list %}
-<p id="comment-{{ comment.pk }}-by-{{ comment.user_name|slugify }}"
-class="comment vcard {% cycle 'box1' 'box2' %}{% if comment.user %} authenticated-comment{% if comment.user.is_staff %} staff-comment{% endif %}{% if comment.user.is_superuser %} superuser-comment{% endif %}{% endif %}">
-{% block comment-image %}
-<img src="{% get_gravatar comment.email 60 "G" %}"
-class="gravatar photo" alt="{{ comment.name }}" />
-{% endblock comment-image %}
-{% block comment-info %}
-<p class="comment-info">
-{% if comment.url %}
-<a href="{{ comment.url }}" rel="external nofollow"
-class="fn url">{{ comment.name }}</a>
-{% else %}
-<span class="fn">{{ comment.name }}</span>
-{% endif %}
-{% trans "on" context "on date" %}
-<time class="comment-published" datetime="{{ comment.submit_date|date:"c" }}">
-{{ comment.submit_date|date:"SHORT_DATETIME_FORMAT" }}
-</time>
-<a href="#comment-{{ comment.pk }}-by-{{ comment.user_name|slugify }}"
-id="c{{ comment.pk }}" class="anchor-link"
-title="{% trans "Direct link to this comment" %}">#</a>
-</p>
-{% endblock comment-info %}
-{% block comment-content %}
-{{ comment.comment|linebreaks }}
-{% endblock comment-content %}
-</p>
-{% endfor %}
-</ul>
-{% endblock comments-loop %}
-{% endwith %}
-{% if not object.comments_are_open %}
-<p>{% trans "Comments are closed." %}</p>
-{% endif %}
-{% else %}
-{% if object.comments_are_open %}
-<p>{% trans "No comments yet." %}</p>
-{% else %}
-<p>{% trans "Comments are closed." %}</p>
-{% endif %}
-{% endif %}
-
-
-
-{% endblock entry-comments %}
-
-{% block entry-comments-form %}
-{% if object.comments_are_open %}
-{% render_comment_form for object %}
-{% endif %}
-{% endblock entry-comments-form %} -->
-
 {% endblock content %}
-
 {% block admin-tools %}
 {% if perms.zinnia.change_entry %}
 <li>
