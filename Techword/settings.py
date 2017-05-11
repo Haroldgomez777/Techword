@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '6acev69+%z9if#1kz&kri9#%!#p=qwthp7*l^5l=bdk577a^u%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['testharold.com','192.168.1.2','127.0.0.1']
+ALLOWED_HOSTS = ['lookout.pythonanywhere.com']
 
 
 # Application definition
@@ -59,7 +59,7 @@ ROOT_URLCONF = 'Techword.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,6 +87,12 @@ DATABASES = {
     }
 }
 
+# 'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'mydatabase',
+#         'USER': 'mydatabaseuser',
+#         'PASSWORD': 'mypassword',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
