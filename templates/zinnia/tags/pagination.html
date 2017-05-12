@@ -6,9 +6,9 @@
     </li>
 
     {% if page.has_previous %}
-    <li class="Previous">
+    <li>
       <a href="?page={{ page.previous_page_number }}{{ GET_string }}"
-         title="{% trans "More recent entries" %}">&laquo;</a>
+         title="{% trans "More recent entries" %}" class="Previous">&laquo;</a>
     </li>
     {% endif %}
 
