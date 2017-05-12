@@ -13,7 +13,7 @@
     {% endif %}
 
     {% for page_number in begin %}
-    <li class="page{% ifequal page.number page_number %} current{% endifequal %}">
+    <li>
       {% ifequal page.number page_number %}
       {{ page_number }}
       {% else %}
@@ -24,9 +24,9 @@
     {% endfor %}
 
     {% if middle %}
-    <li class="ellipsis">&hellip;</li>
+    <li>&hellip;</li>
     {% for page_number in middle %}
-    <li class="page{% ifequal page.number page_number %} current{% endifequal %}">
+    <li>
       {% ifequal page.number page_number %}
       {{ page_number }}
       {% else %}
@@ -38,9 +38,9 @@
     {% endif %}
 
     {% if end %}
-    <li class="ellipsis">&hellip;</li>
+    <li>&hellip;</li>
     {% for page_number in end %}
-    <li class="page{% ifequal page.number page_number %} current{% endifequal %}">
+    <li>
       {% ifequal page.number page_number %}
       {{ page_number }}
       {% else %}
