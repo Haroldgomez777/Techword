@@ -151,9 +151,9 @@ background-color: #0f56c6;
 
 /*loader1 css begins*/
 .main-wrap {
-    background-color: #2b4661;
-    color: #fff;
-    height: 520px;
+    /*background-color: #2b4661;*/
+    /*color: #fff;*/
+    height: 100%;
     display: flex;
     justify-content:center;
     align-items:center;    
@@ -164,7 +164,7 @@ background-color: #0f56c6;
     height: 50px;
     /*margin-right:5px;*/
     margin-right:3px;
-    background-color: #FFF;
+    background-color: #000;
     -webkit-animation: animate1 1s infinite;
     animation: animate1 1s infinite;
     float: left;
@@ -324,7 +324,7 @@ background-color: #0f56c6;
 <script type="text/javascript">
 
 $(window).ready(function() {
-	$('#loading').hide()
+	$('#loading').fadeOut(3000)
 });
 
 $('.hastip').tooltipsy({
