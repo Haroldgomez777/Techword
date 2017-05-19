@@ -23,11 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '6acev69+%z9if#1kz&kri9#%!#p=qwthp7*l^5l=bdk577a^u%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+
 
 ALLOWED_HOSTS = ['testharold.com','192.168.1.2','127.0.0.1']
 
 
+from .secrets import DEBUG
 # Application definition
 
 INSTALLED_APPS = [
