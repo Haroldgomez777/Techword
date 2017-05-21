@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '6acev69+%z9if#1kz&kri9#%!#p=qwthp7*l^5l=bdk577a^u%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
+from .secrets import SECURE_SSL_REDIRECT
 
 ALLOWED_HOSTS = ['lookout.pythonanywhere.com']
 
