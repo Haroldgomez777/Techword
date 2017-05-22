@@ -14,7 +14,10 @@
 <link rel="stylesheet" type="text/css" href="{% static 'change/theme/css/custom.css' %}">
 <script src="{% static 'change/theme/js/jquery.min.js' %}"></script>
 <script src="{% static 'change/theme/js/bootstrap.min.js' %}"></script>
-<style>
+<style>	
+.psc-test li ol li{
+	cursor: pointer;
+}
 #tooltip {
 background: black;
 border: 1px solid green;
@@ -391,6 +394,29 @@ $("#hide").click(function(){
 $("#hide>a").toggle();
 });
 });
+
+	$(document).ready(function(){
+
+		$('.d_1287').on('click',function(){
+			
+			var txt1 = " <i>&#x2714</i>";
+
+			$(this).css("color","green");
+			$(this).append(txt1);
+			$(this).off('click');
+
+		});
+
+		$('.C1232_2').on('click',function(){
+			
+			var txt1 = " <i>&#x2716</i>";
+			
+			$(this).css("color","red");
+			$(this).append(txt1);
+			$(this).off('click');
+		
+		});
+	});
 
 </script>
 </html>
