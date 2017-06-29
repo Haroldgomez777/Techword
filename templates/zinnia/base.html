@@ -2,7 +2,7 @@
 {% load i18n %}
 {% load zinnia %}
 
-{% block meta-keywords %}{% get_tags as entry_tags %}{{ entry_tags|join:", "}}{% endblock meta-keywords %}
+{% block meta-keywords %}{% get_tags as entry_tags %}{{ entry_tags|join:", "}} lookout {% endblock meta-keywords %}
 
 {% block meta %}
     <meta name="generator" content="Zinnia {{ ZINNIA_VERSION }}" />
