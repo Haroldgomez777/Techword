@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style type="text/css">
+	
+.psc-test li ol li{
+	cursor: pointer;
+}
+
+.c {
+
+}
+</style>
+</head>
+<body>
+<h1>Click On the Anwer</h1>
+<ol class="psc-test">
+	<li>A peptide hormone is 
+	<ol>
+	<li class="C1232_2">Estrone</li>
+	<li class="d_1287">Corticoid</li>
+	<li class="C1232_2">Progestrone</li>
+	<li class="C1232_2">Insulin</li>
+	</ol>
+	</li>
+
+	<li>Which of the following is not found in DNA
+	<ol>
+	<li class="d_1287">Uracil</li>
+	<li class="C1232_2">Adenine</li>
+	<li class="C1232_2">Thymine</li>
+	<li class="C1232_2">Guanine</li>
+	</ol>
+	</li>
+
+	<li>What is the hybridisation of carbon in HCN?
+	<ol>
+	<li class="C1232_2">sp<sup>3</sup>d</li>
+	<li class="C1232_2">sp<sup>3</sup></li>
+	<li class="C1232_2">sp<sup>2</sup></li>
+	<li class="d_1287">sp</li>
+	</ol>
+	</li>
+
+	<li>Human Body is an example for 
+	<ol>
+	<li class="C1232_2">Open system</li>
+	<li class="C1232_2">Closed system</li>
+	<li class="C1232_2">Isolated System</li>
+	<li class="d_1287">Adiabatic system</li>
+	</ol>
+	</li>
+
+	<li>Choose a water soluble Vitamin 
+	<ol>
+	<li class="C1232_2">Vitamin A</li>
+	<li class="C1232_2">Vitamin D</li>
+	<li class="d_1287">Vitamin C</li>
+	<li class="C1232_2">Vitamin E</li>
+	</ol>
+	</li>
+
+	<li>The metal present in chlorophyll is
+	<ol>
+	<li class="C1232_2" class="C1232_2">Iron</li>
+	<li class="C1232_2" class="C1232_2">Cobalt</li>
+	<li class="d_1287">Magnesium</li>
+	<li class="C1232_2" class="C1232_2">Nickel</li>
+	</ol>
+	</li>
+
+	<li> Worlds first bank to deploy a robot for customer sevice
+	<ol>
+	<li class="C1232_2">HSBC</li>
+	<li class="C1232_2">Axis Bank</li>
+	<li class="d_1287">HDFC</li>
+	<li class="C1232_2">ICICI</li>
+	</ol>
+	</li>
+
+	<li>Who wrote the famous book "Who wants to be Millionaire"?
+	<ol>
+	<li class="d_1287">Agatha Christie</li>
+	<li class="C1232_2">Emile Zola</li>
+	<li class="C1232_2">Vikram Seth</li>
+	<li class="C1232_2">Chethan Bhagath</li>
+	</ol>
+	</li>
+
+	<li>Indian Sports Reserch Institute is located at
+	<ol>
+	<li class="C1232_2">Delhi</li>
+	<li class="d_1287">Patiala</li>
+	<li class="C1232_2">Mohali</li>
+	<li class="C1232_2">Ranchi</li>
+	</ol>
+	</li>
+
+	<li>The first cinema scope film in India
+	<ol>
+	<li class="C1232_2">Deewana</li>
+	<li class="C1232_2">Bazigar</li>
+	<li class="d_1287">Kagaz Ke Phool</li>
+	<li class="C1232_2">Dangal</li>
+	</ol>
+	</li>
+</ol>
+</body>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$('.d_1287').on('click',function(){
+			
+			var txt1 = " <i>&#x2714</i>";
+
+			$(this).css("color","green");
+			$(this).append(txt1);
+			$(this).off('click');
+
+		});
+
+		$('.C1232_2').on('click',function(){
+			
+			var txt1 = " <i>&#x2716</i>";
+			
+			$(this).css("color","red");
+			$(this).append(txt1);
+			$(this).off('click');
+		
+		});
+	});
+</script>
+</html>
+
