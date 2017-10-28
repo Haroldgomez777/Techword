@@ -2,8 +2,10 @@
 {% block navbar %}
 
 <nav class="navbar navbar-default navbar-fixed-top">
+
 <div class="container-fluid" ">
 <!-- Brand and toggle get grouped for better mobile display -->
+
 <div id="ss" class="navbar-header">
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 <span class="sr-only">Toggle navigation</span>
@@ -13,10 +15,15 @@
 </button>
 <!-- <a class="navbar-brand" href="/"><img src=""></a> -->
 </div>
+
 <!-- Collect the nav links, forms, and other content for toggling -->
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 <ul class="nav navbar-nav">
-<li id="co"><a class="hastip"  href="{% url 'zinnia:entry_archive_index' %}"  title="lookout home" rel="home" >Home</a></li>
+<li id="co">
+<a class="hastip"  href="{% url 'zinnia:entry_archive_index' %}"  title="lookout home" rel="home">
+Home
+</a>
+</li>
 <li id="co"><a class="hastip"  href="{% url 'zinnia:category_list' %}"  title="Categories" rel="home">{% trans "Categories" %}</a></li>
 <li id="co"><a class="hastip"  href="{% url 'zinnia:tag_list' %}"  title="Tags" rel="home">{% trans "Tags" %}</a></li>
 </ul>
@@ -35,15 +42,22 @@ font-size: 10pt; height: 28px; width:186px; color: #000000; padding-left: 2px; f
 <li><a class="hastip" href="#" title="{% trans "Google" %}" target="_blank" >
 <i class="fa fa-google" aria-hidden="true"></i>
 </a></li>
-<li><a class="hastip" href="https://www.facebook.com/reversestring/" title="{% trans "facebook" %}" target="_blank" >
+<li>
+<!-- https://www.facebook.com/reversestring/ -->
+<a class="hastip" href="#" title="{% trans "facebook" %}" target="_blank" >
 <i class="fa fa-facebook" aria-hidden="true"></i>
 </a></li>
+<!-- twitter -->
 <li><a class="hastip" href="https://twitter.com" title="{% trans "twitter" %}" target="_blank" >
 <i class="fa fa-twitter" aria-hidden="true"></i>
 </a></li>
+
+<!-- RSS feed -->
 <li><a class="hastip" href="{% url 'zinnia:entry_feed' %}" title="{% trans "RSS feed of last entries" %}" target="_blank" >
 <i class="fa fa-rss" aria-hidden="true"></i>
 </a></li>
+
+<!-- Site Map -->
 <li>
 <a class="hastip" href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}" class="" rel="sitemap">
 <i class="fa fa-map " aria-hidden="true"></i>
