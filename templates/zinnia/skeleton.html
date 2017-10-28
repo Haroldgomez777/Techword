@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'change/theme/css/custom.css' %}">
 <script src="{% static 'change/theme/js/jquery.min.js' %}"></script>
 <script src="{% static 'change/theme/js/bootstrap.min.js' %}"></script>
-<style>	
+<style>
 .psc-test li ol li{
 	cursor: pointer;
 }
@@ -61,12 +61,12 @@ border: 1px solid #ced3cd;
 background: transparent url({% static '/change/theme/img/tags.png' %}) no-repeat scroll;
 width: 100px;
 }
-.entry-summary > p { 
+.entry-summary > p {
 
 font-family: 'Raleway', sans-serif;
 }
 .entry-summary > p::first-letter {
-padding-left: 1.8em; 
+padding-left: 1.8em;
 font-size: 200%;
 }
 
@@ -142,7 +142,46 @@ color:black;
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
 background-image: none;
-background-color: #0f56c6;   
+background-color: #0f56c6;
+}
+
+.info {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-name: example;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    /* Standard syntax */
+    animation-name: example;
+    animation-duration: 10s;
+    animation-timing-function: ease-out;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    0%   {background-color:rgb(142, 129, 145); left:0px; top:0px;}
+    25%  {background-color:rgb(99, 195, 204); left:500px; top:0px;}
+    50%  {background-color:rgb(108, 178, 152); left:500px; top:500px;}
+    75%  {background-color:rgb(92, 148, 170); left:0px; top:500px;}
+    100% {background-color:rgb(58, 56, 57); top:0px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color:rgb(142, 129, 145); left:0px; top:0px;}
+    25%  {background-color:rgb(99, 195, 204); left:500px; top:0px;}
+    50%  {background-color:rgb(108, 178, 152); left:500px; top:500px;}
+    75%  {background-color:rgb(92, 148, 170); left:0px; top:500px;}
+    100% {background-color:rgb(58, 56, 57); top:0px;}
 }
 
 
@@ -241,18 +280,18 @@ e.preventDefault();
 });
 $("#wrapper").toggleClass("toggled");
 
-$(document).ready(function(){ 
-$(window).scroll(function(){ 
-if ($(this).scrollTop() > 100) { 
-$('#scroll').fadeIn(); 
-} else { 
-$('#scroll').fadeOut(); 
-} 
-}); 
-$('#scroll').click(function(){ 
-$("html, body").animate({ scrollTop: 0 }, 600); 
-return false; 
-}); 
+$(document).ready(function(){
+$(window).scroll(function(){
+if ($(this).scrollTop() > 100) {
+$('#scroll').fadeIn();
+} else {
+$('#scroll').fadeOut();
+}
+});
+$('#scroll').click(function(){
+$("html, body").animate({ scrollTop: 0 }, 600);
+return false;
+});
 });
 $(document).ready(function(){
 $("#hide").click(function(){
@@ -263,7 +302,7 @@ $("#hide>a").toggle();
 	$(document).ready(function(){
 
 		$('.d_1287').on('click',function(){
-			
+
 			var txt1 = " <i>&#x2714</i>";
 
 			$(this).css("color","green");
@@ -273,13 +312,13 @@ $("#hide>a").toggle();
 		});
 
 		$('.C1232_2').on('click',function(){
-			
+
 			var txt1 = " <i>&#x2716</i>";
-			
+
 			$(this).css("color","red");
 			$(this).append(txt1);
 			$(this).off('click');
-		
+
 		});
 	});
 
