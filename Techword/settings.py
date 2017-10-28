@@ -25,7 +25,7 @@ SECRET_KEY = '6acev69+%z9if#1kz&kri9#%!#p=qwthp7*l^5l=bdk577a^u%'
 # SECURITY WARNING: don't run with debug turned on in production!
 from .secrets import SECURE_SSL_REDIRECT
 
-ALLOWED_HOSTS = ['lookout.pythonanywhere.com']
+ALLOWED_HOSTS = ['lookout.pythonanywhere.com','127.0.0.1']
 
 
 from .secrets import DEBUG
