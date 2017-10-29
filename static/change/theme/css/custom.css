@@ -659,30 +659,79 @@ font-family: 'Raleway', sans-serif;
     -webkit-animation-direction: alternate;
     /* Standard syntax */
     animation-name: example;
-    animation-duration: 15s;
+    animation-duration: 3s;
     animation-timing-function: linear;
     animation-delay: 1s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 5;
     animation-direction: alternate;
-    box-shadow: 5px 5px 2.5px rgba(100,107,100,0.4);
+    box-shadow: 1px 1px 0.5px rgba(100,107,100,0.4);
 }
 .info:hover {
     animation: none;
 }
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes example {
-    0%   {background-color:#609260a8; left:0px; top:0px;}
-    25%  {background-color:#6c4ea2ba; left:900px; top:0px;}
-    50%  {background-color:#b51b1bbf; left:900px; top:470px;}
-    75%  {background-color:#bf65ac96; left:0px; top:470px;}
-    100% {background-color:#4f1a8096; top:0px;}
+    0%   {
+      background-color:#609260a8; 
+      -webkit-transform: rotate(2deg);
+      transform: rotate(2deg);
+  }
+    50%  {background-color:#6c4ea2ba;
+      -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+    }
+    /*50%  {background-color:#b51b1bbf; left:900px; top:470px;}*/
+    /*75%  {background-color:#bf65ac96; left:0px; top:470px;}*/
+    100% {background-color:#4f1a8096;
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+    }
 }
 
 /* Standard syntax */
 @keyframes example {
-    0%   {background-color:#609260a8; left:0px; top:0px;}
-    25%  {background-color:#6c4ea2ba; left:900px; top:0px;}
-    50%  {background-color:#b51b1bbf; left:900px; top:470px;}
-    75%  {background-color:#bf65ac96; left:0px; top:470px;}
-    100% {background-color:#4f1a8096; top:0px;}
+    0%   {
+      background-color:#609260a8; 
+      -webkit-transform: rotate(7deg);
+      transform: rotate(6deg);
+  }
+    50%  {background-color:#6c4ea2ba;
+      -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+    }
+    /*50%  {background-color:#b51b1bbf; left:900px; top:470px;}*/
+    /*75%  {background-color:#bf65ac96; left:0px; top:470px;}*/
+    100% {background-color:#4f1a8096;
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+    }
+}
+
+.ha-spin {
+  -webkit-animation: ha-spin 2s 1 cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  animation: ha-spin 2s 1 cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+.ha-spin:hover{
+  animation: none;
+}
+@-webkit-keyframes ha-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes ha-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
 }

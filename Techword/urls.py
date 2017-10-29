@@ -26,7 +26,7 @@ urlpatterns = [
 	url(r'^comments/', include('django_comments.urls')),
 
 
-
+    url(r'^login/', include('app.urls')),
     url(r'^about/$', TemplateView.as_view(template_name="checker.html")),
-
+    url(r'^appgen/', include('app.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
