@@ -645,11 +645,12 @@ font-family: 'Raleway', sans-serif;
 
 
 .info {
-    width: 100px;
+    width: 300px;
     height: 100px;
     background-color: #c13333a8;
     position: relative;
-    border-radius: 100%;
+    text-align: justify;
+    border-radius: 1.3%;
     /* Safari 4.0 - 8.0 */
     -webkit-animation-name: example;
     -webkit-animation-duration: 5s;
@@ -658,18 +659,30 @@ font-family: 'Raleway', sans-serif;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
     /* Standard syntax */
-    animation-name: example;
+    animation-name: fade;
     animation-duration: 3s;
     animation-timing-function: linear;
     animation-delay: 1s;
-    animation-iteration-count: 5;
+    animation-iteration-count: infinite;
     animation-direction: alternate;
-    box-shadow: 1px 1px 0.5px rgba(100,107,100,0.4);
+    box-shadow: 10px 10px 20px rgba(50,10,50,0.3);
 }
 .info:hover {
     animation: none;
 }
 /* Safari 4.0 - 8.0 */
+
+@-webkit-keyframes fade {
+  100% {
+    background-color: #c1333344;
+  }
+}
+
+@keyframes fade {
+  100% {
+    background-color: #c1333344;
+  }
+}
 @-webkit-keyframes example {
     0%   {
       background-color:#609260a8; 

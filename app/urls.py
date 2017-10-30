@@ -8,6 +8,6 @@ urlpatterns = [
     url(r'^.*\.html', views.gentella_html, name='gentella'),
 
     # The home page
-    url(r'^i$', views.index, name='index'),
-    url(r'$', views.login, name='login'),
+    url(r'^index$', views.index, name='index'),
+    url(r'^$', views.login, name='login'),
 ]
