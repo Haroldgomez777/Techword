@@ -41,9 +41,17 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django_comments',
     'mptt',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'tagging',
     'zinnia',
     'app',
+
+    # 'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.twitter',
+
 ]
 
 MIDDLEWARE = [
@@ -114,6 +122,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = (
+    
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
