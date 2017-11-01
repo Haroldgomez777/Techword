@@ -40,35 +40,37 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
 <div class="row" id="entri-styles">
 <div class="visible-lg col-sm-3 col-sm-offset-1">
       {% block entry-next-entry %}
-      <h5>{% trans "Next entry" %}</h5>
+      <button class="boo_bu">
       {% with next_entry=object.next_entry %}
       {% if next_entry %}
       <p>
       <a href="{{ next_entry.get_absolute_url }}" title="{{ next_entry.title }}" rel="next" class="hastip">
-      <i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
+      {% trans "Next" %} <span><i class="fa fa-arrow-right fa-1x" aria-hidden="true"></i></span> 
       </a>
       </p>
       {% else %}
-       <i class="fa fa-arrow-right fa-1x" aria-hidden="true"></i>
+      {% trans " Next" %}
       {% endif %}
       {% endwith %}
+      </button>
 </div>
       {% endblock entry-next-entry %}
 <div class="visible-lg col-sm-3 col-sm-offset-5">
         {% block entry-previous-entry %}
-        <h5>{% trans "Previous entry" %}</h5>
+        <button class="boo_bu">
         {% with previous_entry=object.previous_entry %}
 
         {% if previous_entry %}
         <p>
         <a href="{{ previous_entry.get_absolute_url }}" title="{{ previous_entry.title }}" rel="prev" class="hastip">
-        <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+        {% trans "Previous" %} <span><i class="fa fa-arrow-left fa-1x" aria-hidden="true"></i></span> 
         </a>
         </p>
         {% else %}
-        <i class="fa fa-arrow-left fa-1x" aria-hidden="true"></i>
+        {% trans "Previous" %}
         {% endif %}
         {% endwith %}
+        </button>
 </div>
 </div>
         {% endblock entry-previous-entry %}
@@ -198,3 +200,4 @@ title="{% trans "Direct link to this trackback" %}">#</a>
 </li>
 {% endif %}
 {% endblock admin-tools %}
+
