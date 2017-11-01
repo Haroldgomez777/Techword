@@ -1,0 +1,184 @@
+{% extends "app/base_site.html" %}
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block title %} Login {% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <!-- Animate.css -->
+  <link href="/static/vendors/animate.css/animate.min.css" rel="stylesheet">
+{% endblock stylesheets %}
+
+{% block body_class %}login{% endblock body_class %}
+
+{% block body %}
+{% get_providers as socialaccount_providers %}
+  
+  {% if socialaccount_providers %}
+<p>{% blocktrans with site.name as site_name %}Please sign in with one
+of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+
+<div class="socialaccount_ballot">
+
+  <ul class="socialaccount_providers">
+    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+  </ul>
+
+  <div class="login-or">{% trans 'or' %}</div>
+
+</div>
+
+{% include "socialaccount/snippets/login_extra.html" %}
+
+{% else %}
+
+<!-- <p>{% blocktrans %}If you have not created an account yet, then please
+<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p> -->
+{% endif %}
+  <div>
+    <a class="hiddenanchor" id="signup"></a>
+    <a class="hiddenanchor" id="signin"></a>
+
+
+    <div class="login_wrapper">
+      <div class="animate form login_form">
+    <section class="login_content" style="padding: 0px">
+          
+        
+<form method="POST" action="{% url 'account_login' %}">
+<h1>Login Form</h1>
+  {% csrf_token %}
+
+
+{% for field in form %}
+
+  {% if field.html_name != 'remember'%}
+        
+        <div>
+<input 
+{% if field.html_name == 'password'%}
+type= "password"
+{% else %}
+type= "text" 
+{% endif %} class="form-control" name="{{ field.html_name }}" 
+{% if field.html_name == 'password'%}
+placeholder="{{ field.html_name }}"
+{% else %}
+type= "text" 
+{% endif %}
+placeholder="Username" 
+required="" />
+{% for eror in field.errors%}
+<p>{{eror}}</p>
+{% endfor %}
+
+        {% if field.help_text %}
+        <p class="help">{{ field.help_text|safe }}</p>
+        {% endif %}
+        </div>
+  {% else %}
+        {{ field }}{{field.label }}<br>
+        {% if field.help_text %}
+        <p class="help">{{ field.help_text|safe }}</p>
+  {% endif %}
+
+  {% endif%}
+{% endfor %}
+{% for error in form.non_field_errors %}
+    <p>{{error}}</p>
+{% endfor %}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <a class="secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+  <div class="clearfix"></div>
+
+            <div class="separator">
+              <p class="change_link">New to site?
+                <a href="#signup" class="to_register"> Create Account </a>
+              </p>
+
+              <div class="clearfix"></div>
+    <br />
+  <button class="btn btn-default submit" type="submit">{% trans "Log In" %}</button>
+</form>
+</section>
+
+
+</div>
+
+           <!--  <h1>Login Form</h1>
+            <div>
+              <input type="text" class="form-control" placeholder="Username" required="" />
+            </div>
+            <div>
+              <input type="password" class="form-control" placeholder="Password" required="" />
+            </div>
+            <div>
+              <a class="btn btn-default submit" href="index.html">Log in</a>
+              <a class="reset_pass" href="#">Lost your password?</a> -->
+            
+<!-- 
+            <div class="clearfix"></div>
+
+            <div class="separator">
+              <p class="change_link">New to site?
+                <a href="#signup" class="to_register"> Create Account </a>
+              </p>
+
+              <div class="clearfix"></div>
+              <br />
+
+              <div> -->
+<!--                 <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p> -->
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <div id="register" class="animate form registration_form">
+        <section class="login_content">
+          <form>
+            <h1>Create Account</h1>
+            <div>
+              <input type="text" class="form-control" placeholder="Username" required="" />
+            </div>
+            <div>
+              <input type="email" class="form-control" placeholder="Email" required="" />
+            </div>
+            <div>
+              <input type="password" class="form-control" placeholder="Password" required="" />
+            </div>
+            <div>
+              <a class="btn btn-default submit" href="index.html">Submit</a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="separator">
+              <p class="change_link">Already a member ?
+                <a href="#signin" class="to_register"> Log in </a>
+              </p>
+
+              <div class="clearfix"></div>
+              <br />
+
+              <div>
+<!--                 <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p> -->
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  </div>
+{% endblock body %}
+
+
+
+

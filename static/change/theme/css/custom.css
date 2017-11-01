@@ -292,9 +292,9 @@ input[name="head"] {
 
 
 
-    body,html{
-    height: 100%;
-    background-color: #ffffff;
+body,html{
+    /*height: 100%;*/
+    background-color: #e6e6cf69;
     font-size: 17px;
     color: #001404;
 
@@ -583,14 +583,14 @@ input[name="head"] {
 
 */
 
-.panel > .panel-heading {
+.mpanel > .mpanel-heading {
   background-image: none;
   font-family: 'Raleway', sans-serif;
 }
 
-.panel > .panel-body {
-  font-family: 'Raleway', sans-serif;
-  color:#7f0000;
+.mpanel > .mpanel-body {
+  font-family: 'Raleway', 'mono-space';
+  color:#000000c7;
 }
 
 .entry-last-update{
@@ -641,4 +641,474 @@ p,a{
 
 .entry-content > p {
 font-family: 'Raleway', sans-serif;
+}
+
+
+.info {
+    width: 300px;
+    height: 100px;
+    background-color: #c13333a8;
+    position: relative;
+    text-align: justify;
+    border-radius: 1.3%;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-name: example;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    /* Standard syntax */
+    animation-name: fade;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    box-shadow: 10px 10px 20px rgba(50,10,50,0.3);
+}
+.info:hover {
+    animation: none;
+}
+/* Safari 4.0 - 8.0 */
+
+@-webkit-keyframes fade {
+  100% {
+    background-color: #c1333344;
+  }
+}
+
+@keyframes fade {
+  100% {
+    background-color: #c1333344;
+  }
+}
+@-webkit-keyframes example {
+    0%   {
+      background-color:#609260a8; 
+      -webkit-transform: rotate(2deg);
+      transform: rotate(2deg);
+  }
+    50%  {background-color:#6c4ea2ba;
+      -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+    }
+    /*50%  {background-color:#b51b1bbf; left:900px; top:470px;}*/
+    /*75%  {background-color:#bf65ac96; left:0px; top:470px;}*/
+    100% {background-color:#4f1a8096;
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+    }
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {
+      background-color:#609260a8; 
+      -webkit-transform: rotate(7deg);
+      transform: rotate(6deg);
+  }
+    50%  {background-color:#6c4ea2ba;
+      -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+    }
+    /*50%  {background-color:#b51b1bbf; left:900px; top:470px;}*/
+    /*75%  {background-color:#bf65ac96; left:0px; top:470px;}*/
+    100% {background-color:#4f1a8096;
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+    }
+}
+
+.ha-spin {
+  -webkit-animation: ha-spin 2s 1 cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  animation: ha-spin 2s 1 cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+.ha-spin:hover{
+  animation: none;
+}
+@-webkit-keyframes ha-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes ha-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+
+
+
+
+
+.mpanel {
+  margin-bottom: 20px;
+  background-color: #2c333526;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  -webkit-box-shadow: 10px 10px 15px rgba(100, 100, 120, .2);
+          box-shadow: 10px 10px 15px rgba(100, 100, 120, .2);
+}
+.mpanel-body {
+  padding: 15px;
+}
+.mpanel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.mpanel-heading > .dropdown .dropdown-toggle {
+  color: inherit;
+}
+.mpanel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 20px;
+  color: inherit;
+}
+.mpanel-title > a,
+.mpanel-title > small,
+.mpanel-title > .small,
+.mpanel-title > small > a,
+.mpanel-title > .small > a {
+  color: inherit;
+}
+.mpanel-footer {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.mpanel > .list-group,
+.mpanel > .mpanel-collapse > .list-group {
+  margin-bottom: 0;
+}
+.mpanel > .list-group .list-group-item,
+.mpanel > .mpanel-collapse > .list-group .list-group-item {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+.mpanel > .list-group:first-child .list-group-item:first-child,
+.mpanel > .mpanel-collapse > .list-group:first-child .list-group-item:first-child {
+  border-top: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.mpanel > .list-group:last-child .list-group-item:last-child,
+.mpanel > .mpanel-collapse > .list-group:last-child .list-group-item:last-child {
+  border-bottom: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.mpanel > .mpanel-heading + .mpanel-collapse > .list-group .list-group-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.mpanel-heading + .list-group .list-group-item:first-child {
+  border-top-width: 0;
+}
+.list-group + .mpanel-footer {
+  border-top-width: 0;
+}
+.mpanel > .table,
+.mpanel > .table-responsive > .table,
+.mpanel > .mpanel-collapse > .table {
+  margin-bottom: 0;
+}
+.mpanel > .table caption,
+.mpanel > .table-responsive > .table caption,
+.mpanel > .mpanel-collapse > .table caption {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.mpanel > .table:first-child,
+.mpanel > .table-responsive:first-child > .table:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.mpanel > .table:first-child > thead:first-child > tr:first-child,
+.mpanel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
+.mpanel > .table:first-child > tbody:first-child > tr:first-child,
+.mpanel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.mpanel > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.mpanel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.mpanel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.mpanel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.mpanel > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.mpanel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.mpanel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+.mpanel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+  border-top-left-radius: 3px;
+}
+.mpanel > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.mpanel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.mpanel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.mpanel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.mpanel > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.mpanel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.mpanel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+.mpanel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+  border-top-right-radius: 3px;
+}
+.mpanel > .table:last-child,
+.mpanel > .table-responsive:last-child > .table:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.mpanel > .table:last-child > tbody:last-child > tr:last-child,
+.mpanel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
+.mpanel > .table:last-child > tfoot:last-child > tr:last-child,
+.mpanel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.mpanel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.mpanel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.mpanel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.mpanel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.mpanel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.mpanel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.mpanel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.mpanel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+  border-bottom-left-radius: 3px;
+}
+.mpanel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.mpanel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.mpanel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.mpanel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.mpanel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.mpanel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.mpanel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.mpanel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+  border-bottom-right-radius: 3px;
+}
+.mpanel > .mpanel-body + .table,
+.mpanel > .mpanel-body + .table-responsive,
+.mpanel > .table + .mpanel-body,
+.mpanel > .table-responsive + .mpanel-body {
+  border-top: 1px solid #ddd;
+}
+.mpanel > .table > tbody:first-child > tr:first-child th,
+.mpanel > .table > tbody:first-child > tr:first-child td {
+  border-top: 0;
+}
+.mpanel > .table-bordered,
+.mpanel > .table-responsive > .table-bordered {
+  border: 0;
+}
+.mpanel > .table-bordered > thead > tr > th:first-child,
+.mpanel > .table-responsive > .table-bordered > thead > tr > th:first-child,
+.mpanel > .table-bordered > tbody > tr > th:first-child,
+.mpanel > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+.mpanel > .table-bordered > tfoot > tr > th:first-child,
+.mpanel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+.mpanel > .table-bordered > thead > tr > td:first-child,
+.mpanel > .table-responsive > .table-bordered > thead > tr > td:first-child,
+.mpanel > .table-bordered > tbody > tr > td:first-child,
+.mpanel > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+.mpanel > .table-bordered > tfoot > tr > td:first-child,
+.mpanel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+  border-left: 0;
+}
+.mpanel > .table-bordered > thead > tr > th:last-child,
+.mpanel > .table-responsive > .table-bordered > thead > tr > th:last-child,
+.mpanel > .table-bordered > tbody > tr > th:last-child,
+.mpanel > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+.mpanel > .table-bordered > tfoot > tr > th:last-child,
+.mpanel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+.mpanel > .table-bordered > thead > tr > td:last-child,
+.mpanel > .table-responsive > .table-bordered > thead > tr > td:last-child,
+.mpanel > .table-bordered > tbody > tr > td:last-child,
+.mpanel > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+.mpanel > .table-bordered > tfoot > tr > td:last-child,
+.mpanel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+  border-right: 0;
+}
+.mpanel > .table-bordered > thead > tr:first-child > td,
+.mpanel > .table-responsive > .table-bordered > thead > tr:first-child > td,
+.mpanel > .table-bordered > tbody > tr:first-child > td,
+.mpanel > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+.mpanel > .table-bordered > thead > tr:first-child > th,
+.mpanel > .table-responsive > .table-bordered > thead > tr:first-child > th,
+.mpanel > .table-bordered > tbody > tr:first-child > th,
+.mpanel > .table-responsive > .table-bordered > tbody > tr:first-child > th {
+  border-bottom: 0;
+}
+.mpanel > .table-bordered > tbody > tr:last-child > td,
+.mpanel > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+.mpanel > .table-bordered > tfoot > tr:last-child > td,
+.mpanel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+.mpanel > .table-bordered > tbody > tr:last-child > th,
+.mpanel > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+.mpanel > .table-bordered > tfoot > tr:last-child > th,
+.mpanel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+  border-bottom: 0;
+}
+.mpanel > .table-responsive {
+  margin-bottom: 0;
+  border: 0;
+}
+.mpanel-group {
+  margin-bottom: 20px;
+}
+.mpanel-group .mpanel {
+  margin-bottom: 0;
+  border-radius: 4px;
+}
+.mpanel-group .mpanel + .mpanel {
+  margin-top: 5px;
+}
+.mpanel-group .mpanel-heading {
+  border-bottom: 0;
+}
+.mpanel-group .mpanel-heading + .mpanel-collapse > .mpanel-body,
+.mpanel-group .mpanel-heading + .mpanel-collapse > .list-group {
+  border-top: 1px solid #ddd;
+}
+.mpanel-group .mpanel-footer {
+  border-top: 0;
+}
+.mpanel-group .mpanel-footer + .mpanel-collapse .mpanel-body {
+  border-bottom: 1px solid #ddd;
+}
+.mpanel-default {
+  border-color: #2d5f5a14;
+}
+.mpanel-default > .mpanel-heading {
+    color: #150202b5;
+    background-color: #878e9440;
+    border-color: #2d5f5a14;
+}
+.mpanel-default > .mpanel-heading > .a{
+    color: #eadedeb5;
+}
+.mpanel-default > .mpanel-heading + .mpanel-collapse > .mpanel-body {
+  border-top-color: #ddd;
+}
+.mpanel-default > .mpanel-heading .badge {
+  color: #f5f5f5;
+  background-color: #333;
+}
+.mpanel-default > .mpanel-footer + .mpanel-collapse > .mpanel-body {
+  border-bottom-color: #ddd;
+}
+.mpanel-primary {
+  border-color: #337ab7;
+}
+.mpanel-primary > .mpanel-heading {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.mpanel-primary > .mpanel-heading + .mpanel-collapse > .mpanel-body {
+  border-top-color: #337ab7;
+}
+.mpanel-primary > .mpanel-heading .badge {
+  color: #337ab7;
+  background-color: #fff;
+}
+.mpanel-primary > .mpanel-footer + .mpanel-collapse > .mpanel-body {
+  border-bottom-color: #337ab7;
+}
+.mpanel-success {
+  border-color: #d6e9c6;
+}
+.mpanel-success > .mpanel-heading {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.mpanel-success > .mpanel-heading + .mpanel-collapse > .mpanel-body {
+  border-top-color: #d6e9c6;
+}
+.mpanel-success > .mpanel-heading .badge {
+  color: #dff0d8;
+  background-color: #3c763d;
+}
+.mpanel-success > .mpanel-footer + .mpanel-collapse > .mpanel-body {
+  border-bottom-color: #d6e9c6;
+}
+.mpanel-info {
+  border-color: #bce8f1;
+}
+.mpanel-info > .mpanel-heading {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.mpanel-info > .mpanel-heading + .mpanel-collapse > .mpanel-body {
+  border-top-color: #bce8f1;
+}
+.mpanel-info > .mpanel-heading .badge {
+  color: #d9edf7;
+  background-color: #31708f;
+}
+.mpanel-info > .mpanel-footer + .mpanel-collapse > .mpanel-body {
+  border-bottom-color: #bce8f1;
+}
+.mpanel-warning {
+  border-color: #faebcc;
+}
+.mpanel-warning > .mpanel-heading {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+.mpanel-warning > .mpanel-heading + .mpanel-collapse > .mpanel-body {
+  border-top-color: #faebcc;
+}
+.mpanel-warning > .mpanel-heading .badge {
+  color: #fcf8e3;
+  background-color: #8a6d3b;
+}
+.mpanel-warning > .mpanel-footer + .mpanel-collapse > .mpanel-body {
+  border-bottom-color: #faebcc;
+}
+.mpanel-danger {
+  border-color: #ebccd1;
+}
+.mpanel-danger > .mpanel-heading {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.mpanel-danger > .mpanel-heading + .mpanel-collapse > .mpanel-body {
+  border-top-color: #ebccd1;
+}
+.mpanel-danger > .mpanel-heading .badge {
+  color: #f2dede;
+  background-color: #a94442;
+}
+.mpanel-danger > .mpanel-footer + .mpanel-collapse > .mpanel-body {
+  border-bottom-color: #ebccd1;
+}
+
+#mydiv {
+    position: absolute;
+}
+
+#mydivheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
 }

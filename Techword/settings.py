@@ -25,8 +25,9 @@ SECRET_KEY = '6acev69+%z9if#1kz&kri9#%!#p=qwthp7*l^5l=bdk577a^u%'
 # SECURITY WARNING: don't run with debug turned on in production!
 # from .secrets import SECURE_SSL_REDIRECT
 
-from .secrets import ALLOWED_HOSTS 
-# ALLOWED_HOSTS = ['lookout.pythonanywhere.com']
+
+from .secrets import ALLOWED_HOSTS
+
 
 
 from .secrets import DEBUG
@@ -42,8 +43,17 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django_comments',
     'mptt',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'tagging',
     'zinnia',
+    'app',
+
+    # 'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.twitter',
+
 ]
 
 MIDDLEWARE = [
@@ -114,6 +124,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = (
+    
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
