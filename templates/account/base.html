@@ -1,1 +1,12 @@
-{% extends "base.html" %}
+{% extends "app/base_site.html" %}
+
+      <div id="register" class="animate form registration_form">
+        <section class="login_content">
+          <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            {% block signup_form%}
+            {% endblock signup_form%}
+          </form>
+        </section>
+      </div>
+    </div>
+  </div>
