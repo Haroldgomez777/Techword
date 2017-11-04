@@ -1222,13 +1222,14 @@ text-decoration: none;
 }
 
 .hentry {background-color: #dee4e4b3;padding:2em;-webkit-box-shadow: 2px 4px 20px 15px rgb(229, 233, 233);box-shadow: 4px 5px 18px 10px rgb(206, 209, 208);}
+
 .remotebutt {
-height: 22px;
-font-size: 12px;
-background-color: #ceefd3;
-border: 1px solid #ced3cd;
-background: transparent url({% static '/change/theme/img/tags.png' %}) no-repeat scroll;
-width: 100px;
+  height: 22px;
+  font-size: 12px;
+  background-color: #f9fffac7;
+  border: 1px solid #29611e;
+  background: transparent url({% static '/change/theme/img/tags.png' %}) no-repeat scroll;
+  width: auto;
 }
 .entry-summary > p {
 
