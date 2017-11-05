@@ -38,9 +38,9 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
 {% endblock entry-content %}
 {% block entry-widgets %}
 <div class="row" id="entri-styles">
-<div class="visible-lg col-sm-3 col-sm-offset-1">
+<div class="visible-lg col-sm-3 col-sm-offset-2">
       {% block entry-next-entry %}
-      <button class="boo_bu">
+      <div class="boo_bu">
       {% with next_entry=object.next_entry %}
       {% if next_entry %}
       <p>
@@ -52,12 +52,12 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
       {% trans " Next" %}
       {% endif %}
       {% endwith %}
-      </button>
+      </div>
 </div>
       {% endblock entry-next-entry %}
-<div class="visible-lg col-sm-3 col-sm-offset-5">
+<div class="visible-lg col-sm-3 col-sm-offset-2">
         {% block entry-previous-entry %}
-        <button class="boo_bu">
+        <div class="boo_bu">
         {% with previous_entry=object.previous_entry %}
 
         {% if previous_entry %}
@@ -70,12 +70,19 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
         {% trans "Previous" %}
         {% endif %}
         {% endwith %}
-        </button>
+        </div>
 </div>
 </div>
         {% endblock entry-previous-entry %}
-<div class="row" id="entri-styles">
-<div class="visible-lg col-sm-3 col-sm-offset-1">
+{% endblock entry-widgets %}
+
+<h2> </h2>
+{% endblock content %}
+{% block footbank %}
+
+<div id="entri-styles2">
+<div class="row" >
+<div class="visible-lg col-sm-3 col-sm-offset-3">
           {% block entry-related-entries %}
           <h5>{% trans "Related entries" %}</h5>
           {% with entry_related=object.related_published %}
@@ -92,16 +99,17 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
 </div>
           {% endblock entry-related-entries %}
               {% block entry-similar-entries %}
-              <div class="visible-lg col-sm-3 col-sm-offset-5">
+              <div class="visible-lg col-sm-3 col-sm-offset-3">
               <h5>{% trans "Similar entries" %}</h5>
               {% get_similar_entries %}
               </div>
               {% endblock entry-similar-entries %}
 </div>
-{% endblock entry-widgets %}
+
+
         {% block entry-pingbacks %}
-        <div class="row" id="entri-styles">
-        <div class="visible-lg col-sm-3 col-sm-offset-1">
+        <div class="row">
+        <div class="visible-lg col-sm-3 col-sm-offset-3">
         <h5>{% trans "Pingbacks" %}</h5>
         {% if object.pingback_count %}
         {% with pingback_list=object.pingbacks %}
@@ -143,7 +151,7 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
         </div>
         {% endblock entry-pingbacks %}
 {% block entry-trackbacks %}
-<div class="visible-lg col-sm-3 col-sm-offset-5" >
+<div class="visible-lg col-sm-3 col-sm-offset-3" >
 <h5>{% trans "Trackbacks" %}</h5>
 {% if object.trackback_count or object.trackbacks_are_open %}
 {% if object.trackback_count %}
@@ -188,9 +196,10 @@ title="{% trans "Direct link to this trackback" %}">#</a>
 {% endif %}
 </div>
 </div>
+</div>
 {% endblock entry-trackbacks %}
-<h2> </h2>
-{% endblock content %}
+{% endblock footbank %}
+
 {% block admin-tools %}
 {% if perms.zinnia.change_entry %}
 <li>

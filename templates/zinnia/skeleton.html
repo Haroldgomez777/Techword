@@ -22,7 +22,7 @@
 {% block link %}{% endblock link %}
 {% block script %}{% endblock script %}
 </head>
-
+<a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
 <body>
 {% block navbar %}
 {% include "zinnia/navbar.html" %}
@@ -31,7 +31,7 @@
 <div class="row">
 <div class="visible-lg col-sm-3" style="margin-left: 10px">{% block sidebar %}{% endblock sidebar %}</div>
 <div class="col-sm-8 ">
-<a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
+
 {% block content %}
 <div class="links">
 <h2>{% trans "Useful links" %}</h2>
@@ -59,6 +59,8 @@
 <footer id="footer" role="contentinfo">
 {% block breadcrumbs %}{% endblock breadcrumbs %}
 <p>{% blocktrans %}Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.{% endblocktrans %}</p>
+{% block footbank %}
+{% endblock footbank %}
 </footer>
 <script src="{% static 'change/theme/js/tooltipsy.min.js' %}"></script>
 <script src="{% static 'change/theme/js/custom.js' %}"></script>
