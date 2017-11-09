@@ -28,7 +28,7 @@ SECRET_KEY = '6acev69+%z9if#1kz&kri9#%!#p=qwthp7*l^5l=bdk577a^u%'
 
 from .secrets import ALLOWED_HOSTS
 
-
+from .secrets import SECURE_SSL_REDIRECT
 
 from .secrets import DEBUG
 # Application definition
