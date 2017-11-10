@@ -20,6 +20,8 @@ from django.conf.urls.static import static
 from django.conf.urls import url
 from django.views.generic import TemplateView
 from . import views
+from userface.views import AboutView
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -28,7 +30,8 @@ urlpatterns = [
 
 
     url(r'^login/', include('app.urls')),
-    url(r'^about/$', TemplateView.as_view(template_name="checker.html")),
+    # url(r'^about/$', TemplateView.as_view(template_name="checker.html")),
+    url(r'^artic/$', AboutView.as_view()),
     url(r'^app/', include('app.urls')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^accounts/profile/',views.profile, name='profile'),

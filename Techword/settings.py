@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'tagging',
     'zinnia',
     'app',
+    'userface',
 
     # 'allauth.socialaccount.providers.facebook',
     # 'allauth.socialaccount.providers.google',

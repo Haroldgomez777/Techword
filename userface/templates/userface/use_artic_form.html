@@ -1,0 +1,28 @@
+{% extends 'userface/base.html' %}
+
+{% block body %}
+	<div class="jumbotron">
+		<div class="container">
+	<h1>Create Article</h1>
+	<form>
+		<div><input type="text" name="" placeholder="Title"></div>
+		<label class="custom-file">
+  				<input type="file" id="file" class="custom-file-input">
+  			<span class="custom-file-control"></span>
+		</label>
+		<div><textarea rows="5" cols="100" data-provide="markdown-editable" data-iconlibrary="fa"></textarea></div>
+		<div><textarea rows="10" cols="100" data-provide="markdown-editable" data-iconlibrary="fa"> </textarea></div>
+		<select>  
+
+ 		</select>
+ 		<div><select>
+ 			<option value="draft">Draft</option>
+ 			<option value="published">Published</option>
+ 			<option value="hidden">Hidden</option>
+ 			</select>
+ 		</div>
+		<div><input type="submit" name=""></div>
+	</form>
+</div>
+</div>
+{% endblock body %}
