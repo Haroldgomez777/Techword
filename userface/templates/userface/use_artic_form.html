@@ -4,25 +4,26 @@
 	<div class="jumbotron">
 		<div class="container">
 	<h1>Create Article</h1>
-	<form>
-		<div><input type="text" name="" placeholder="Title"></div>
-		<label class="custom-file">
-  				<input type="file" id="file" class="custom-file-input">
-  			<span class="custom-file-control"></span>
-		</label>
-		<div><textarea rows="5" cols="100" data-provide="markdown-editable" data-iconlibrary="fa"></textarea></div>
-		<div><textarea rows="10" cols="100" data-provide="markdown-editable" data-iconlibrary="fa"> </textarea></div>
-		<select>  
-
- 		</select>
- 		<div><select>
- 			<option value="draft">Draft</option>
- 			<option value="published">Published</option>
- 			<option value="hidden">Hidden</option>
- 			</select>
- 		</div>
-		<div><input type="submit" name=""></div>
+	<form action="{% url 'poster' %}" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+			{{ form.as_p }}
+		<input type="submit" name="">
 	</form>
 </div>
 </div>
 {% endblock body %}
+
+<!-- 
+		<div><input type="text" name="titler" placeholder="Title"></div>
+		<label class="custom-file">
+  				<input type="file" name="filere" class="custom-file-input" enctype="multipart/form-data">
+  			<span class="custom-file-control"></span>
+		</label>
+		<div><textarea name="lead" rows="5" cols="100" data-provide="markdown-editable" data-iconlibrary="fa"></textarea></div>
+		<div><textarea name="content" rows="10" cols="100" data-provide="markdown-editable" data-iconlibrary="fa"> </textarea></div>
+			<select id="id_status" name="status" required>
+			<option value="0" selected="selected">draft</option>
+			<option value="1">hidden</option>
+			<option value="2">published</option>
+			</select>
+		<div><input type="submit" name=""></div> -->
