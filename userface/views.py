@@ -12,7 +12,9 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from Techword.settings import MEDIA_ROOT,ZINNIA_UPLOAD_TO
 from .forms import ArticleForm
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def change(request):
 
     if request.method == "POST":
@@ -28,11 +30,14 @@ def change(request):
             post.save()
             Artic = Entry.objects.get(id=post.pk)
             Artic.sites=[Site.objects.get_current().pk]
+            Artic.authors = [request.user.pk]
+            Artic.save()
             return render(request, 'userface/use_artic_form.html', {'form': form})
     else:
         form = ArticleForm()
         return render(request, 'userface/use_artic_form.html', {'form': form })
 
+@login_required
 def AboutView(request):
 	form = ArticleForm()
 	return render(request, 'userface/use_artic_form.html', {'form': form})

@@ -4,11 +4,13 @@
 	<div class="jumbotron">
 		<div class="container">
 	<h1>Create Article</h1>
-	<form action="{% url 'poster' %}" method="POST" enctype="multipart/form-data">
+	<div>
+	<form class="form-group" action="{% url 'poster' %}" method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
 			{{ form.as_p }}
 		<input type="submit" name="">
 	</form>
+	</div>
 </div>
 </div>
 {% endblock body %}

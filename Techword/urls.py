@@ -31,7 +31,7 @@ urlpatterns = [
 
     url(r'^login/', include('app.urls')),
     # url(r'^about/$', TemplateView.as_view(template_name="checker.html")),
-    url(r'^artic/', include('userface.urls') ,name='artic'),
+    url(r'^artic/', include('userface.urls')),
     url(r'^artic/post$', change, name='poster'),
     url(r'^app/', include('app.urls')),
     url(r'^accounts/', include('allauth.urls')),
