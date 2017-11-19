@@ -51,8 +51,8 @@ INSTALLED_APPS = [
     'app',
     'userface',
 
-    # 'allauth.socialaccount.providers.facebook',
-    # 'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
     # 'allauth.socialaccount.providers.twitter',
 
 ]

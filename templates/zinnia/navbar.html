@@ -65,7 +65,7 @@ font-size: 10pt; height: 28px; width:186px; color: #000000; padding-left: 2px; f
 </a></li>
 <li>
 <!-- https://www.facebook.com/reversestring/ -->
-<a class="hastip" href="#" title="{% trans "facebook" %}" target="_blank" >
+<a class="hastip" href="https://www.facebook.com/swell17" title="{% trans "facebook" %}" target="_blank" >
 <i class="fa fa-facebook ha-spin" aria-hidden="true"></i>
 </a></li>
 <!-- twitter -->
@@ -87,7 +87,7 @@ font-size: 10pt; height: 28px; width:186px; color: #000000; padding-left: 2px; f
 <!-- login  -->
 <li>
 {% if user.is_authenticated %}
-<a class="hastip" href="" title="{% trans "login" %}" class="" rel="sitemap">
+<a class="hastip" href="{% url 'account_logout' %}" title="{% trans "logout" %}" class="" rel="sitemap">
 <i class="fa fa fa-user-circle ha-spin" aria-hidden="true"></i>
 </a>
 {% else %}
