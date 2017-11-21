@@ -836,8 +836,8 @@ font-family: 'Raleway', sans-serif;
   background-color: #dae1e41f;
   border: 1px solid transparent;
   border-radius: 2px;
-  -webkit-box-shadow: 5px 5px 5px 1px rgba(37, 49, 44, 0.2);
-  box-shadow: 5px 5px 5px 1px rgba(37, 49, 44, 0.2);
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(7, 10, 14, 0.69);
+  box-shadow: 1px 1px 4px 0px rgba(39, 39, 39, 0.32);
 }
 .mpanel-body {
   padding: 15px;
