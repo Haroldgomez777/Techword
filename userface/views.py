@@ -43,3 +43,5 @@ def AboutView(request):
 	return render(request, 'userface/use_artic_form.html', {'form': form})
 
 
+def matter(request):
+    return render(request,'user_profile/userprofile.html')

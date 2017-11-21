@@ -7,4 +7,5 @@ urlpatterns = [
     # Or create a separate django app.
 
     url(r'^$', views.AboutView, name='about'),
+    url(r'^min$', views.matter),
 ]
