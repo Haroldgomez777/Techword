@@ -15,7 +15,7 @@ i.e, One project one Virtualenvironment
 ```
 cd inside the Project folder Techword
 
-pip install -r requirements.txt       // maybe -t check it
+pip install -r requirements.txt
 
 ```
 
