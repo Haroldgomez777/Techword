@@ -1234,6 +1234,9 @@ text-decoration: none;
   background: transparent url({% static '/change/theme/img/tags.png' %}) no-repeat scroll;
   width: auto;
 }
+.entry-summary {
+	max-width:100%;
+}
 .entry-summary > p {
 
 font-family: 'Raleway', sans-serif;
@@ -1327,4 +1330,6 @@ background-color: #0f56c6;
 }
 
 
-
+.button-lookout {
+  background-color: rgba(1,1,1,1);
+}

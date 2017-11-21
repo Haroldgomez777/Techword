@@ -1,21 +1,25 @@
 {% load socialaccount %}
 
 {% get_providers as socialaccount_providers %}
-
+<div class="row">
 {% for provider in socialaccount_providers %}
 {% if provider.id == "openid" %}
 {% for brand in provider.get_brands %}
-<button class="{{brand.name}}">
+
   <a title="{{brand.name}}" 
-     class="socialaccount_provider {{provider.id}} {{brand.id}}" 
-     href="{% provider_login_url provider.id openid=brand.openid_url process=process %}"
-     >{{brand.name}}</a>
-</button>
+  		href="{% provider_login_url provider.id openid=brand.openid_url process=process %}"
+     class="btn button-default socialaccount_provider {{provider.id}} {{brand.id}}" >{{brand.name}}</a>
+
 {% endfor %}
+
 {% endif %}
-<button class="btn {{provider.name}}">
-  <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}}" 
-     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">{{provider.name}}</a>
-     <span class="fa-{% filter lower %}{{provider.name}}{% endfilter %}"></span>
-</button>
+
+<div class="col-sm-3" style="margin:10px; padding: 10px;">
+     <form method="post" action="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
+  {% csrf_token %}
+     	<button class="btn button-default ">{{provider.name}} <span class="fa-{% filter lower %}{{provider.name}}{% endfilter %}"></span></a></button>
+     </form>
+</div>
+
 {% endfor %}
+</div>
