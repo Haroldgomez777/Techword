@@ -7,7 +7,7 @@
 	<div>
 	<form class="form-group" action="{% url 'poster' %}" method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
-			{{ form.as_p }}
+			{{ form }}
 		<input type="submit" name="">
 	</form>
 	</div>
