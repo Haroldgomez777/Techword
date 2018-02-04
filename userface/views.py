@@ -45,3 +45,18 @@ def AboutView(request):
 
 def matter(request):
     return render(request,'user_profile/userprofile.html')
+
+def userview(request):
+    return render(request,'blogui/index.html')
+
+def user_article_gallery(request):
+    return render(request,'blogui/gallary.html')
+
+def user_article_create(request):
+    return render(request,'blogui/article.html')
+
+def user_category_create(request):
+    return render(request,'blogui/category.html')
+
+def user_tag_create(request):
+    return render(request,'blogui/tag.html')
