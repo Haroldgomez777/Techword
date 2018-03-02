@@ -80,11 +80,12 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
 {% endblock content %}
 {% block footbank %}
 
-<div id="entri-styles2">
+<div id="entri-styles2" >
 <div class="row" >
-<div class="visible-lg col-sm-3 col-sm-offset-3">
+<div class="visible-lg col-sm-2 col-sm-offset-2">
           {% block entry-related-entries %}
           <h5>{% trans "Related entries" %}</h5>
+<div class="footsteps">
           {% with entry_related=object.related_published %}
           {% if entry_related %}
           <ul>
@@ -98,19 +99,26 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
           {% endwith %}
 </div>
           {% endblock entry-related-entries %}
-              {% block entry-similar-entries %}
-              <div class="visible-lg col-sm-3 col-sm-offset-3">
-              <h5>{% trans "Similar entries" %}</h5>
-              {% get_similar_entries %}
-              </div>
-              {% endblock entry-similar-entries %}
 </div>
 
 
+          <div class="visible-lg col-sm-2 ">
+          {% block entry-similar-entries %}
+
+          <h5>{% trans "Similar entries" %}</h5>
+<div class="footsteps">
+          {% get_similar_entries %}
+</div>
+          {% endblock entry-similar-entries %}
+          </div>
+              
+
+
+
         {% block entry-pingbacks %}
-        <div class="row">
-        <div class="visible-lg col-sm-3 col-sm-offset-3">
+<div class="visible-lg col-sm-2">
         <h5>{% trans "Pingbacks" %}</h5>
+<div class="footsteps">
         {% if object.pingback_count %}
         {% with pingback_list=object.pingbacks %}
           {% block pingbacks-loop %}
@@ -138,6 +146,7 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
             </li>
             {% endfor %}
           </ol>
+
           {% endblock pingbacks-loop %}
         {% endwith %}
         {% endif %}
@@ -148,11 +157,13 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
               <p>{% trans "Pingbacks are closed." %}</p>
               {% endif %}
               {% endblock pingbacks-status %}
-        </div>
+</div>
+</div>
         {% endblock entry-pingbacks %}
 {% block entry-trackbacks %}
-<div class="visible-lg col-sm-3 col-sm-offset-3" >
+<div class="visible-lg col-sm-2" >
 <h5>{% trans "Trackbacks" %}</h5>
+<div class="footsteps">
 {% if object.trackback_count or object.trackbacks_are_open %}
 {% if object.trackback_count %}
 {% with trackback_list=object.trackbacks %}
@@ -194,6 +205,7 @@ title="{% trans "Direct link to this trackback" %}">#</a>
       {% endblock trackbacks-status %}
 
 {% endif %}
+</div>
 </div>
 </div>
 </div>

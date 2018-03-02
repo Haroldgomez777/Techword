@@ -295,9 +295,9 @@ input[name="head"] {
 
 body,html{
     /* height: 100%; */
-    background-color: #f1f1f169;
+    background-color: #e2e2e25c;
     font-size: 18px;
-    color: #000000;
+    color: #2d2a2a;
   }
 
 
@@ -591,8 +591,25 @@ body,html{
 .mpanel > .mpanel-body {
   font-family: 'Raleway', 'mono-space';
   color:#000000c7;
+  overflow: scroll;
+  overflow-x: hidden;
+  max-height: 100px;
+  min-height:  100px;
 }
-
+  .mpanel > .mpanel-body::-webkit-scrollbar{
+    width: 20px;
+  }
+  
+  .mpanel > .mpanel-body::-webkit-scrollbar-track{
+    background: #ebeded;
+    border-left: 9px solid #ebeded;
+    border-right: 9px solid #ebeded;
+  }
+  .mpanel > .mpanel-body::-webkit-scrollbar-thumb{
+    background: #3e3030b5;
+    border-left: 7px solid #ebeded;
+    border-right: 7px solid #ebeded;
+  }
 .entry-last-update{
   font-size: 12px;
   font-family: 'Raleway', sans-serif;
@@ -1270,7 +1287,7 @@ background-image: none;
 background-color: #0f56c6;
 }
 
-#entri-styles2 {position: absolute;background-color: #020101ed;color: #efe8e8c7;left: 0px;right: 0px;width: 100%;height: auto;}
+#entri-styles2 {position: absolute;background-color: #020101ed;color: #efe8e8c7;left: 0px;right: 0px;width: 100%;}
 
 #entri-styles2  h5  {
   font-family: Relaway;
@@ -1286,3 +1303,26 @@ background-color: #0f56c6;
 .button-lookout {
   background-color: rgba(1,1,1,1);
 }
+
+
+.footsteps {
+  font-family: 'Raleway', 'mono-space';
+  overflow: auto;
+  overflow-x: hidden;
+  max-height: 200px;
+  min-height: 200px;
+}
+  .footsteps::-webkit-scrollbar{
+    width: 20px;
+  }
+  
+  .footsteps::-webkit-scrollbar-track{
+    background: #110f0f;
+    border-left: 9px solid #110f0f;
+    border-right: 9px solid #110f0f;
+  }
+  .footsteps::-webkit-scrollbar-thumb{
+    background: #ffffff;
+    border-left: 7px solid #110f0f;
+    border-right: 7px solid #110f0f;
+  }
