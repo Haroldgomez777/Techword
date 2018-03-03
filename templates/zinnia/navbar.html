@@ -55,7 +55,7 @@ font-size: 10pt; height: 28px; width:186px; color: #000000; padding-left: 2px; f
 <ul class="nav navbar-nav navbar-right" id="co">
 
 {% if user.is_authenticated %}
-<li><a class="hastip" href="{% url 'about' %}" title="create article" target="_blank" >
+<li><a class="hastip" href="{% url 'userface:about' %}" title="create article" target="_blank" >
 Create Article
 </a></li>
 <li>

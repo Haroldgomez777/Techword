@@ -17,7 +17,7 @@ class ArticleForm(ModelForm):
 						max_length=255,
 						widget=forms.TextInput(attrs={
 							'id': 'wer',
-							'class':'form-control',
+							'class':'form-control col-md-7 col-xs-12',
 							'type': 'text'
 							}))
 	status = IntegerField( widget=forms.Select(
@@ -26,12 +26,12 @@ class ArticleForm(ModelForm):
 										))
 	publication_date = DateTimeField (widget=forms.TextInput(attrs={
 									'type': 'date',
-									'class': 'form-control'
+									'class': 'form-control col-md-7 col-xs-12'
 									}))
 	content = CharField (
 						widget=forms.Textarea(attrs={
 									'type': 'textarea',
-									'class': 'form-control'
+									'class': 'form-control col-md-7 col-xs-12'
 									}))
 	image = ImageField(
 						widget=forms.ClearableFileInput(attrs={
@@ -42,7 +42,7 @@ class ArticleForm(ModelForm):
 	lead = CharField (
 						widget=forms.Textarea(attrs={
 									'type': 'textarea',
-									'class': 'form-control'
+									'class': 'form-control col-md-7 col-xs-12'
 									}))
 	class Meta:
 		model = Entry

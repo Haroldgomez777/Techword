@@ -1,12 +1,10 @@
 from django.conf.urls import url
 from userface import views
 
+
+# /artic/
 app_name = 'userface'
 urlpatterns = [
-    # Matches any html file - to be used for gentella
-    # Avoid using your .html in your resources.
-    # Or create a separate django app.
-
     url(r'^$', views.AboutView, name='about'),
     url(r'^min$', views.matter),
     url(r'^home$',views.userview,name='home'),

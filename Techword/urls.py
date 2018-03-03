@@ -26,8 +26,7 @@ from userface.views import change
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('zinnia.urls')),
-	url(r'^comments/', include('django_comments.urls')),
-
+    url(r'^comments/', include('django_comments.urls')),
 
     url(r'^login/', include('app.urls')),
     # url(r'^about/$', TemplateView.as_view(template_name="checker.html")),

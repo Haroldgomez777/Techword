@@ -20,8 +20,9 @@ def gentella_html(request):
     return HttpResponse(template.render(context, request))
 
 def login(request):
+    context = {}
     template = loader.get_template('app/' + 'login.html')
-    return HttpResponse(template.render(request))
+    return HttpResponse(template.render(context,request))
 
 def login_user(request):
     pass

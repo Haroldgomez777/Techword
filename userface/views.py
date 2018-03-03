@@ -29,10 +29,12 @@ def change(request):
                         )
             post.save()
             Artic = Entry.objects.get(id=post.pk)
-            Artic.sites=[Site.objects.get_current().pk]
-            Artic.authors = [request.user.pk]
+            Artic.sites.set([Site.objects.get_current().pk])
+            Artic.authors.set([request.user.pk])
             Artic.save()
             return render(request, 'userface/use_artic_form.html', {'form': form})
+        else:
+            return HttpResponse(str('error'));
     else:
         form = ArticleForm()
         return render(request, 'userface/use_artic_form.html', {'form': form })
