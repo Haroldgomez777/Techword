@@ -25,9 +25,16 @@ class ArticleForm(ModelForm):
 										attrs={'class': 'form-control' }
 										))
 	publication_date = DateTimeField (widget=forms.TextInput(attrs={
-									'type': 'date',
+									'type': 'text',
+									'id': 'single_cal1',
+									'class': 'form-control col-md-7 col-xs-12',
+									}))
+	lead = CharField (
+						widget=forms.Textarea(attrs={
+									'type': 'textarea',
 									'class': 'form-control col-md-7 col-xs-12'
 									}))
+
 	content = CharField (
 						widget=forms.Textarea(attrs={
 									'type': 'textarea',
@@ -39,11 +46,6 @@ class ArticleForm(ModelForm):
 									'class': ''
 									})
 						)
-	lead = CharField (
-						widget=forms.Textarea(attrs={
-									'type': 'textarea',
-									'class': 'form-control col-md-7 col-xs-12'
-									}))
 	class Meta:
 		model = Entry
 		exclude = ['id',

@@ -3,7 +3,7 @@
 // });
 
 $('.hastip').tooltipsy({
-offset: [0, 10],
+offset: [1,1],
 css: {
 'padding': '2px',
 'max-width': '200px',

@@ -38,7 +38,7 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
 {% endblock entry-content %}
 {% block entry-widgets %}
 <div class="row" id="entri-styles">
-<div class="visible-lg col-sm-3 col-sm-offset-2">
+<div class="col-md-3 col-sm-offset-2">
       {% block entry-next-entry %}
       <div class="boo_bu">
       {% with next_entry=object.next_entry %}
@@ -55,7 +55,7 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
       </div>
 </div>
       {% endblock entry-next-entry %}
-<div class="visible-lg col-sm-3 col-sm-offset-2">
+<div class="col-md-3 col-sm-offset-2">
         {% block entry-previous-entry %}
         <div class="boo_bu">
         {% with previous_entry=object.previous_entry %}

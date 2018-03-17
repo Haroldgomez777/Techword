@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'app',
     'userface',
 
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.google',
     # 'allauth.socialaccount.providers.twitter',
 
 ]
@@ -134,6 +134,9 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+SECURE_SSL_REDIRECT = False
 
 
 # Static files (CSS, JavaScript, Images)

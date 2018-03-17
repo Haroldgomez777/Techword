@@ -29,6 +29,10 @@
 <link href="{% static 'vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css'%}" rel="stylesheet">
 <!-- JQVMap -->
 <link href="{% static 'vendors/jqvmap/dist/jqvmap.min.css'%}" rel="stylesheet"/>
+<link href="{% static 'builder/css/custom.css'%}" rel="stylesheet"/>
+<style>
+
+</style>
 {% endblock stylesheets %}
 </head>
 <body>
@@ -77,6 +81,19 @@
 <script src="{% static 'vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js' %}"></script>
 <!-- starrr -->
 <script src="{% static 'vendors/starrr/dist/starrr.js' %}"></script>
+<script>
+
+	$('#single_cal1').daterangepicker({
+        singleDatePicker: true,
+        singleClasses: "picker_2",
+		locale: {
+            format: 'DD/MM/YYYY'
+        }
+    }, function(start, end, label) {
+        console.log(start.toISOString(), end.toISOString(), label);
+    });
+
+</script>
 </html>
 
 <!-- <script src="{% static 'vendors/fastclick/lib/fastclick.js' %}"></script> -->

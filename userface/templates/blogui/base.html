@@ -12,6 +12,24 @@
   <link rel="shortcut icon" href="{% static 'assets/images/fake-angels-by-chriscold-dbc3j51-1259x634.jpg' %}" type="image/x-icon">
   <meta name="description" content="">
   <title>Home</title>
+  <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.css' %}">
+
+<!-- Bootstrap -->
+<link href="{% static 'vendors/bootstrap/dist/css/bootstrap.min.css'%}" rel="stylesheet">
+<!-- Font Awesome -->
+<link href="{% static 'vendors/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet">
+<!-- NProgress -->
+<link href="{% static 'vendors/nprogress/nprogress.css'%}" rel="stylesheet">
+<!-- bootstrap-daterangepicker -->
+<link href="{% static 'vendors/bootstrap-daterangepicker/daterangepicker.css'%}" rel="stylesheet">
+<!-- iCheck -->
+<link href="{% static 'vendors/iCheck/skins/flat/green.css'%}" rel="stylesheet">
+<!-- bootstrap-progressbar -->
+<link href="{% static 'vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css'%}" rel="stylesheet">
+<!-- JQVMap -->
+<link href="{% static 'vendors/jqvmap/dist/jqvmap.min.css'%}" rel="stylesheet"/>
+<link href="{% static 'builder/css/custom.css'%}" rel="stylesheet"/>
+
   <link rel="stylesheet" href="{% static 'assets/web/assets/mobirise-icons/mobirise-icons.css' %}">
   <link rel="stylesheet" href="{% static 'assets/tether/tether.min.css' %} ">
   <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css'%} ">
@@ -66,7 +84,7 @@
                         Add Tags</a>
                 </li>
                 <li class="nav-item">
-             <a class="nav-link link text-white display-4" href="{% url 'userface:article' %}">
+             <a class="nav-link link text-white display-4" href="{% url 'userface:about' %}">
              	<span class="mbri-edit2 mbr-iconfont mbr-iconfont-btn"></span>
                         Write Article</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="{% url 'userface:gallary' %}"><span class="mbri-pages mbr-iconfont mbr-iconfont-btn"></span>View Your Articles&nbsp;</a></li></ul>
             <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="/"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Home</a></div>
@@ -76,7 +94,65 @@
 	  {% block body %}
       {% endblock body %}
 </body>
+  
+  <script src="{% static 'bootstrap-4.0.0-beta.2-dist/js/jquery-3.2.1.slim.min.js' %}"></script>
+<script src="{% static 'slim/slim.min.js'%}"></script>
+<script src="{% static 'slim/tether.min.js'%}"></script>
 
+<script src="{% static 'bootstrap-4.0.0-beta.2-dist/js/popper.js' %}"></script>
+<script src="{% static 'bootstrap-4.0.0-beta.2-dist/js/bootstrap.min.js' %}"></script>
+
+
+<script src="{% static 'toopay-bootstrap-markdown-878f349/js/bootstrap-markdown.js' %}" type="text/javascript"></script>
+<script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
+<!-- Bootstrap -->
+<script src="{% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<!-- FastClick -->
+<script src="{% static 'vendors/fastclick/lib/fastclick.js' %}"></script>
+<!-- NProgress -->
+<script src="{% static 'vendors/nprogress/nprogress.js' %}"></script>
+<!-- bootstrap-progressbar -->
+<script src="{% static 'vendors/bootstrap-progressbar/bootstrap-progressbar.min.js' %}"></script>
+<!-- iCheck -->
+<script src="{% static 'vendors/iCheck/icheck.min.js' %}"></script>
+<!-- bootstrap-daterangepicker -->
+<script src="{% static 'vendors/moment/min/moment.min.js' %}"></script>
+<script src="{% static 'vendors/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+<!-- bootstrap-wysiwyg -->
+<script src="{% static 'vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js' %}"></script>
+<script src="{% static 'vendors/jquery.hotkeys/jquery.hotkeys.js' %}"></script>
+<script src="{% static 'vendors/google-code-prettify/src/prettify.js' %}"></script>
+<!-- jQuery Tags Input -->
+<script src="{% static 'vendors/jquery.tagsinput/src/jquery.tagsinput.js' %}"></script>
+<!-- Switchery -->
+<script src="{% static 'vendors/switchery/dist/switchery.min.js' %}"></script>
+<!-- Select2 -->
+<script src="{% static 'vendors/select2/dist/js/select2.full.min.js' %}"></script>
+<!-- Parsley -->
+<script src="{% static 'vendors/parsleyjs/dist/parsley.min.js' %}"></script>
+<!-- Autosize -->
+<script src="{% static 'vendors/autosize/dist/autosize.min.js' %}"></script>
+<!-- jQuery autocomplete -->
+<script src="{% static 'vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js' %}"></script>
+<!-- starrr -->
+<script src="{% static 'vendors/starrr/dist/starrr.js' %}"></script>
+<script>
+
+  $('#single_cal1').daterangepicker({
+        singleDatePicker: true,
+        singleClasses: "picker_2",
+    locale: {
+            format: 'DD/MM/YYYY'
+        }
+    }, function(start, end, label) {
+        console.log(start.toISOString(), end.toISOString(), label);
+    });
+
+</script>
+
+
+
+  
   <script src="{%static 'assets/web/assets/jquery/jquery.min.js'%}"></script>
   <script src="{%static 'assets/popper/popper.min.js' %}"></script>
   <script src="{%static 'assets/tether/tether.min.js' %}"></script>

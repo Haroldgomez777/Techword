@@ -295,6 +295,7 @@ input[name="head"] {
 
 body,html{
     /* height: 100%; */
+    /* width:  100%; */
     background-color: #e2e2e25c;
     font-size: 18px;
     color: #2d2a2a;
@@ -807,7 +808,7 @@ color: white;
   border: 1px solid transparent;
   border-radius: 2px;
   -webkit-box-shadow: 1px 1px 5px 0px rgba(7, 10, 14, 0.69);
-  box-shadow: 1px 1px 4px 0px rgba(39, 39, 39, 0.32);
+  box-shadow: 1px 1px 5px 0px rgba(7, 10, 14, 0.69);
 }
 .mpanel-body {
   padding: 15px;
@@ -815,8 +816,8 @@ color: white;
 .mpanel-heading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
-  /* border-top-left-radius: 3px; */
-  /* border-top-right-radius: 3px; */
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .mpanel-heading > .dropdown .dropdown-toggle {
   color: inherit;
@@ -1040,8 +1041,8 @@ color: white;
   border-color: #2d5f5a14;
 }
 .mpanel-default > .mpanel-heading {
-    color: #383e40cc;
-    background-color: #d2d4d496;
+    color: #000000;
+    background-color: #c5c5c55e;
     border-color: #2d5f5a14;
 }
 .mpanel-default > .mpanel-heading > .a{
@@ -1185,9 +1186,7 @@ margin-right: 100px;
 .ders {
 background-color: white;
 }
-#ss {
-margin-left: 1em;
-}
+#ss {margin-left: 1em;}
 a {color: #232d25e0;outline:none;font-family: Verdana, Geneva, sans-serif;}
 a:hover {
 color: #000d59;
@@ -1325,4 +1324,10 @@ background-color: #0f56c6;
     background: #ffffff;
     border-left: 7px solid #110f0f;
     border-right: 7px solid #110f0f;
+  }
+
+  .navbar-nav>li>.drop-change {
+    top:115%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }

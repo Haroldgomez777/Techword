@@ -94,13 +94,14 @@
 
     {% block continue-reading %}
     {% if continue_reading and object_content.has_more %}
-    <p class="continue-reading">
+   <p class="continue-reading">
     <a href="{{ object.get_absolute_url }}"
     title="{% blocktrans with object=object.title percent=object_content.remaining_percent|floatformat:0 %}{{ percent }}% of {{ object }} still remains to read.{% endblocktrans %}"
     rel="bookmark" itemprop="url" class="hastip">
     <h3 style="text-align:center">{% trans "Continue reading" %}</h3>
     </a>
     </p>
+
     {% endif %}
     {% endblock continue-reading %}
 </div>

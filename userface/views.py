@@ -13,36 +13,39 @@ from django.urls import reverse
 from Techword.settings import MEDIA_ROOT,ZINNIA_UPLOAD_TO
 from .forms import ArticleForm
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_protect
 
+@csrf_protect
 @login_required
 def change(request):
 
     if request.method == "POST":
         form = ArticleForm(request.POST, request.FILES)
-        if form.is_valid():
-            post = Entry(title=request.POST.get('title'),
-                        slug=slugify(request.POST.get('title')),
-                        lead=request.POST.get('lead'),
-                        image=request.FILES.get('image'),
-                        status=request.POST.get('status'),
-                        content=request.POST.get('content'),
-                        )
-            post.save()
-            Artic = Entry.objects.get(id=post.pk)
-            Artic.sites.set([Site.objects.get_current().pk])
-            Artic.authors.set([request.user.pk])
-            Artic.save()
-            return render(request, 'userface/use_artic_form.html', {'form': form})
-        else:
-            return HttpResponse(str('error'));
+        make_a_slug=slugify(request.POST.get('title'))
+        post = Entry(title=request.POST.get('title'),
+                    slug=make_a_slug,
+                    lead=request.POST.get('lead'),
+                    image=request.FILES.get('image'),
+                    status=request.POST.get('status'),
+                    content=request.POST.get('content'),
+                    )
+        post.save()
+        make_a_slug = make_a_slug + str(post.pk)
+        make_a_slug = slugify(make_a_slug)
+        Artic = Entry.objects.get(id=post.pk)
+        Artic.sites.set([Site.objects.get_current().pk])
+        Artic.slug = make_a_slug
+        Artic.authors.set([request.user.pk])
+        Artic.save()
+        return render(request, 'blogui/article.html', {'form': form})
     else:
         form = ArticleForm()
-        return render(request, 'userface/use_artic_form.html', {'form': form })
+        return render(request, 'blogui/article.html', {'form': form })
 
 @login_required
 def AboutView(request):
 	form = ArticleForm()
-	return render(request, 'userface/use_artic_form.html', {'form': form})
+	return render(request, 'blogui/article.html', {'form': form})
 
 
 def matter(request):
