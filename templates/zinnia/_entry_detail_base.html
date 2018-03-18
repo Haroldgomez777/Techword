@@ -79,16 +79,21 @@
           {% endif %}
           {% endblock entry-image %}
               {% block entry-lead %}
+              {% if continue_reading and object.lead %}
+              <div class="entry-summary" itemprop="headline">
+              <p>{{ object.lead }}</p>
+              </div>
+              {% endif %}
               {% if not continue_reading and object.lead %}
               <div class="entry-summary" itemprop="headline">
-              {{ object.html_lead|safe }}
+              <p>{{ object.lead }}</p>
               </div>
               {% endif %}
               {% endblock entry-lead %}
 
           {% block entry-content %}
           <div class="entry-content" itemprop="articleBody">
-          {{ object_content|safe }}
+          <p>{{ object.content }}</p>
           </div>
           {% endblock entry-content %}
 

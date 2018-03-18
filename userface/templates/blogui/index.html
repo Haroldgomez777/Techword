@@ -10,7 +10,7 @@
             </div>
 
             <div class="media-content">
-                <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-1">Name</h1>
+                <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-1">{{ user.get_full_name }}</h1>
                 <h3 class="mbr-section-subtitle align-left mbr-white mbr-light pb-3 mbr-fonts-style display-2">
                     klout Mobile
                 </h3>
@@ -18,8 +18,8 @@
                     <p class="mbr-text mbr-fonts-style display-5">Bio : Full width intro with image background, color overlay and a picture on the left. You can easily change the size of image in block parameters.
                     </p>
                 </div>
-                <div class="mbr-section-btn"><a class="btn btn-md btn-primary display-4" href="https://mobirise.com">Articles</a>
-                    <a class="btn btn-md btn-white-outline display-4" href="https://mobirise.com">Unpublished</a></div>
+                <div class="mbr-section-btn"><a class="btn btn-md btn-primary display-4" href="{%url 'userface:about' %}">Articles</a>
+                    <a class="btn btn-md btn-white-outline display-4" href="{%url 'userface:about' %}">Unpublished</a></div>
             </div>
         </div>
     </div>
