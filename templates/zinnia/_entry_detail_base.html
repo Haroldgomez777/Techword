@@ -81,20 +81,26 @@
               {% block entry-lead %}
               {% if continue_reading and object.lead %}
               <div class="entry-summary" itemprop="headline">
-              <p>{{ object.lead }}</p>
+              <p>{{ object.lead|safe }}</p>
               </div>
               {% endif %}
               {% if not continue_reading and object.lead %}
               <div class="entry-summary" itemprop="headline">
-              <p>{{ object.lead }}</p>
+              <p>{{ object.lead|safe }}</p>
               </div>
               {% endif %}
               {% endblock entry-lead %}
 
           {% block entry-content %}
+          {% if object.lead %}
           <div class="entry-content" itemprop="articleBody">
-          <p>{{ object.content }}</p>
+          <p>{{ object.content|safe }}</p>
           </div>
+          {% else %}
+          <div class="entry-summary" itemprop="articleBody">
+          <p>{{ object.content|safe }}</p>
+          </div>
+          {% endif %}
           {% endblock entry-content %}
 
     {% block continue-reading %}

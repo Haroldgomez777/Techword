@@ -22,12 +22,12 @@ def change(request):
     if request.method == "POST":
         form = ArticleForm(request.POST, request.FILES)
         make_a_slug=slugify(request.POST.get('title'))
-        post = Entry(title=request.POST.get('title'),
-                    slug=make_a_slug,
-                    lead=request.POST.get('lead'),
+        post = Entry(title=sanitize(request.POST.get('title')),
+                    slug=sanitize(make_a_slug),
+                    lead=sanitize(request.POST.get('lead')),
                     image=request.FILES.get('image'),
-                    status=request.POST.get('status'),
-                    content=request.POST.get('content'),
+                    status=sanitize(request.POST.get('status')),
+                    content=sanitize(request.POST.get('content')),
                     )
         post.save()
         make_a_slug = make_a_slug + str(post.pk)
@@ -65,3 +65,34 @@ def user_category_create(request):
 
 def user_tag_create(request):
     return render(request,'blogui/tag.html')
+
+def sanitize(text):
+    cleared_text=''
+    ch=0
+    temp=''
+    identify=0
+    for word in text:
+        if word=='<':
+            ch=1
+        if word=='>':
+            ch=2
+            temp+=word
+        if ch==1:
+            temp+=word
+            # print(temp)
+        if ch==2:
+            if temp[0:7]=='<script' or temp[0:8]=='<section' or temp[0:4]=='<div' or temp[0:7]=='<navbar' or temp[0:4]=='<nav':
+                cleared_text+='<pre style="color:white;background-color:black;"><!--Please Dont rape my baby -->'
+                temp=''
+            elif temp[0:8]=='</script'or temp[0:8]=='</sectio' or temp[0:5]=='</div' or temp[0:7]=='</navba' or temp[0:5]=='</nav':
+                cleared_text+='</pre>'
+                temp=''
+            else:
+                cleared_text+=temp
+                temp=''
+            ch=0
+            continue
+        if(ch==0):
+            cleared_text+=word
+
+    return cleared_text
