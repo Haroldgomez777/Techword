@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'app',
     'userface',
 
-    # 'allauth.socialaccount.providers.facebook',
-    # 'allauth.socialaccount.providers.google',
-    # 'allauth.socialaccount.providers.twitter',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.twitter',
 
 ]
 
@@ -83,8 +83,13 @@ SITE_ID = 1
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'blog_tech',
+        'USER':'root',
+        'PASSWORD':'harold@#$123',
+        'HOST':'localhost',
+        'PORT':'3306',
+        'default-character-set':'utf8'
     }
 }
 

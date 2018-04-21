@@ -3,6 +3,7 @@ import random
 from django.core.files import File
 from django.shortcuts import render
 from django.utils import timezone
+from django.utils.html import *
 from django.views.generic import TemplateView
 from zinnia.models.entry import Entry
 from django.contrib.sites.models import Site
@@ -81,18 +82,28 @@ def sanitize(text):
             temp+=word
             # print(temp)
         if ch==2:
-            if temp[0:7]=='<script' or temp[0:8]=='<section' or temp[0:4]=='<div' or temp[0:7]=='<navbar' or temp[0:4]=='<nav':
-                cleared_text+='<pre style="color:white;background-color:black;"><!--Please Dont rape my baby -->'
+            #print(temp[0:2])
+            if (temp[0:3]=='<a ' or temp[0:2]=='<p'
+                or temp[0:3]=='<h1' or temp[0:4]=='<img'
+                or temp[0:4]=='<pre'):
+                cleared_text+=temp
                 temp=''
-            elif temp[0:8]=='</script'or temp[0:8]=='</sectio' or temp[0:5]=='</div' or temp[0:7]=='</navba' or temp[0:5]=='</nav':
-                cleared_text+='</pre>'
+                identify = 1
+            elif(temp[0:4]=='</a ' or temp[0:2]=='</p'
+                or temp[0:4]=='</h1' or temp[0:5]=='</pre'):
+                cleared_text+=temp
                 temp=''
+                identify = 2
             else:
+                temp = escape(temp)
                 cleared_text+=temp
                 temp=''
             ch=0
             continue
         if(ch==0):
+            word = escape(word)
             cleared_text+=word
+    if(identify==1):
+        cleared_text = escape(cleared_text)
 
     return cleared_text
