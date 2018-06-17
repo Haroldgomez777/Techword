@@ -3,19 +3,23 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=9" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Info from everyone">
-<meta name="keywords" content="python, django, Angular, facebook, google, Harold Gomez, Linux,Kernel ">
-<meta name="author" content="Harold Gomez">
-<link rel="shortcut icon" href="{% static 'change/favicon.ico' %}" />
-<title>Lookout</title>
-<!-- <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Montserrat" rel="stylesheet"> -->
-<link rel="stylesheet" type="text/css" href="{% static 'change/theme/css2/bootstrap.min.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'change/theme/css2/bootstrap-theme.min.css' %}">
-<link rel="stylesheet" href="{% static 'change/font-awesome-4.7.0/css/font-awesome.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'change/theme/css2/custom.css' %}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.7.2, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="{% static 'assets/images/mbr-favicon.png' %}" type="image/x-icon">
+  <meta name="description" content="">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&subset=latin,cyrillic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700&subset=latin,vietnamese,latin-ext">
+  <link rel="stylesheet" href="{% static 'assets/web/assets/mobirise-icons/mobirise-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/tether/tether.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/soundcloud-plugin/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/socicon/css/socicon.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/puritym/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/mobirise/css/mbr-additional.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'custom/custom.css' %}" type="text/css">
 <script src="{% static 'change/theme/js/jquery.min.js' %}"></script>
 <script src="{% static 'change/theme/js/bootstrap.min.js' %}"></script>
 <style>
@@ -37,13 +41,13 @@
 {% block navbar %}
 {% include "zinnia/navbar.html" %}
 {% endblock navbar %}
-<div class="container">
+<div class="custom-container container">
 <div class="row">
-<div class="visible-lg col-sm-3" style="margin-left: 10px">{% block sidebar %}{% endblock sidebar %}</div>
-<div class="col-xs-10 col-md-8" style="word-wrap: break-word; ">
+<div class="visible-lg col-sm-3 sidebar">{% block sidebar %}{% endblock sidebar %}</div>
+<div class="col-xs-12 col-md-8" style="word-wrap: break-word; ">
 
 {% block content %}
-<div class="links">
+<!-- <div class="links">
 <h2>{% trans "Useful links" %}</h2>
 <ul>
 <li>
@@ -59,19 +63,34 @@
 </ul>
 </div>
 <div>
+
+
+
 <h2>{% trans "Search" %}</h2>
 {% include "zinnia/tags/search_form.html" %}
-</div>
+</div> -->
+
 {% endblock content %}
+
+
 </div>
 </div>
-</body>
+</div>
+
+<script src="{% static 'change/theme/js/tooltipsy.min.js' %}"></script>
+<script src="{% static 'change/theme/js/custom.js' %}"></script>
+
+
+</body> 
+
 <footer id="footer" role="contentinfo">
 {% block breadcrumbs %}{% endblock breadcrumbs %}
 <p>{% blocktrans %}Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.{% endblocktrans %}</p>
 {% block footbank %}
 {% endblock footbank %}
 </footer>
-<script src="{% static 'change/theme/js/tooltipsy.min.js' %}"></script>
-<script src="{% static 'change/theme/js/custom.js' %}"></script>
+
+
+
+
 </html>

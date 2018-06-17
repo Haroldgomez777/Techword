@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700);
+
+
+
+#menu-f .navbar-toggler {
+  color: #0275d8;
+}
+#menu-f .nav-link {
+  font-size: 25px;
+  font-family: 'Indie Flower', cursive;
+}
+#menu-f .navbar-brand {
+  font-family: 'Indie Flower', cursive;
+  font-size: 32px;
+}
+#menu-f .nav-item .btn {
+  font-family: 'Indie Flower', cursive;
+  font-size: 11px;
+}
+
+
+
+
+#menu-o .navbar-toggler {
+  color: #0275d8;
+}
+#menu-o .nav-link {
+  font-size: 25px;
+  font-family: 'Indie Flower', cursive;
+}
+#menu-o .navbar-brand {
+  font-family: 'Indie Flower', cursive;
+  font-size: 32px;
+}
+#menu-o .nav-item .btn {
+  font-family: 'Indie Flower', cursive;
+  font-size: 11px;
+}
+#header3-r H3 {
+  font-family: 'Lora', serif;
+}
+
+
+
+#menu-w .navbar-toggler {
+  color: #0275d8;
+}
+#menu-w .nav-link {
+  font-size: 25px;
+  font-family: 'Indie Flower', cursive;
+}
+#menu-w .navbar-brand {
+  font-family: 'Indie Flower', cursive;
+  font-size: 32px;
+}
+#menu-w .nav-item .btn {
+  font-family: 'Indie Flower', cursive;
+  font-size: 11px;
+}

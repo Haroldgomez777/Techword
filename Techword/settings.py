@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'app',
     'userface',
 
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.twitter',
+    # 'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.twitter',
 
 ]
 
@@ -81,18 +81,26 @@ SITE_ID = 1
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'blog_tech',
+#         'USER':'harold',
+#         'PASSWORD':'password',
+#         'HOST':'localhost',
+#         'PORT':'3306',
+#         'default-character-set':'UTF8MB4'
+#     }
+# }
+
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog_tech',
-        'USER':'root',
-        'PASSWORD':'harold@#$123',
-        'HOST':'localhost',
-        'PORT':'3306',
-        'default-character-set':'utf8'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
-
 # 'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'mydatabase',
 #         'USER': 'mydatabaseuser',
@@ -155,7 +163,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 

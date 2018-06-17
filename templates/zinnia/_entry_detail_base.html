@@ -2,7 +2,9 @@
 {% load zinnia %}
 <h1> </h1>
 <article id="entry-{{ object.pk }}" class="hentry{% if object.featured %} featured{% endif %}" itemscope itemtype="http://schema.org/Article">
-{% block entry-header %} 
+
+<!-- Header  -->
+{% block entry-header %}
 <header class="entry-header">
      {% block entry-title %}
      <h2 class="entry-title" itemprop="name">
@@ -65,7 +67,7 @@
           <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
           {% endif %}
           <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-          <img class="img-responsive" src="{{ object.image.url }}" alt="{{ object.image_caption|default:object.title }}" itemprop="contentUrl" />
+          <img class="img-responsive" src="{{ object.image.url }}" alt="{{ object.image_caption|default:object.title }}" itemprop="contentUrl" width="250" />
           </br>
           {% if object.image_caption %}
           <figcaption style="text-align: center;" itemprop="caption" >{{ object.image_caption }}</figcaption>
@@ -117,6 +119,8 @@
     {% endblock continue-reading %}
 </div>
 {% endblock entry-body %}
+
+<!-- Header  end-->
 {% block entry-footer %}
 {% endblock entry-footer %}
 </article>
