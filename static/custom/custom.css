@@ -14,11 +14,12 @@ body {
 	/* padding: 2.5rem; */
 	background: #005eaf;
 	position: relative;
-	box-shadow: 1px 3px 8px 1px rgba(0, 94, 175, 0.79);
-	-moz-box-shadow: 1px 3px 8px 1px rgba(0, 94, 175, 0.79);
-	-webkit-box-shadow: 1px 3px 8px 1px rgba(0, 94, 175, 0.79);
+	box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.74);
+	-moz-box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.74);
+	-webkit-box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.74);
 	position: relative;
 	width: 20%;
+	border-radius: 5px;
 }
 @media only screen and (max-width:1050px){
 	.sidebar{
@@ -32,10 +33,25 @@ body {
 }
 
 .mpanel  {
-	color:green;
+	color: white;
 	margin: -0.9rem;
 	background: #0e4e86;
+	border-radius: 5px;
 }
+
+.mpanel li {
+    margin: 15px;
+}
+
+.mpanel a {
+    margin: 10px !important;
+    color: #ffffff;
+}
+
+.mpanel p {
+    margin: 15px;
+}
+
 
 
 .mpanel-default {}
@@ -172,12 +188,25 @@ body {
 }
 
 footer{
-    position: absolute;
+    position: relative;
     right: 0;
     bottom: 0;
     left: 0;
     padding: 1rem;
-    /* background-color: #efefef; */
-    /* text-align: center; */
-    /* margin-top: 10rem; */
+}
+
+footer a,p{
+  font-size: 12px;
+}
+
+
+a {
+    color: #287e86;
+    text-decoration: none;
+}
+
+
+a:hover {
+    color: #0e4e86eb;
+    text-decoration: none;
 }

@@ -11,3 +11,5 @@ db.sqlite3
 .goutputstream-*
 /.idea
 VTE
+mydatabase
+
