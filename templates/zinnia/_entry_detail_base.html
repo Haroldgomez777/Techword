@@ -67,12 +67,14 @@
           <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
           {% endif %}
           <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-          <img class="img-responsive" src="{{ object.image.url }}" alt="{{ object.image_caption|default:object.title }}" itemprop="contentUrl" width="250" />
+          <img class="img-responsive" src="{{ object.image.url }}" alt="{{ object.image_caption|default:object.title }}" itemprop="contentUrl" />
           </br>
           {% if object.image_caption %}
           <figcaption style="text-align: center;" itemprop="caption" >{{ object.image_caption }}</figcaption>
           {% endif %}
           </figure>
+          </a>
+          </div>  
           </br>
           {% if continue_reading %}
           </a>

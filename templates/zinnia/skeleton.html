@@ -44,7 +44,7 @@
 <div class="custom-container container">
 <div class="row">
 <div class="visible-lg col-sm-3 sidebar">{% block sidebar %}{% endblock sidebar %}</div>
-<div class="col-xs-12 col-md-8" style="word-wrap: break-word; ">
+<div class="col-xs-12 col-md-9" style="word-wrap: break-word; ">
 
 {% block content %}
 <!-- <div class="links">
@@ -85,7 +85,6 @@
 
 <footer id="footer" role="contentinfo">
 {% block breadcrumbs %}{% endblock breadcrumbs %}
-<p>{% blocktrans %}Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.{% endblocktrans %}</p>
 {% block footbank %}
 {% endblock footbank %}
 </footer>

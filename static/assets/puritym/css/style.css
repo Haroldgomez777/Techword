@@ -5,7 +5,8 @@
   position: relative; }
 
 .btn {
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0rem;
+  margin-top: 0.5rem; }
   .btn + .btn {
     margin-left: 0rem;
     }
@@ -217,7 +218,7 @@ footer.mbr-footer {
   top: 0;
   right: 0;
   left: 0;
-  padding: 1.5rem 1rem;
+  padding: 0.5rem 1rem;
   background-color: #fff;
   z-index: 1030; }
   .mbr-navbar.navbar-fixed-top {
