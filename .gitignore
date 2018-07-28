@@ -1,7 +1,7 @@
 *.pyc
 *~
 __pycache__
-VENV
+/VENV
 ENV
 DJ2
 db.sqlite3
@@ -10,6 +10,6 @@ db.sqlite3
 .git
 .goutputstream-*
 /.idea
-VTE
+/VTE
 mydatabase
 
