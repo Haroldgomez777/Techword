@@ -57,6 +57,7 @@
 
 {% block content %}
 
+<div class="content_title001">
 {% block content-title %}
 {% if category %}
 <h1>{% blocktrans %}Category archives: {{ category }}{% endblocktrans %}</h1>
@@ -88,6 +89,7 @@
 </p>
 {% endif %}
 {% endblock content-title %}
+</div>
 
 {% block content-loop %}
 {% for object in object_list %}

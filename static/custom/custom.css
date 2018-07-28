@@ -257,7 +257,7 @@ a:hover {
 }
 
 #entri-styles2 {
-  background: #054175cc;
+  background: #d5d8dc80;
   min-height: 12rem;
   height: auto;
   margin-left: -1rem;
@@ -269,4 +269,19 @@ a:hover {
   margin-right: 0rem;
   margin-top: 1rem;
   padding-top: 2rem;
+}
+
+.content_title001 {
+  text-align:  center;
+  font-family: monospace;
+}
+
+.content_title001 h1 {
+    font-family:  monospace;
+}
+
+.content-related {
+	position:relative;
+	float:right;
+	color: #000000;
 }
