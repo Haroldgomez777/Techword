@@ -1,4 +1,4 @@
-#!/home/harold/pyprojects/Techword/VEN/bin/python
+#!/home/legolas/pyproject/Techword/VEN/bin/python
 
 import sys
 import getopt
