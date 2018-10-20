@@ -4262,3 +4262,39 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 }
 
 }
+
+
+label {
+    float: left;
+    margin: 0%
+}
+
+.signup_content form {
+    margin: 20px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.signup_content form input[type="text"],
+.signup_content form input[type="email"],
+.signup_content form input[type="password"] {
+    border-radius: 3px;
+    -ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+    -o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+    box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+    border: 1px solid #c8c8c8;
+    color: #777;
+    margin: 0 0 0px;
+    width: 50%;
+    float:right;
+}
+.signup_content form input[type="text"]:focus,
+.signup_content form input[type="email"]:focus,
+.signup_content form input[type="password"]:focus {
+    -ms-box-shadow: 0 0 2px #ed1c24 inset;
+    -o-box-shadow: 0 0 2px #ed1c24 inset;
+    box-shadow: 0 0 2px #A97AAD inset;
+    background-color: #fff;
+    border: 1px solid #A878AF;
+    outline: none
+}

@@ -8,6 +8,15 @@
   {{ block.super }}
   <!-- Animate.css -->
   <link href="/static/vendors/animate.css/animate.min.css" rel="stylesheet">
+
+
+  <style>
+  @media only screen and (min-width:800px) {
+    input {
+      float: right;
+    }
+  }
+  </style>
 {% endblock stylesheets %}
 
 {% block body_class %}login{% endblock body_class %}
@@ -16,14 +25,29 @@
 
     <div class="login_wrapper">
       <div class="animate form login_form">
-      	<section class="login_content" style="padding: 0px">
+      	<section class="signup_content" style="padding: 0px">
 <h1>{% trans "Sign Up" %}</h1>
 
 <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
       <div id="register" class="colign">
           <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
               {% csrf_token %}
-  				{{ form }}
+              <div class="forme">
+                <label for="id_username">Username:</label><button type="submit">Sign Up »</button>
+                <input name="username" placeholder="Username" autofocus="autofocus" minlength="1" maxlength="150" required="" id="id_username" type="text">
+              </div>
+              <div class="">
+                <label for="id_email">E-mail (optional):</label>
+                <input name="email" placeholder="E-mail address" id="id_email" type="email">
+              </div>
+              <div class="">
+                <label for="id_password1">Password:</label>
+                <input name="password1" placeholder="Password" required="" id="id_password1" type="password">
+              </div>
+              <div class="">
+                <label for="id_password2">Password (again):</label>
+                <input name="password2" placeholder="Password (again)" required="" id="id_password2" type="password">
+              </div>
  				{% if redirect_field_value %}
  			 	<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   				{% endif %}
@@ -34,6 +58,11 @@
   </div>
 </div>
  
+
+
+
+
+
 
 
 
