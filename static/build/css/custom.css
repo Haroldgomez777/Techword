@@ -2010,6 +2010,8 @@ button,
     margin-bottom: 5px;
     margin-right: 5px
 }
+
+.signup button {margin-left: 8rem;margin-right: 8rem;margin-top: 2rem;}
 .btn-group-vertical .btn,
 .btn-group .btn {
     margin-bottom: 0;
@@ -4266,7 +4268,7 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 
 label {
     float: left;
-    margin: 0%
+    margin: 5%;
 }
 
 .signup_content form {
@@ -4278,15 +4280,17 @@ label {
 .signup_content form input[type="text"],
 .signup_content form input[type="email"],
 .signup_content form input[type="password"] {
-    border-radius: 3px;
+    border-radius: 0px;
     -ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
     -o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
     box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
     border: 1px solid #c8c8c8;
     color: #777;
-    margin: 0 0 0px;
-    width: 50%;
+    margin: 1.5rem 0rem 0rem 0rem;
+    width: 57%;
     float:right;
+    height: 3rem;
+    text-align: center;
 }
 .signup_content form input[type="text"]:focus,
 .signup_content form input[type="email"]:focus,

@@ -12,7 +12,7 @@
         <div class="clearfix"></div>
         <div class="collapse navbar-toggleable-sm" id="exCollapsingNavbar2">
             <span class="navbar-logo"><a href="/" class="mbri-edit mbr-iconfont mbr-iconfont-menu"></a></span>
-            <span><a class="navbar-brand text-primary" href="/">asdfq</a></span>
+            <span><a class="navbar-brand text-primary" href="/">Cold Ice</a></span>
 
             <ul class="nav navbar-nav pull-xs-right">{% if user.is_authenticated %}
             	<li class="nav-item"><a class="btn btn-primary-outline btn-primary" href="{% url 'account_logout' %}">Logout</a></li></ul>
@@ -20,13 +20,13 @@
             	<li class="nav-item"><a class="btn btn-primary-outline btn-primary" href="{% url 'account_login' %}">Login</a></li></ul>
             	{%endif%}
             <ul class="nav navbar-nav pull-xs-right">
-            	<li class="nav-item"><a class="nav-link" href="/">Tags</a></li> 
+            	<li class="nav-item"><a class="nav-link" href="{% url 'zinnia:tag_list' %}">Tags</a></li> 
             	<li class="nav-item"><a class="nav-link" href="/">New</a></li> 
             	<li class="nav-item"><a class="nav-link" href="/">Popular</a></li> 
             	<li class="nav-item"><a class="nav-link" href="/">Archives</a></li> 
-            	<li class="nav-item"><a class="nav-link" href="/">Categories</a></li> 
-            	<li class="nav-item"><a class="nav-link" href="/">Authors</a></li> 
-            	<li class="nav-item"><a class="nav-link" href="/">Sitemap</a></li>  
+            	<li class="nav-item"><a class="nav-link" href="{% url 'zinnia:category_list' %}">Categories</a></li> 
+            	<li class="nav-item"><a class="nav-link" href="{% url 'zinnia:author_list' %}">Authors</a></li> 
+            	<!-- <li class="nav-item"><a class="nav-link" href="/">Sitemap</a></li> -->  
             	<li class="nav-item"><a class="nav-link" href="/"></a></li></ul>
         </div>
     </div>

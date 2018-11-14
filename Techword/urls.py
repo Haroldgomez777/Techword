@@ -35,5 +35,6 @@ urlpatterns = [
     url(r'^app/', include('app.urls')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^accounts/profile/',views.profile, name='profile'),
+    url(r'^home$',views.home ,name = 'home'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

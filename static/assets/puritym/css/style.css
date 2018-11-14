@@ -86,7 +86,8 @@ body {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
 .display-1, .display-2, .display-3, .display-4 {
-  font-family: "Playfair Display", sans-serif; }
+  font-family: "Alegreya Sans", sans-serif; 
+  }
 
 /**
  * MAPS
