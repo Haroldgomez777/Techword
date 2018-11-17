@@ -13,31 +13,32 @@ STATUS_CHOICES = ((DRAFT, _('draft')),
 class ArticleForm(ModelForm):
 	def __init__(self, *args, **kwargs):
 		super(ArticleForm, self).__init__(*args, **kwargs)
+
 	title = CharField(
 						max_length=255,
 						widget=forms.TextInput(attrs={
 							'id': 'wer',
-							'class':'form-control col-md-12 col-xs-12',
+							'class':'control_flex',
 							'type': 'text'
 							}))
 	status = IntegerField( widget=forms.Select(
 										choices=STATUS_CHOICES,
-										attrs={'class': 'form-control col-md-12 col-xs-12' }
+										attrs={'class': 'control_flex' }
 										))
 	lead = CharField (
 						widget=forms.Textarea(attrs={
 									'type': 'textarea',
-									'class': 'form-control col-md-12 col-xs-12'
+									'class': 'control_flex'
 									}))
 	publication_date = DateTimeField (widget=forms.TextInput(attrs={
 									'type': 'text',
 									'id': 'single_cal1',
-									'class': 'form-control col-md-12 col-xs-12',
+									'class': 'control_flex',
 									}))
 	content = CharField (
 						widget=forms.Textarea(attrs={
 									'type': 'textarea',
-									'class': 'form-control col-md-12 col-xs-12'
+									'class': 'control_flex'
 									}))
 	image = ImageField(
 						widget=forms.ClearableFileInput(attrs={
@@ -72,7 +73,14 @@ class ArticleForm(ModelForm):
 					'categories',
 					'featured',
 				]
-
+		fields = (
+		'title',
+		'status',
+		'lead',
+		'publication_date',
+		'content',
+		'image'
+		)
 
 # Use exclude = instead of fields
 

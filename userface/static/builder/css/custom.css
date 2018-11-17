@@ -494,6 +494,51 @@ body {
     font-weight: 400;
     line-height: 1.471
 }
+
+label.control_label {
+    flex-basis: 6rem;
+}
+
+div.input_control {
+    flex-basis: 23rem;
+}
+
+label.input_control {
+    flex-basis: 10rem;
+}
+
+.form_control {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem;
+}
+
+
+@media only screen and (max-width:500px) {
+    .form_control {
+        display:flex;
+        flex-direction:column;
+        margin: 0rem;
+    }
+
+label.control_label {
+    flex-basis:1rem;
+    display: flex;
+    align-items: inherit;
+    justify-content: center;
+}
+
+div.input_control {
+    flex-basis: 2rem;
+}
+
+textarea.control_flex {
+    width:100%;
+}
+
+#id_status {margin-left: 35%;margin-right: 35%;margin-bottom: 3%;}
+}
 .main_container .top_nav {
     display: block;
     margin-left: 230px
@@ -646,6 +691,15 @@ h3,
     margin-top: 10px;
     margin-bottom: 10px
 }
+
+@media only screen and (max-width :500px){
+
+h3.creater {
+    margin-top:2rem;
+}
+
+}
+
 a {
     color: #5A738E;
     text-decoration: none
@@ -665,6 +719,8 @@ a:active,
 .btn.active.focus {
     outline: 0
 }
+
+button.navbar-toggler.navbar-toggler-right {}
 a:hover,
 a:focus {
     text-decoration: none
@@ -965,6 +1021,18 @@ article.media {
 *:before,
 *:after {
     box-sizing: border-box
+}
+
+
+textarea.control_flex {
+    width: 100%;
+}
+
+
+input#wer {}
+
+input.control_flex {
+    width: 100%;
 }
 #integration-list {
     width: 100%;
@@ -4238,4 +4306,24 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 
 .dataTables_wrapper > .row{
   overflow:auto !important; /*prevent datatables overflowing its container*/
+}
+
+@media (min-width:900px) {
+.show {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+}
+
+@media (max-width:900px) {
+.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.nav-item {
+    width:100%;
+    display:flex;
+}
 }

@@ -15,21 +15,21 @@
     </div> -->
 <div class="container">
     <div class="jumbotron"">
-    <center><h3 style="font-size: 40px;">Create Article</h3></center>
+    <center><h3 style="font-size: 40px;" class="creater">Create Article</h3></center>
     <hr>
         <div>
-            <form class="form-horizontal form-label-left" action="{% url 'poster' %}" method="POST" enctype="multipart/form-data">
+            <form class="control_flexible" action="{% url 'poster' %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {% for field in form %}
-                <div class="form-group">
-                    <label class="control-label col-sm-3 col-md-3 " for="{{ field.name }}">{{ field.label }}</label>
-                    <div class="col-sm-9 col-md-9 ">
+                <div class="form_control">
+                    <label class="control_label" for="{{ field.name }}">{{ field.label }}</label>
+                    <div class="input_control">
                         {{ field }}
                     </div>
                 </div>
                 {% endfor %}
-                <div class="form-group">
-                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                <div class="form_control">
+                    <div class="input_control_button">
                         <input class="btn btn-primary" type="submit" value="submit">
                     </div>
                 </div>

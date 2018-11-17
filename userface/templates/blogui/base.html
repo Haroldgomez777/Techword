@@ -68,25 +68,27 @@
                          <img src="{%static 'assets/images/fake-angels-by-chriscold-dbc3j51-1259x634.jpg' %}" alt="Mobirise" title="" style="height: 3.8rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white" href="{% url 'userface:home' %}">
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="{% url 'userface:home' %}">
                         {{ user.get_full_name }}</a></span>
             </div>
         </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse show" id="navbarSupportedContent">
             <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
                     <a class="nav-link link text-white" href="https://mobirise.com">
                         </a>
                 </li>
-                <li class="nav-item">
-                	<a class="nav-link link text-white" href="{% url 'userface:category' %}">
+            <li class="nav-item">
+                	<a class="nav-link link text-white display-4 " href="{% url 'userface:category' %}">
                 	<span class="mbri-add-submenu mbr-iconfont mbr-iconfont-btn"></span>Add Categories</a></li><li class="nav-item">
-                    <a class="nav-link link text-white" href="{% url 'userface:tag' %}"><span class="mbri-flag mbr-iconfont mbr-iconfont-btn"></span>
+                    <a class="nav-link link text-white display-4" href="{% url 'userface:tag' %}"><span class="mbri-flag mbr-iconfont mbr-iconfont-btn"></span>
                         Add Tags</a>
-                </li>
-                <li class="nav-item">
-             <a class="nav-link link text-white" href="{% url 'userface:about' %}">
+            </li>
+            <li class="nav-item">
+             <a class="nav-link link text-white display-4" href="{% url 'userface:about' %}">
              	<span class="mbri-edit2 mbr-iconfont mbr-iconfont-btn"></span>
-                        Write Article</a></li><li class="nav-item"><a class="nav-link link text-white" href="{% url 'userface:gallary' %}"><span class="mbri-pages mbr-iconfont mbr-iconfont-btn"></span>View Your Articles&nbsp;</a></li></ul>
+                        Write Article</a>
+            </li>
+            <li class="nav-item"><a class="nav-link link text-white display-4" href="{% url 'userface:gallary' %}"><span class="mbri-pages mbr-iconfont mbr-iconfont-btn"></span>View Your Articles&nbsp;</a></li></ul>
             <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary" href="/"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Home</a></div>
         </div>
     </nav>

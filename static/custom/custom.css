@@ -52,6 +52,11 @@ body {
     font-size: 18px;
 }
 
+.mpanel-heading:hover {
+    color: aliceblue;
+    background-color: #0c2d2cb5;
+}
+
 .mpanel li {}
 
 .mpanel a {

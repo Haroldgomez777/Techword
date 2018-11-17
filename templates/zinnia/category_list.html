@@ -17,7 +17,7 @@
     <a href="{{ object.get_absolute_url }}"
        title="{% blocktrans with category=object %}Show all entries in {{ category }}{% endblocktrans %}">{{ object }}</a>
     {% blocktrans count entry_count=object.count_entries_published %}{{ entry_count }} entry{% plural %}{{ entry_count }} entries{% endblocktrans %}
-    {% if object.description %}<p>{{ object.description|striptags|safe }}</p>{% endif %}
+    {% if object.description %}<p>{{ object.description|striptags|safe|markdown }}</p>{% endif %}
   </li>
   {% empty %}
   <li>

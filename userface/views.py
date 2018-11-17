@@ -68,42 +68,4 @@ def user_tag_create(request):
     return render(request,'blogui/tag.html')
 
 def sanitize(text):
-    cleared_text=''
-    ch=0
-    temp=''
-    identify=0
-    for word in text:
-        if word=='<':
-            ch=1
-        if word=='>':
-            ch=2
-            temp+=word
-        if ch==1:
-            temp+=word
-            # print(temp)
-        if ch==2:
-            #print(temp[0:2])
-            if (temp[0:3]=='<a ' or temp[0:2]=='<p'
-                or temp[0:3]=='<h1' or temp[0:4]=='<img'
-                or temp[0:4]=='<pre'):
-                cleared_text+=temp
-                temp=''
-                identify = 1
-            elif(temp[0:4]=='</a ' or temp[0:2]=='</p'
-                or temp[0:4]=='</h1' or temp[0:5]=='</pre'):
-                cleared_text+=temp
-                temp=''
-                identify = 2
-            else:
-                temp = escape(temp)
-                cleared_text+=temp
-                temp=''
-            ch=0
-            continue
-        if(ch==0):
-            word = escape(word)
-            cleared_text+=word
-    if(identify==1):
-        cleared_text = escape(cleared_text)
-
-    return cleared_text
+    return escape(text)

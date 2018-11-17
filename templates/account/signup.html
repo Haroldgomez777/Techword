@@ -26,7 +26,7 @@
     <div class="login_wrapper">
       <div class="animate form login_form">
       	<section class="signup_content" style="padding: 0px">
-<center><h1>{% trans "Sign Up" %}</h1>
+<center><h1>{% trans "Sign Up" %}</h1></center>
 
 <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p></center>
       <div id="register" class="colign">
@@ -53,6 +53,7 @@
   				{% endif %}
   				<button type="submit">{% trans "Sign Up" %} &raquo;</button>
           </form>
+          <center><p><a href="{% url 'home' %}">Cold Ice</a></p></center>
         </section>
       </div>
   </div>

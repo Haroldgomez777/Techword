@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'zinnia',
     'app',
     'userface',
+    'markdown_deux',
     # 'allauth.socialaccount.providers.facebook',
     # 'allauth.socialaccount.providers.google',
     # 'allauth.socialaccount.providers.twitter',
@@ -93,6 +94,9 @@ SITE_ID = 1
 # }
 
 
+ZINNIA_MARKUP_LANGUAGE = 'markdown'
+
+ZINNIA_MARKDOWN_EXTENSIONS =  ['markdown.extensions.nl2br']
 
 DATABASES = {
     'default': {
@@ -161,6 +165,16 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+
+MARKDOWN_DEUX_STYLES = {
+    "default": {
+        "extras": {
+            "code-friendly": None,
+        },
+        "safe_mode": "escape",
+    },
+}
 
 #STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 

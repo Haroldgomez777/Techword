@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load zinnia %}
+{% load markdown_deux_tags %}
 <h1> </h1>
 <article id="entry-{{ object.pk }}" class="hentry{% if object.featured %} featured{% endif %}" itemscope itemtype="http://schema.org/Article">
 
@@ -68,14 +69,14 @@
           {% endif %}
           <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
           <img class="img-responsive" src="{{ object.image.url }}" alt="{{ object.image_caption|default:object.title }}" itemprop="contentUrl" />
-          </br>
+          <br>
           {% if object.image_caption %}
           <figcaption style="text-align: center;" itemprop="caption" >{{ object.image_caption }}</figcaption>
           {% endif %}
           </figure>
           </a>
           </div>  
-          </br>
+          <br>
           {% if continue_reading %}
           </a>
           {% endif %}
@@ -85,12 +86,12 @@
               {% block entry-lead %}
               {% if continue_reading and object.lead %}
               <div class="entry-summary" itemprop="headline">
-              <p>{{ object.lead|safe }}</p>
+              <p>{{ object.lead | safe | markdown }}</p>
               </div>
               {% endif %}
               {% if not continue_reading and object.lead %}
               <div class="entry-summary" itemprop="headline">
-              <p>{{ object.lead|safe }}</p>
+              <p>{{ object.lead | safe | markdown }}</p>
               </div>
               {% endif %}
               {% endblock entry-lead %}
@@ -98,11 +99,11 @@
           {% block entry-content %}
           {% if object.lead %}
           <div class="entry-content" itemprop="articleBody">
-          <p>{{ object.content|safe }}</p>
+          <p>{{ object.content | safe | markdown }}</p>
           </div>
           {% else %}
           <div class="entry-summary" itemprop="articleBody">
-          <p>{{ object.content|safe }}</p>
+          <p>{{ object.content | safe | markdown }}</p>
           </div>
           {% endif %}
           {% endblock entry-content %}
