@@ -93,7 +93,7 @@ href="{% url 'zinnia:entry_trackback_feed' year month day object.slug %}" />
           <ul>
           {% for entry in entry_related %}
           <li>
-          <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark" style="">{{ entry.title }}</a>
+          <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a>
           </li>
           {% endfor %}
           </ul>

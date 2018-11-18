@@ -83,6 +83,36 @@ blockquote {
 body {
   font-family: "Alegreya Sans", sans-serif; }
 
+
+
+@media only screen and (max-width:500px) {
+   
+ul.nav.navbar-nav.pull-md-right.commodore {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: flex-start;
+}
+
+.navbar-toggleable-sm.flexity.collapse.in {
+  display:flex;
+  flex-direction:column-reverse;
+}
+
+.mbr-navbar .navbar-divider, .mbr-navbar .navbar-nav .nav-item + .nav-item, .mbr-navbar .navbar-nav .nav-link + .nav-link {
+    margin-left: 0rem !important;
+}
+
+.navbar-toggleable-sm.flexity.collapsing {
+  display:flex;
+  flex-direction:column-reverse;
+}
+
+.navbar-toggleable-sm.flexity.collapsing *{
+  display:none;
+}
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
 .display-1, .display-2, .display-3, .display-4 {
