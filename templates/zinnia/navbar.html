@@ -24,8 +24,7 @@
                 {% if user.is_authenticated %}
                 <li class="nav-item"><a class="nav-link" href="/artic">Profile</a></li>
                 {% endif %}
-            	<li class="nav-item"><a class="nav-link" href="/">Popular</a></li> 
-            	<li class="nav-item"><a class="nav-link" href="/">Archives</a></li> 
+            	<li class="nav-item"><a class="nav-link" href="/search">Search</a></li> 
             	<li class="nav-item"><a class="nav-link" href="{% url 'zinnia:category_list' %}">Categories</a></li> 
             	<li class="nav-item"><a class="nav-link" href="{% url 'zinnia:author_list' %}">Authors</a></li> 
             	<!-- <li class="nav-item"><a class="nav-link" href="/">Sitemap</a></li> -->  

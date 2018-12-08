@@ -10,7 +10,7 @@ body {
 	min-height: 100%;
 }
 .sidebar {
-	margin-top: 0%;
+	margin-top: -1%;
 	background: #005eaf;
 	position: relative;
 	box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.74);
@@ -18,7 +18,7 @@ body {
 	-webkit-box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.74);
 	position: relative;
 	width: 20%;
-	padding: 0.2999999%;
+	padding: 0.12%;
 	border-radius: 2px;
 }
 @media only screen and (max-width:1050px){
@@ -50,22 +50,29 @@ body {
     padding: 5%;
     font: menu;
     font-size: 18px;
+    font-family: monospace;
 }
 
 .mpanel-heading:hover {
     color: aliceblue;
     background-color: #0c2d2cb5;
+    transition: 1s linear;
 }
 
-.mpanel li {}
+.mpanel li {
+    font-family: monospace;
+}
 
 .mpanel a {
     margin: 0% !important;
     color: #f2fdf4;
     /* font-size:  30px; */
+    font-family: monospace;
 }
 
-.mpanel p {}
+.mpanel p {
+    font-family: monospace;
+}
 
 
 
@@ -251,7 +258,7 @@ a {
 
 
 a:hover {
-    color: #0d0d13;
+    color: #bbb9bd;
     text-decoration: none;
 }
 

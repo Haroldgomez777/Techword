@@ -103,12 +103,9 @@ ul.nav.navbar-nav.pull-md-right.commodore {
     margin-left: 0rem !important;
 }
 
-.navbar-toggleable-sm.flexity.collapsing {
-  display:flex;
-  flex-direction:column-reverse;
-}
 
-.navbar-toggleable-sm.flexity.collapsing *{
+
+.navbar-toggleable-sm.flexity.collapsing > *{
   display:none;
 }
 }
@@ -272,7 +269,8 @@ footer.mbr-footer {
   .mbr-navbar .navbar-nav .nav-link + .nav-link {
     margin-left: 1rem; }
   .mbr-navbar .navbar-nav + .navbar-nav {
-    margin-right: 20px; }
+    margin-right: 10px;
+    }
 
 .mbr-navbar .hamburger-icon, .navbar-dropdown .hamburger-icon {
   content: "";

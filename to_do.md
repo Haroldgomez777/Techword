@@ -6,7 +6,7 @@ yearly archive is appearing right. add it to sidebar or remove
 ---
 1] Everything is broken now "Fix it"  [done]  
 2] Responsive top bar
-3] "New" should be visible only to logged in users.  
+3] "New" should be visible only to logged in users. [done] changed to profile  
 4] "Popular" link should open up popular articles in view.  
 5] "Archives" link should open up "Archived Articles" in view.
 

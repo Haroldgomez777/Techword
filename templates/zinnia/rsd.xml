@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <rsd version="1.0" xmlns="http://archipelago.phrasewise.com/rsd">
   <service>
-    <engineName>Django Blog Zinnia {{ ZINNIA_VERSION }}</engineName>
-    <engineLink>http://github.com/Fantomas42/django-blog-zinnia</engineLink>
+    <engineName>Cold Ice</engineName>
+    <engineLink></engineLink>
     <homePageLink>{{ protocol }}://{{ site.domain }}/</homePageLink>
     <apis>
       <api name="MetaWeblog" preferred="true" apiLink="{{ protocol }}://{{ site.domain }}/xmlrpc/" blogID="{{ site.id }}">
