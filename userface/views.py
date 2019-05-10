@@ -6,6 +6,7 @@ from django.utils import timezone
 from django.utils.html import *
 from django.views.generic import TemplateView
 from zinnia.models.entry import Entry
+from zinnia.models import Category
 from django.contrib.sites.models import Site
 from django.template.defaultfilters import slugify
 from django.shortcuts import get_object_or_404, render
@@ -69,3 +70,16 @@ def user_tag_create(request):
 
 def sanitize(text):
     return escape(text)
+
+
+def add_category(request):
+    make_a_slug = slugify(request.POST.get('title'))
+    categor = Category(title=request.POST.get('title'),
+    slug=sanitize(make_a_slug))
+    categor.save()
+    make_a_slug = make_a_slug + str(categor.pk)
+    make_a_slug = slugify(make_a_slug)
+    secategory = Category.objects.get(id=categor.pk)
+    secategory.slug = make_a_slug
+    secategory.save()
+    return HttpResponse(categor.pk)
