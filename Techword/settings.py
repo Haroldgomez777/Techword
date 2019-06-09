@@ -1,3 +1,7 @@
+from .secrets import EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
+from .secrets import DEBUG
+from .secrets import SECURE_SSL_REDIRECT
+from .secrets import ALLOWED_HOSTS
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -14,11 +18,6 @@ SECRET_KEY = '6acev69+%z9if#1kz&kri9#%!#p=qwthp7*l^5l=bdk577a^u%'
 # from .secrets import SECURE_SSL_REDIRECT
 
 
-from .secrets import ALLOWED_HOSTS
-
-from .secrets import SECURE_SSL_REDIRECT
-
-from .secrets import DEBUG
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +38,7 @@ INSTALLED_APPS = [
     'app',
     'userface',
     'markdown_deux',
+    'corsheaders',
     # 'allauth.socialaccount.providers.facebook',
     # 'allauth.socialaccount.providers.google',
     # 'allauth.socialaccount.providers.twitter',
@@ -46,14 +46,26 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_WHITELIST = (
+
+    #'google.com',
+    #'hostname.example.com',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000'
+)
+
 
 ROOT_URLCONF = 'Techword.urls'
 
@@ -96,7 +108,7 @@ SITE_ID = 1
 
 ZINNIA_MARKUP_LANGUAGE = 'markdown'
 
-ZINNIA_MARKDOWN_EXTENSIONS =  ['markdown.extensions.nl2br']
+ZINNIA_MARKDOWN_EXTENSIONS = ['markdown.extensions.nl2br']
 
 DATABASES = {
     'default': {
@@ -104,6 +116,10 @@ DATABASES = {
         'NAME': 'mydatabase',
     }
 }
+
+
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False
 # 'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'mydatabase',
 #         'USER': 'mydatabaseuser',
@@ -130,7 +146,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTHENTICATION_BACKENDS = (
-    
+
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
@@ -185,6 +201,5 @@ ZINNIA_UPLOAD_TO = 'media/uploads/zinnia'
 
 
 EMAIL_HOST = 'smtp.gmail.com'
-from .secrets import EMAIL_HOST_USER,EMAIL_HOST_PASSWORD
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
