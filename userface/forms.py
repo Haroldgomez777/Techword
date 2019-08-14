@@ -18,32 +18,32 @@ class ArticleForm(ModelForm):
 						max_length=255,
 						widget=forms.TextInput(attrs={
 							'id': 'wer',
-							'class':'control_flex',
+							'class':'form-control control_flex',
 							'type': 'text'
 							}))
 	status = IntegerField( widget=forms.Select(
 										choices=STATUS_CHOICES,
-										attrs={'class': 'control_flex' }
+										attrs={'class': 'form-control control_flex' }
 										))
 	lead = CharField (
 						widget=forms.Textarea(attrs={
 									'type': 'textarea',
-									'class': 'control_flex'
+									'class': 'form-control control_flex'
 									}))
 	publication_date = DateTimeField (widget=forms.TextInput(attrs={
 									'type': 'text',
 									'id': 'single_cal1',
-									'class': 'control_flex',
+									'class': 'form-control control_flex',
 									}))
 	content = CharField (
 						widget=forms.Textarea(attrs={
 									'type': 'textarea',
-									'class': 'control_flex'
+									'class': 'form-control control_flex'
 									}))
 	image = ImageField(
 						widget=forms.ClearableFileInput(attrs={
 									'type': 'file',
-									'class': ''
+									'class': 'form-control'
 									})
 						)
 	class Meta:

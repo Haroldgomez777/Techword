@@ -29,12 +29,11 @@ $('#addcategorybutton').click(function(e) {
     e.preventDefault();
     var category = $('#name-form1-i').val();
     $.ajax({
-
+        headers: { "X-CSRFToken": token  },
         url: site_url + "/artic/addcategory",
         method:'POST',
         data: {
             'title':category,
-            'csrftoken' : getCookie('csrftoken')
         },
         success: function(result){
             console.log(result);

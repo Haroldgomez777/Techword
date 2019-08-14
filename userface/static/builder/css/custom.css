@@ -497,6 +497,8 @@ body {
 
 label.control_label {
     flex-basis: 6rem;
+    align-items: start;
+    padding: 1rem 0 0 0;
 }
 
 div.input_control {

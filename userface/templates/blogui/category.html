@@ -23,7 +23,9 @@
         <div class="row justify-content-center">
             <div class="media-container-column col-lg-8" data-form-type="formoid">
                     <div data-form-alert="" hidden="">Thanks for filling out the form!</div>
-            
+          <script>
+              var token = '{{ csrf_token }}';
+          </script>  
                     <form class="mbr-form" id="addnewcategory" method="post" data-form-title="Mobirise Form">
                             {% csrf_token %}
                         <div class="row row-sm-offset">
