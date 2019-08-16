@@ -502,7 +502,7 @@ label.control_label {
 }
 
 div.input_control {
-    flex-basis: 31rem;
+    flex-basis: 63rem;
 }
 
 label.input_control {
@@ -539,7 +539,7 @@ textarea.control_flex {
     width:100%;
 }
 
-#id_status {margin-left: 35%;margin-right: 35%;margin-bottom: 3%;}
+#id_status {margin-left: 0%;margin-right: 35%;margin-bottom: 0%;}
 }
 .main_container .top_nav {
     display: block;
@@ -721,6 +721,12 @@ a:active,
 .btn.active.focus {
     outline: 0
 }
+
+.formcustom_control {
+    display: flex;
+}
+
+.formcustom_control {}
 
 button.navbar-toggler.navbar-toggler-right {}
 a:hover,
@@ -4327,5 +4333,11 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 .nav-item {
     width:100%;
     display:flex;
+}
+
+
+.formcustom_control {
+    display:flex;
+    flex-direction:column;
 }
 }

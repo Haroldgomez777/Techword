@@ -16,6 +16,7 @@ from Techword.settings import MEDIA_ROOT,ZINNIA_UPLOAD_TO
 from .forms import ArticleForm
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
+from django.core import serializers
 from django.http import JsonResponse
 
 @csrf_protect
@@ -83,6 +84,6 @@ def add_category(request):
     secategory = Category.objects.get(id=categor.pk)
     secategory.slug = make_a_slug
     secategory.save()
-    return JsonResponse(categor.pk)
+    return JsonResponse(categor.pk, safe=False)
 
 

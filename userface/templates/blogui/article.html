@@ -22,12 +22,28 @@
             {% csrf_token %}
             {% for field in form %}
                 <div class="form_control">
+                    {% if field.name != "status" and field.name != "publication_date" and field.name != "image"  %}
                     <label class="control_label" for="{{ field.name }}">{{ field.label }}</label>
                     <div class="input_control">
                         {{ field }}
                     </div>
+                    {% endif %}
                 </div>
+
                 {% endfor %}
+
+                <div class="formcustom_control">
+            {% for field in form %}
+            <div class="form_control">
+                {% if field.name == "status" or field.name == "publication_date" or field.name == "image"  %}
+                    <label class="control_label" for="{{ field.name }}">{{ field.label }}</label>
+                    <div class="input_control">
+                    {{ field }}
+                    </div>
+                {% endif %}
+                </div>
+            {% endfor %}
+                </div>
                 <div class="form_control">
                     <div class="input_control_button">
                         <input class="btn btn-primary" type="submit" value="submit">

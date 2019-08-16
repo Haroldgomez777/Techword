@@ -721,6 +721,18 @@ a:hover {
 .form-control:focus {
   border: 1px solid #e8e8e8;
 }
+
+input#id_image {
+    width: auto;
+}
+
+input#single_cal1 {
+    width: auto;
+}
+
+select#id_status {
+    width: auto;
+}
 .form-active .form-control:invalid {
   border-color: red;
 }

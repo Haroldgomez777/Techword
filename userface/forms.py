@@ -21,11 +21,12 @@ class ArticleForm(ModelForm):
 							'class':'form-control control_flex',
 							'type': 'text'
 							}))
-	status = IntegerField( widget=forms.Select(
-										choices=STATUS_CHOICES,
-										attrs={'class': 'form-control control_flex' }
-										))
 	lead = CharField (
+						widget=forms.Textarea(attrs={
+									'type': 'textarea',
+									'class': 'form-control control_flex'
+									}))
+	content = CharField (
 						widget=forms.Textarea(attrs={
 									'type': 'textarea',
 									'class': 'form-control control_flex'
@@ -35,11 +36,10 @@ class ArticleForm(ModelForm):
 									'id': 'single_cal1',
 									'class': 'form-control control_flex',
 									}))
-	content = CharField (
-						widget=forms.Textarea(attrs={
-									'type': 'textarea',
-									'class': 'form-control control_flex'
-									}))
+	status = IntegerField( widget=forms.Select(
+										choices=STATUS_CHOICES,
+										attrs={'class': 'form-control control_flex' }
+										))
 	image = ImageField(
 						widget=forms.ClearableFileInput(attrs={
 									'type': 'file',
@@ -75,10 +75,10 @@ class ArticleForm(ModelForm):
 				]
 		fields = (
 		'title',
-		'status',
 		'lead',
-		'publication_date',
 		'content',
+		'status',
+		'publication_date',
 		'image'
 		)
 
